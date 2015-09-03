@@ -42,15 +42,14 @@ public float getVel() {
         return vuelta;
     }
 
-    public float getCalorias() {
-        return calorias;
-    }
+
    
     public float calcularKm(float vel/*, time tiempo*/ ) //Falta colocar el tiempo
     {
-      return 1;                                      /* Se coloca 1 para evitar 
-                                                        obtener errores
-                                                      */
+        float tiempoTotal= 100.5f;                              //Esta en segundos
+        return tiempoTotal/vel;                                                /* Se coloca 1 para evitar 
+                                                                obtener errores
+                                                                */
     }
     
     public int calcularVueltas(float vel/*, time tiempo*/)      //Hay que mirar cómo colocar el tiempo
