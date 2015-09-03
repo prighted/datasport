@@ -16,7 +16,7 @@ public class Test {
         float v=1.1f;
         float i=0.5f;
         
-        programaEjercicio p = new programaEjercicio(v, i, 20, 80);
+        ProgramaEjercicio p = new ProgramaEjercicio(v, i, 20, 80);
         float calorias;
         calorias=p.calcularCal();
         System.out.println("Las calorías son" + calorias);

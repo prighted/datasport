@@ -9,7 +9,7 @@ package datasport;
  *
  * @author Reinaldo pabon
  */
-public class ProgramaEjercicio {
+public class ProgramaEjercicio{
     
    private float vel;
    private float inc;
@@ -19,12 +19,13 @@ public class ProgramaEjercicio {
                             */
    private float cv, ci, e, k, p;
 
-    public programaEjercicio(float vel, float inc, float e, float p) {
+  public ProgramaEjercicio(float vel, float inc, float e, float p) {
         this.vel = vel;
         this.inc = inc;
         this.e = e;
         this.p = p;
     }
+   
 
   
 
