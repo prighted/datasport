@@ -17,13 +17,14 @@ public class ProgramaEjercicio {
    private float calorias; /*No se si sea float 
                             o sea int, por favor revisar
                             */
-   private float cv, ci, e, k, p;
+   private float cv, ci;
+   private float caloriasAcumuladas;
+   private static final float K=10f;        //es una constante, no es necesario que cambie
 
-    public programaEjercicio(float vel, float inc, float e, float p) {
+    public ProgramaEjercicio(float vel, float inc) {
         this.vel = vel;
         this.inc = inc;
-        this.e = e;
-        this.p = p;
+       
     }
 
   
@@ -45,14 +46,14 @@ public float getVel() {
         return calorias;
     }
    
-    public float calcularkm(float vel/*, time tiempo*/ ) //Falta colocar el tiempo
+    public float calcularKm(float vel/*, time tiempo*/ ) //Falta colocar el tiempo
     {
       return 1;                                      /* Se coloca 1 para evitar 
                                                         obtener errores
                                                       */
     }
     
-    public int calcularVueltas(float vel/*, time tiempo*/)
+    public int calcularVueltas(float vel/*, time tiempo*/)      //Hay que mirar cómo colocar el tiempo
     {
       return 1;
               
@@ -63,16 +64,26 @@ public float getVel() {
           return 1;
     }
     
-    public float calAcum(float cal)
+    public float calAcum()
     {
-        return 1;
+       caloriasAcumuladas=0;
+       int minutos=10;      //Cantidad de minutos que trotó el usuario
+       for(int i=1; i<=minutos; i++)
+       {
+           caloriasAcumuladas=caloriasAcumuladas+calcularCal();
+           /*System.out.println(caloriasAcumuladas);
+           System.out.println("\n"); 
+                   */
+      }
+        
+        return caloriasAcumuladas;
     }
     
     public float calcularCal()
     {
-        k = 10 + 10*((30-e)/10) + 10*(p/100);
-        cv = (k*(1+(vel-5)/10));
-        ci = k*(inc/12);
+       // K = 10 + 10*((30-e)/10) + 10*(p/100);     Por si necesita modificar    
+        cv = (K*(1+(vel-5)/10));
+        ci = K*(inc/12);
         calorias=cv+ci;
         return calorias;
     }
