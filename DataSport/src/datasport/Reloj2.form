@@ -23,13 +23,25 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <Component id="jlbhora" min="-2" pref="112" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jlbdia" min="-2" pref="97" max="-2" attributes="0"/>
-                  <Component id="jlbhora" min="-2" pref="112" max="-2" attributes="0"/>
+                  <Component id="jbtinicio" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtfinal" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="245" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jlbhorainicial" pref="97" max="32767" attributes="0"/>
+                  <Component id="jlbhorafinal" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="45" max="32767" attributes="0"/>
+              <Component id="jlbhorarestada" min="-2" pref="155" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -38,9 +50,32 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Component id="jlbhora" min="-2" pref="63" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jlbdia" min="-2" pref="69" max="-2" attributes="0"/>
-              <EmptySpace pref="104" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jbtinicio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbhorainicial" alignment="3" min="-2" pref="69" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace pref="40" max="32767" attributes="0"/>
+                              <Component id="jbtfinal" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jlbhorafinal" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jlbhorarestada" min="-2" pref="81" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -49,11 +84,35 @@
     <Component class="javax.swing.JLabel" name="jlbhora">
       <Properties>
         <Property name="text" type="java.lang.String" value="Hora"/>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jlbdia">
+    <Component class="javax.swing.JLabel" name="jlbhorainicial">
       <Properties>
-        <Property name="text" type="java.lang.String" value="D&#xed;a"/>
+        <Property name="text" type="java.lang.String" value="hora inicio"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtinicio">
+      <Properties>
+        <Property name="label" type="java.lang.String" value="inicio"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtinicioActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtfinal">
+      <Properties>
+        <Property name="label" type="java.lang.String" value="final"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbhorafinal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="hora final"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlbhorarestada">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="hora restada"/>
       </Properties>
     </Component>
   </SubComponents>

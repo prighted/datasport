@@ -3,6 +3,7 @@ package datasport;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JLabel;
+import java.util.Calendar;
 
 public class Reloj extends Thread {
     
@@ -12,11 +13,11 @@ public class Reloj extends Thread {
     this.lbl=lbl;
     }
     
-    public void run(){
+    public void run(){ 
     while(true){
         Date hoy = new Date ();
         SimpleDateFormat s=new SimpleDateFormat("hh:mm:ss");
-        lbl.setText(s.format(hoy));
+        lbl.setText(s.format(hoy));        
     try {sleep(1000);
     }catch(Exception ex){
     
