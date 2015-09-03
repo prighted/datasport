@@ -20,7 +20,6 @@ public class Reloj2 extends javax.swing.JFrame {
         initComponents();
         Reloj hilo = new Reloj(jlbhora);
         hilo.start();
-        otrahora();
         
     }
 
@@ -48,6 +47,11 @@ public class Reloj2 extends javax.swing.JFrame {
         jlbhorainicial.setText("hora inicio");
 
         jbtinicio.setLabel("inicio");
+        jbtinicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtinicioMouseClicked(evt);
+            }
+        });
         jbtinicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtinicioActionPerformed(evt);
@@ -55,6 +59,11 @@ public class Reloj2 extends javax.swing.JFrame {
         });
 
         jbtfinal.setLabel("final");
+        jbtfinal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtfinalMouseClicked(evt);
+            }
+        });
 
         jlbhorafinal.setText("hora final");
 
@@ -113,11 +122,24 @@ public class Reloj2 extends javax.swing.JFrame {
     private void jbtinicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtinicioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtinicioActionPerformed
-    public void otrahora(){
-        Calendar cal=Calendar.getInstance();
+
+    private void jbtinicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtinicioMouseClicked
+
+            Calendar cal=Calendar.getInstance();
         String hora=cal.get(cal.HOUR_OF_DAY)+":"+cal.get(cal.MINUTE)+":"+cal.get(cal.SECOND);
         jlbhorainicial.setText(hora);
-    }
+        
+    }//GEN-LAST:event_jbtinicioMouseClicked
+
+    private void jbtfinalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtfinalMouseClicked
+  Calendar cal=Calendar.getInstance();
+        String hora=cal.get(cal.HOUR_OF_DAY)+":"+cal.get(cal.MINUTE)+":"+cal.get(cal.SECOND);
+        jlbhorafinal.setText(hora);
+    }//GEN-LAST:event_jbtfinalMouseClicked
+
+    
+    
+
   
     
     public static void main(String args[]) {

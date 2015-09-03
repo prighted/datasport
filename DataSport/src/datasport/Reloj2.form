@@ -97,6 +97,7 @@
         <Property name="label" type="java.lang.String" value="inicio"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jbtinicioMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtinicioActionPerformed"/>
       </Events>
     </Component>
@@ -104,6 +105,9 @@
       <Properties>
         <Property name="label" type="java.lang.String" value="final"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jbtfinalMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jlbhorafinal">
       <Properties>
