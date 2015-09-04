@@ -9,7 +9,7 @@ package datasport;
  *
  * @author Reinaldo pabon
  */
-public class ProgramaEjercicio {
+public class ProgramaEjercicio{
     
    private float vel;
    private float inc;
@@ -22,10 +22,12 @@ public class ProgramaEjercicio {
    private static final float K=10f;        //es una constante, no es necesario que cambie
 
     public ProgramaEjercicio(float vel, float inc) {
+
         this.vel = vel;
         this.inc = inc;
        
     }
+   
 
   
 
