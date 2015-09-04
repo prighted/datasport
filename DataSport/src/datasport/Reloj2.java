@@ -16,6 +16,7 @@ public class Reloj2 extends javax.swing.JFrame {
     /**
      * Creates new form Reloj2
      */
+   //OJO Definir los tiempos iniciales y terminales como retornos para calculos en los programas de ejercicio.
     public Reloj2() {
         initComponents();
         Reloj hilo = new Reloj(jlbhora);
@@ -62,6 +63,11 @@ public class Reloj2 extends javax.swing.JFrame {
         jbtfinal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jbtfinalMouseClicked(evt);
+            }
+        });
+        jbtfinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtfinalActionPerformed(evt);
             }
         });
 
@@ -125,17 +131,21 @@ public class Reloj2 extends javax.swing.JFrame {
 
     private void jbtinicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtinicioMouseClicked
 
-            Calendar cal=Calendar.getInstance();
+        Calendar cal=Calendar.getInstance();
         String hora=cal.get(cal.HOUR_OF_DAY)+":"+cal.get(cal.MINUTE)+":"+cal.get(cal.SECOND);
         jlbhorainicial.setText(hora);
         
     }//GEN-LAST:event_jbtinicioMouseClicked
 
     private void jbtfinalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtfinalMouseClicked
-  Calendar cal=Calendar.getInstance();
+        Calendar cal=Calendar.getInstance();
         String hora=cal.get(cal.HOUR_OF_DAY)+":"+cal.get(cal.MINUTE)+":"+cal.get(cal.SECOND);
         jlbhorafinal.setText(hora);
     }//GEN-LAST:event_jbtfinalMouseClicked
+
+    private void jbtfinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtfinalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtfinalActionPerformed
 
     
     

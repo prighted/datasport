@@ -9,6 +9,9 @@ package datasport;
  *
  * @author Reinaldo Pabon
  */
-public class ModoLibre {
-    
+public class ModoLibre extends ProgramaEjercicio {
+    public ModoLibre(float vel,float inc)
+    {
+        super(vel,inc);
+    }
 }
