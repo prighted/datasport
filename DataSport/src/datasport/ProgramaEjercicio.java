@@ -10,7 +10,7 @@ package datasport;
  * @author Reinaldo pabon
  */
 public class ProgramaEjercicio{
-    
+   private Reloj2 r; //Falta un metodo que calcule a partir de una interaccion la diferencia de tiempo entre el actual y el de partida
    private float vel;
    private float inc;
    private int vuelta;
@@ -25,7 +25,6 @@ public class ProgramaEjercicio{
 
         this.vel = vel;
         this.inc = inc;
-       
     }
    
 
@@ -60,7 +59,7 @@ public float getVel() {
               
     }
     
-    public int calculaTimeLap()
+    public int calculaTimeLap() 
     {
           return 1;
     }
@@ -68,7 +67,7 @@ public float getVel() {
     public float calAcum()
     {
        caloriasAcumuladas=0;
-       int minutos=10;      //Cantidad de minutos que trotó el usuario
+       int minutos=10;      //Cantidad de minutos que ha trotado el usuario. Tomar este tiempo de reloj actual menos partida.
        for(int i=1; i<=minutos; i++)
        {
            caloriasAcumuladas=caloriasAcumuladas+calcularCal();

@@ -9,8 +9,12 @@ package datasport;
  *
  * @author Reinaldo Pabon
  */
-public class ModoPrestablecido {
+public class ModoPrestablecido extends ProgramaEjercicio {
   
+    public ModoPrestablecido(float vel,float inc)
+    {
+    super(vel,inc);
+    }
           
     
 }

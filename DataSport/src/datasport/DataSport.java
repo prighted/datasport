@@ -5,9 +5,11 @@
  */
 package datasport;
 
+import java.util.Scanner;
+
 /**
- *
- * @author Reinaldo Pabon
+ * Esta sera la clase principal de la app Aclaro no sera el ejecutable.
+ * @author Reinaldo Pabonh
  */
 public class DataSport {
 
@@ -15,7 +17,9 @@ public class DataSport {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Reloj2 reloj = new Reloj2(); 
+    
+                  
     }
     
 }

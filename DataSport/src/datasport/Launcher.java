@@ -6,9 +6,15 @@
 package datasport;
 
 /**
- *
+ * Sistema de la trotadora
  * @author Reinaldo Pabon
  */
 public class Launcher {
-    
+    public static void main(String[] args) {
+        
+     DataSport Trotadora= new DataSport();
+    Conexion DB = new Conexion(); // Posiblemente se implemente factory
+                  
+    }
 }
+ 
