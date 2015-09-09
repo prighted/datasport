@@ -5,7 +5,7 @@
  */
 package datasport;
 
-import java.util.Scanner;
+//import testeando.Reloj2;
 
 /**
  * Esta sera la clase principal de la app Aclaro no sera el ejecutable.
@@ -17,7 +17,7 @@ public class DataSport {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Reloj2 reloj = new Reloj2(); 
+       
     
                   
     }

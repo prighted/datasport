@@ -5,12 +5,14 @@
  */
 package datasport;
 
+//import testeando.Reloj2;
+
 /**
  *
  * @author Reinaldo pabon
  */
 public class ProgramaEjercicio{
-   private Reloj2 r; //Falta un metodo que calcule a partir de una interaccion la diferencia de tiempo entre el actual y el de partida
+    //Falta un metodo que calcule a partir de una interaccion la diferencia de tiempo entre el actual y el de partida
    private float vel;
    private float inc;
    private int vuelta;
