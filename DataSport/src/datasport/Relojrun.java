@@ -19,16 +19,26 @@ public class Relojrun {
     /*
      Variables para obtener la hora.
      */
+    Calendar calInicial = Calendar.getInstance();
+    private long horaInicialSeg = calInicial.getTimeInMillis();;
 
+    public long getHoraInicialSeg() {
+        return horaInicialSeg;
+    }
 
     public String getHoraString() {
-
         Calendar cal = Calendar.getInstance();
+       
         int segundos = cal.get(cal.SECOND);
         int minutos = cal.get(cal.MINUTE);
         int horas = cal.get(cal.HOUR_OF_DAY);
         String hora = horas + ":" + minutos + ":" + segundos;
         return hora;
+    }
+    public long getHoraMilis()
+    {
+        Calendar cal = Calendar.getInstance();
+        return cal.getTimeInMillis();
     }
 /**
   
