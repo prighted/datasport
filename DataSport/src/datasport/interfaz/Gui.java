@@ -22,15 +22,11 @@ public class Gui extends javax.swing.JFrame {
      * Creates new form Gui
      */
     public Gui() {
-        int m=0;
         initComponents();
         actualizador = new ActualizarReloj(jLabel1);
         t = new Thread(actualizador,"t");
         t.start();
-        t.getName();
-        /*
-        Hau que actualizar 
-        */
+      
         /*if (actualizador.getStop() == 2){
             actualizador.setVivo(false);
             
