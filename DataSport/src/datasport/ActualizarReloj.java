@@ -40,19 +40,19 @@ public class ActualizarReloj implements Runnable {
     public void run() {
         while (vivo) {
             try {
-                long horaInicial = running.getHoraMilis();                      
-                running.setHoraInicialSeg(horaInicial);
+             
+                running.imprimirHoraInicial();
                 String hora = running.getHoraString();                          //Obtención de la Hora a mostrar en pantalla
                 etiqueta.setText(hora); 
-                System.out.println(horaInicial);
+                //System.out.println(horaInicial);
                 Thread.sleep(1000);
                 stop=stop+1;
                 System.out.println(stop);
                 if (stop==10)
                 {
                     
-                    long horaFinal = running.getHoraMilis();                    //Se crea este método para detener el Hilo
-                    running.setHoraFinalSeg(horaFinal);                         //Y poder hacer el cálculo de los segundos
+                                                                                //Se crea este método para detener el Hilo
+                                            //Y poder hacer el cálculo de los segundos
                     vivo=false;
                     difHoras=running.calcularDeltaHoras();                              //Obtiene la diferencia de las horas
                     System.out.println(difHoras);
