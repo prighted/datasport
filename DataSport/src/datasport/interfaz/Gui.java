@@ -6,6 +6,7 @@
 package datasport.interfaz;
 
 import datasport.ActualizarReloj;
+import javax.swing.JLabel;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,27 +15,18 @@ import java.util.Set;
  * @author Reinaldo Pabon
  */
 public class Gui extends javax.swing.JFrame {
-
-   Thread t;
-   private ActualizarReloj actualizador;
-
+    Thread t;
+    private ActualizarReloj actualizador;
     /**
      * Creates new form Gui
      */
     public Gui() {
         initComponents();
-        actualizador = new ActualizarReloj(jLabel1);
-        t = new Thread(actualizador,"t");
-        t.start();
-      
-        /*if (actualizador.getStop() == 2){
-            actualizador.setVivo(false);
-            
- 
-        }*/
+         actualizador = new ActualizarReloj(jLabel1);
+         t = new Thread(actualizador,"t");
+         t.start();
+        
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,37 +42,26 @@ public class Gui extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("jLabel1");
-        jLabel1.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-                jLabel1InputMethodTextChanged(evt);
-            }
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(304, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(jLabel1)
+                .addContainerGap(322, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(107, 107, 107)
+                .addGap(46, 46, 46)
                 .addComponent(jLabel1)
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addContainerGap(240, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jLabel1InputMethodTextChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1InputMethodTextChanged
 
     /**
      * @param args the command line arguments
@@ -120,4 +101,5 @@ public class Gui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
 }
