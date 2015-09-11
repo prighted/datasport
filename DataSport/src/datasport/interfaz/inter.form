@@ -24,18 +24,113 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Component id="buttonTransluceIcon1" min="-2" pref="75" max="-2" attributes="0"/>
-              <EmptySpace pref="639" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="buttonTransluceIcon2" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="buttonTransluceIcon1" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="buttonTransluceIcon3" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="buttonTransluceIcon4" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="buttonTransluceIcon5" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="buttonTransluceIcon6" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="buttonTransluceIcon7" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="buttonTransluceIcon8" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="buttonTransluceIcon9" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="buttonTransluceIcon10" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="buttonTransluceIcon11" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="buttonTransluceIcon12" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="buttonTransluceIcon14" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="buttonTransluceIcon13" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="buttonTransluceIcon15" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="buttonTransluceIcon17" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="buttonTransluceIcon16" min="-2" pref="75" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="80" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="136" max="32767" attributes="0"/>
-              <Component id="buttonTransluceIcon1" min="-2" pref="67" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                      <Component id="buttonTransluceIcon13" min="-2" pref="68" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="buttonTransluceIcon14" min="-2" pref="67" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="buttonTransluceIcon15" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                          <Component id="buttonTransluceIcon16" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
+                          <Component id="buttonTransluceIcon17" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="63" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="buttonTransluceIcon11" min="-2" pref="67" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="buttonTransluceIcon12" min="-2" pref="67" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="buttonTransluceIcon9" min="-2" pref="67" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="buttonTransluceIcon10" min="-2" pref="67" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="buttonTransluceIcon7" min="-2" pref="67" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="buttonTransluceIcon8" min="-2" pref="67" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="buttonTransluceIcon5" min="-2" pref="67" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="buttonTransluceIcon6" min="-2" pref="67" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="buttonTransluceIcon1" pref="0" max="32767" attributes="0"/>
+                          <Component id="buttonTransluceIcon3" min="-2" pref="67" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="buttonTransluceIcon4" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                          <Component id="buttonTransluceIcon2" alignment="1" min="-2" pref="67" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -45,6 +140,149 @@
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/imagenes/number41.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon2">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/number34.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon3">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/number40.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon4">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/number32.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon5">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/number37.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon6">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/number36.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon7">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/number38.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon8">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/number41.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon9">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/number39.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon10">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/number41.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon11">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/number35.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon12">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/number41.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="640" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="360" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon13">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/off1.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon14">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/speed9.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon15">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/play86.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon16">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/stop39.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
+      </Properties>
+    </Component>
+    <Component class="org.edisoncor.gui.button.ButtonTransluceIcon" name="buttonTransluceIcon17">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/pause39.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="buttonTransluceIcon1"/>
       </Properties>

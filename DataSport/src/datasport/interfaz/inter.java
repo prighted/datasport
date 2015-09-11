@@ -28,27 +28,176 @@ public class inter extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonTransluceIcon1 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon2 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon3 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon4 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon5 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon6 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon7 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon8 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon9 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon10 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon11 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon12 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        jPanel1 = new javax.swing.JPanel();
+        buttonTransluceIcon13 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon14 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon15 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon16 = new org.edisoncor.gui.button.ButtonTransluceIcon();
+        buttonTransluceIcon17 = new org.edisoncor.gui.button.ButtonTransluceIcon();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         buttonTransluceIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number41.png"))); // NOI18N
         buttonTransluceIcon1.setText("buttonTransluceIcon1");
 
+        buttonTransluceIcon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number34.png"))); // NOI18N
+        buttonTransluceIcon2.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number40.png"))); // NOI18N
+        buttonTransluceIcon3.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number32.png"))); // NOI18N
+        buttonTransluceIcon4.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number37.png"))); // NOI18N
+        buttonTransluceIcon5.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number36.png"))); // NOI18N
+        buttonTransluceIcon6.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number38.png"))); // NOI18N
+        buttonTransluceIcon7.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number41.png"))); // NOI18N
+        buttonTransluceIcon8.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number39.png"))); // NOI18N
+        buttonTransluceIcon9.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number41.png"))); // NOI18N
+        buttonTransluceIcon10.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number35.png"))); // NOI18N
+        buttonTransluceIcon11.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number41.png"))); // NOI18N
+        buttonTransluceIcon12.setText("buttonTransluceIcon1");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 640, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 360, Short.MAX_VALUE)
+        );
+
+        buttonTransluceIcon13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/off1.png"))); // NOI18N
+        buttonTransluceIcon13.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/speed9.png"))); // NOI18N
+        buttonTransluceIcon14.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play86.png"))); // NOI18N
+        buttonTransluceIcon15.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stop39.png"))); // NOI18N
+        buttonTransluceIcon16.setText("buttonTransluceIcon1");
+
+        buttonTransluceIcon17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pause39.png"))); // NOI18N
+        buttonTransluceIcon17.setText("buttonTransluceIcon1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(buttonTransluceIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(639, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(buttonTransluceIcon2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonTransluceIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonTransluceIcon3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonTransluceIcon4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonTransluceIcon5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonTransluceIcon6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonTransluceIcon7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonTransluceIcon8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonTransluceIcon9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonTransluceIcon10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonTransluceIcon11, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonTransluceIcon12, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonTransluceIcon14, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonTransluceIcon13, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonTransluceIcon15, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonTransluceIcon17, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonTransluceIcon16, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(136, Short.MAX_VALUE)
-                .addComponent(buttonTransluceIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(buttonTransluceIcon13, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonTransluceIcon14, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonTransluceIcon15, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonTransluceIcon16, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonTransluceIcon17, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(buttonTransluceIcon11, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonTransluceIcon12, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(buttonTransluceIcon9, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonTransluceIcon10, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(buttonTransluceIcon7, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonTransluceIcon8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(buttonTransluceIcon5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonTransluceIcon6, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(buttonTransluceIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(buttonTransluceIcon3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(buttonTransluceIcon4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonTransluceIcon2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(25, 25, 25))
         );
 
         pack();
@@ -91,5 +240,22 @@ public class inter extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon1;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon10;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon11;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon12;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon13;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon14;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon15;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon16;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon17;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon2;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon3;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon4;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon5;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon6;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon7;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon8;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon9;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
