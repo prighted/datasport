@@ -6,6 +6,8 @@
 package datasport.interfaz;
 
 import datasport.ActualizarReloj;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -15,14 +17,21 @@ public class Gui extends javax.swing.JFrame {
 
    Thread t;
    private ActualizarReloj actualizador;
+
     /**
      * Creates new form Gui
      */
     public Gui() {
+        int m=0;
+        initComponents();
         actualizador = new ActualizarReloj(jLabel1);
         t = new Thread(actualizador,"t");
         t.start();
-        initComponents();
+        /*if (actualizador.getStop() == 2){
+            actualizador.setVivo(false);
+            
+ 
+        }*/
     }
     
     
