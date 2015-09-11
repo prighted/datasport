@@ -20,18 +20,32 @@ public class Relojrun {
      Variables para obtener la hora.
      */
     Calendar calInicial = Calendar.getInstance();
-    private long horaInicialSeg = calInicial.getTimeInMillis();;
+    private long horaInicial;
+    private long horaFinal;
+    private long difHoras;
 
+    public void setHoraInicialSeg(long horaInicial) {
+        this.horaInicial = horaInicial;
+    }
+
+    public void setHoraFinalSeg(long horaFinal) {
+        this.horaFinal = horaFinal;
+    }
+    
+    public long calcularDeltaHoras(){
+        difHoras = (horaFinal - horaInicial)/1000;                              //Estoy intentando calcular el delta aquí porque el profesor 
+        return difHoras;                                                        //dijo que Reloj debía hacer ese cálculo
+        
+    }
     public long getHoraInicialSeg() {
-        return horaInicialSeg;
+        return horaInicial;
     }
 
     public String getHoraString() {
         Calendar cal = Calendar.getInstance();
-       
-        int segundos = cal.get(cal.SECOND);
-        int minutos = cal.get(cal.MINUTE);
-        int horas = cal.get(cal.HOUR_OF_DAY);
+        int segundos = cal.get(Calendar.SECOND);
+        int minutos = cal.get(Calendar.MINUTE);
+        int horas = cal.get(Calendar.HOUR_OF_DAY);
         String hora = horas + ":" + minutos + ":" + segundos;
         return hora;
     }
@@ -40,18 +54,5 @@ public class Relojrun {
         Calendar cal = Calendar.getInstance();
         return cal.getTimeInMillis();
     }
-/**
-  
-    public int getSegundos() {
-        return segundos;
-    }
 
-    public int getMinutos() {
-        return minutos;
-    }
-
-    public int getHoras() {
-        return horas;
-    }
-*/
 }
