@@ -24,28 +24,30 @@ public class Relojrun {
     private long horaFinal;
     private long difHoras;
 
-    public Relojrun(long horaInicial) {
+    public long getHoraInicial() {
+        return horaInicial;
+    }
+
+    public long getHoraFinal() {
+        return horaFinal;
+    }
+
+
+    public void setHoraInicial(long horaInicial) {
         this.horaInicial = horaInicial;
     }
 
-    public Relojrun() {
-    }
-
-
-    public void setHoraFinalSeg(long horaFinal) {
+    public void setHoraFinal(long horaFinal) {
         this.horaFinal = horaFinal;
     }
-    
+
+
     public long calcularDeltaHoras(){
         this.difHoras = (horaFinal - horaInicial)/1000;               //Estoy intentando calcular el delta aquí porque el profesor 
         return difHoras/60;                                                     //dijo que Reloj debía hacer ese cálculo
         
     }
-    public long getHoraInicialSeg() {
-        Calendar calInicial = Calendar.getInstance();
-        this.horaInicial=calInicial.getTimeInMillis();
-        return horaInicial;
-    }
+
 
     public String getHoraString() {
         Calendar cal = Calendar.getInstance();
@@ -56,10 +58,13 @@ public class Relojrun {
         return hora;
     }
     
+    public void resetHora(){
+        
+    }
     public void imprimirHoraInicial(){
-        System.out.println("la hora es: "+horaInicial);
+        System.out.println("la hora incial es: "+horaInicial);
     }
     public void imprimirHoraFinal(){
-        System.out.println("la hora es: "+horaFinal);
+        System.out.println("la hora final es: "+horaFinal);
     }
 }

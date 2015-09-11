@@ -15,17 +15,16 @@ public class ActualizarReloj implements Runnable {
     //Codigo que se ejecutara durante el thread
 
     private JLabel etiqueta;
-    Relojrun running = new Relojrun();
     public boolean vivo;                                                        //Para que se repita el run
-    private long difHoras;                                                      //Va a estar en Segundos
- 
     private int stop = 0;                                                       //Para detener el hilo
+    private Relojrun reloj;
     
     
     
-    public ActualizarReloj(JLabel label) {
-        etiqueta = label;
-        vivo = true;
+    public ActualizarReloj(JLabel label, Relojrun reloj) {
+        this.etiqueta = label;
+        this.reloj = reloj;
+        this.vivo = true;
     }
 
     public void setVivo(boolean vivo) {
@@ -40,22 +39,21 @@ public class ActualizarReloj implements Runnable {
     public void run() {
         while (vivo) {
             try {
-             
-                running.imprimirHoraInicial();
-                String hora = running.getHoraString();                          //Obtención de la Hora a mostrar en pantalla
-                etiqueta.setText(hora); 
-                //System.out.println(horaInicial);
+                String hora = reloj.getHoraString();                          //Obtención de la Hora a mostrar en pantalla
+                etiqueta.setText(hora);
+                
+                System.out.println("La hora inicial es "+reloj.getHoraInicial());
                 Thread.sleep(1000);
                 stop=stop+1;
                 System.out.println(stop);
                 if (stop==10)
                 {
-                    
-                                                                                //Se crea este método para detener el Hilo
-                                            //Y poder hacer el cálculo de los segundos
                     vivo=false;
-                    difHoras=running.calcularDeltaHoras();                              //Obtiene la diferencia de las horas
-                    System.out.println(difHoras);
+                    long horaFinal = System.currentTimeMillis();                //Obtiene la hora final
+                    reloj.setHoraFinal(horaFinal);
+                    System.out.println("La hora final es: "+reloj.getHoraFinal());
+                    difHoras=reloj.calcularDeltaHoras();                              //Obtiene la diferencia de las horas
+                    System.out.println("La diferencia de horas es: +"difHoras);
                 }
                 
             } catch (InterruptedException ex) {
