@@ -50,20 +50,25 @@ public class Relojrun {
 
 
     public String getHoraString() {
-        Calendar cal = Calendar.getInstance();
+        Date hoy = new Date ();
+        SimpleDateFormat s=new SimpleDateFormat("hh:mm:ss");                    //De esta forma se obtiene la hora en el
+        return s.format(hoy);                                                   //Buen formato
+        
+        /*Calendar cal = Calendar.getInstance();
         int segundos = cal.get(Calendar.SECOND);
         int minutos = cal.get(Calendar.MINUTE);
         int horas = cal.get(Calendar.HOUR_OF_DAY);
         String hora = horas + ":" + minutos + ":" + segundos;
         //SimpleDateFormat s=new SimpleDateFormat("hh:mm:ss");
        // lbl.setText(s.format(hoy));   
-        return hora;
+        return hora;*/
     }
     
     public void resetHora(){
-        
-        
+        long horaNueva = System.currentTimeMillis();
+        setHoraInicial(horaNueva);
     }
+    
     public void imprimirHoraInicial(){
         System.out.println("la hora incial es: "+horaInicial);
     }
