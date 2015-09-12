@@ -55,10 +55,13 @@ public class Relojrun {
         int minutos = cal.get(Calendar.MINUTE);
         int horas = cal.get(Calendar.HOUR_OF_DAY);
         String hora = horas + ":" + minutos + ":" + segundos;
+        //SimpleDateFormat s=new SimpleDateFormat("hh:mm:ss");
+       // lbl.setText(s.format(hoy));   
         return hora;
     }
     
     public void resetHora(){
+        
         
     }
     public void imprimirHoraInicial(){
