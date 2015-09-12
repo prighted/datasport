@@ -11,9 +11,9 @@ package datasport;
  */
 public class ModoPrestablecido extends ProgramaEjercicio {
   
-    public ModoPrestablecido(float vel,float inc)
+    public ModoPrestablecido(float vel,float inc,int tiempo)
     {
-    super(vel,inc);
+    super(vel,inc,tiempo);
     }
           
     

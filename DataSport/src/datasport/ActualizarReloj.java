@@ -42,7 +42,12 @@ public class ActualizarReloj implements Runnable {
     {
     contador=1;
     }
-    
+
+    public int getContador() {
+        return contador;
+    }
+
+
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
     }
@@ -73,8 +78,13 @@ public class ActualizarReloj implements Runnable {
                 */
                 if (mantenerContador==true)
                 {
+                progEjer.calcularKm(20,contador);//calcula la distancia por ahora la vel es 5 (superClase).
+                progEjer.calAcum(contador);//calcula las cal acumuladas del programa (superClase)
+                progEjer.calculaTimeLap(contador);
                 System.out.println(contador++);
+                System.out.println("\n");
                 }
+                
             } catch (InterruptedException ex) {
             };
             
