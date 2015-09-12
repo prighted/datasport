@@ -21,6 +21,8 @@ public class ActualizarReloj implements Runnable {
     private ProgramaEjercicio progEjer;
     private ModoPrestablecido modoPres;
     private ModoLibre modoLibre;
+    private boolean mantenerContador=false;
+    private int contador=1;
 
     public ActualizarReloj(JLabel etiqueta, Relojrun reloj, ProgramaEjercicio progEjer, ModoPrestablecido modoPres, ModoLibre modoLibre) {
         this.etiqueta = etiqueta;
@@ -31,7 +33,16 @@ public class ActualizarReloj implements Runnable {
         this.modoLibre = modoLibre;
     }
     
-
+    public void initDetCont(boolean v)//Para e inicia contador
+    {
+    mantenerContador=v;
+    }
+    
+    public void resetContador()
+    {
+    contador=1;
+    }
+    
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
     }
@@ -47,7 +58,7 @@ public class ActualizarReloj implements Runnable {
                 String hora = reloj.getHoraString();                          //Obtención de la Hora a mostrar en pantalla
                 etiqueta.setText(hora);
                 Thread.sleep(1000);
-                stop=stop+1;
+                /*stop=stop+1;
                 System.out.println(stop);
                 if (stop==10)
                 {
@@ -59,7 +70,11 @@ public class ActualizarReloj implements Runnable {
                     System.out.println("La diferencia de horas es: "+ difHoras);
                     vivo=false;
                 }
-                
+                */
+                if (mantenerContador==true)
+                {
+                System.out.println(contador++);
+                }
             } catch (InterruptedException ex) {
             };
             
