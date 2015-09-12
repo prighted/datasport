@@ -41,12 +41,10 @@ public class ActualizarReloj implements Runnable {
             try {
                 String hora = reloj.getHoraString();                          //Obtención de la Hora a mostrar en pantalla
                 etiqueta.setText(hora);
-                long horaInicial = reloj.getHoraInicial();
-                System.out.println("La hora inicial es "+ horaInicial);
                 Thread.sleep(1000);
                 stop=stop+1;
                 System.out.println(stop);
-                if (stop==2)
+                if (stop==10)
                 {
                  
                     long horaFinal = System.currentTimeMillis();                //Obtiene la hora final
@@ -62,7 +60,7 @@ public class ActualizarReloj implements Runnable {
             
         }
       
-         
+       //Aqui ya no existe el thread, pero puedo seguir trabajando
        
     }
 }
