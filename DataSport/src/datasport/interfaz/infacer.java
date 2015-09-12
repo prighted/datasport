@@ -43,7 +43,7 @@ public class infacer extends javax.swing.JFrame {
          t = new Thread(actualizador,"t");
          t.start();
         
-    
+         System.out.println();
     }
 
     /**
@@ -116,7 +116,7 @@ public class infacer extends javax.swing.JFrame {
             }
         });
 
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/velocidad.png"))); // NOI18N
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/speed.png"))); // NOI18N
         jButton16.setBorder(null);
         jButton16.setBorderPainted(false);
         jButton16.setContentAreaFilled(false);
@@ -125,6 +125,11 @@ public class infacer extends javax.swing.JFrame {
         jButton16.setIconTextGap(-3);
         jButton16.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton16.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -676,6 +681,10 @@ public class infacer extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
 
     /**
      * @param args the command line arguments
