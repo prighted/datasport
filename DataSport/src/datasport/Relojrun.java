@@ -43,8 +43,8 @@ public class Relojrun {
 
 
     public long calcularDeltaHoras(){
-        this.difHoras = (horaFinal - horaInicial)/1000;               //Estoy intentando calcular el delta aquí porque el profesor 
-        return difHoras/60;                                                     //dijo que Reloj debía hacer ese cálculo
+        difHoras = (this.horaFinal - this.horaInicial)/1000;               //Estoy intentando calcular el delta aquí porque el profesor 
+        return difHoras;                                                     //dijo que Reloj debía hacer ese cálculo
         
     }
 

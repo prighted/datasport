@@ -41,19 +41,20 @@ public class ActualizarReloj implements Runnable {
             try {
                 String hora = reloj.getHoraString();                          //Obtención de la Hora a mostrar en pantalla
                 etiqueta.setText(hora);
-                
-                System.out.println("La hora inicial es "+reloj.getHoraInicial());
+                long horaInicial = reloj.getHoraInicial();
+                System.out.println("La hora inicial es "+ horaInicial);
                 Thread.sleep(1000);
                 stop=stop+1;
                 System.out.println(stop);
-                if (stop==10)
+                if (stop==2)
                 {
-                    vivo=false;
+                 
                     long horaFinal = System.currentTimeMillis();                //Obtiene la hora final
                     reloj.setHoraFinal(horaFinal);
                     System.out.println("La hora final es: "+reloj.getHoraFinal());
-                    difHoras=reloj.calcularDeltaHoras();                              //Obtiene la diferencia de las horas
-                    System.out.println("La diferencia de horas es: +"difHoras);
+                    long difHoras=reloj.calcularDeltaHoras();                              //Obtiene la diferencia de las horas
+                    System.out.println("La diferencia de horas es: "+ difHoras);
+                    vivo=false;
                 }
                 
             } catch (InterruptedException ex) {
