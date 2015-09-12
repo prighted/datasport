@@ -96,7 +96,7 @@ public class infacer extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton15.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\off1.png")); // NOI18N
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/off1.png"))); // NOI18N
         jButton15.setBorder(null);
         jButton15.setBorderPainted(false);
         jButton15.setContentAreaFilled(false);
@@ -105,8 +105,13 @@ public class infacer extends javax.swing.JFrame {
         jButton15.setIconTextGap(-3);
         jButton15.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton15.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
 
-        jButton16.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\speed9.png")); // NOI18N
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/speed9.png"))); // NOI18N
         jButton16.setBorder(null);
         jButton16.setBorderPainted(false);
         jButton16.setContentAreaFilled(false);
@@ -119,7 +124,7 @@ public class infacer extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jButton2.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number41.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number41.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
@@ -129,7 +134,7 @@ public class infacer extends javax.swing.JFrame {
         jButton2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number34.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number34.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -139,7 +144,7 @@ public class infacer extends javax.swing.JFrame {
         jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton4.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number32.png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number32.png"))); // NOI18N
         jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
@@ -149,7 +154,7 @@ public class infacer extends javax.swing.JFrame {
         jButton4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton3.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number40.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number40.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
@@ -159,7 +164,7 @@ public class infacer extends javax.swing.JFrame {
         jButton3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton5.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number37.png")); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number37.png"))); // NOI18N
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
@@ -169,7 +174,7 @@ public class infacer extends javax.swing.JFrame {
         jButton5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton6.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number36.png")); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number36.png"))); // NOI18N
         jButton6.setBorder(null);
         jButton6.setBorderPainted(false);
         jButton6.setContentAreaFilled(false);
@@ -179,7 +184,7 @@ public class infacer extends javax.swing.JFrame {
         jButton6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton8.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number41.png")); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number41.png"))); // NOI18N
         jButton8.setBorder(null);
         jButton8.setBorderPainted(false);
         jButton8.setContentAreaFilled(false);
@@ -189,7 +194,7 @@ public class infacer extends javax.swing.JFrame {
         jButton8.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton7.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number38.png")); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number38.png"))); // NOI18N
         jButton7.setBorder(null);
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
@@ -209,7 +214,7 @@ public class infacer extends javax.swing.JFrame {
         jButton9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton10.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number41.png")); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number41.png"))); // NOI18N
         jButton10.setBorder(null);
         jButton10.setBorderPainted(false);
         jButton10.setContentAreaFilled(false);
@@ -219,7 +224,7 @@ public class infacer extends javax.swing.JFrame {
         jButton10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton12.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number41.png")); // NOI18N
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number41.png"))); // NOI18N
         jButton12.setBorder(null);
         jButton12.setBorderPainted(false);
         jButton12.setContentAreaFilled(false);
@@ -229,7 +234,7 @@ public class infacer extends javax.swing.JFrame {
         jButton12.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton12.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton13.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number35.png")); // NOI18N
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number35.png"))); // NOI18N
         jButton13.setBorder(null);
         jButton13.setBorderPainted(false);
         jButton13.setContentAreaFilled(false);
@@ -239,7 +244,7 @@ public class infacer extends javax.swing.JFrame {
         jButton13.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton13.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton14.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\minus90.png")); // NOI18N
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/minus90.png"))); // NOI18N
         jButton14.setBorder(null);
         jButton14.setBorderPainted(false);
         jButton14.setContentAreaFilled(false);
@@ -249,7 +254,7 @@ public class infacer extends javax.swing.JFrame {
         jButton14.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton14.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton11.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\plus74.png")); // NOI18N
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plus74.png"))); // NOI18N
         jButton11.setBorder(null);
         jButton11.setBorderPainted(false);
         jButton11.setContentAreaFilled(false);
@@ -339,7 +344,7 @@ public class infacer extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jButton17.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number33.png")); // NOI18N
+        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number33.png"))); // NOI18N
         jButton17.setBorder(null);
         jButton17.setBorderPainted(false);
         jButton17.setContentAreaFilled(false);
@@ -349,7 +354,7 @@ public class infacer extends javax.swing.JFrame {
         jButton17.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton17.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton18.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number41.png")); // NOI18N
+        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number41.png"))); // NOI18N
         jButton18.setBorder(null);
         jButton18.setBorderPainted(false);
         jButton18.setContentAreaFilled(false);
@@ -359,7 +364,7 @@ public class infacer extends javax.swing.JFrame {
         jButton18.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton18.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton19.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number40.png")); // NOI18N
+        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number40.png"))); // NOI18N
         jButton19.setBorder(null);
         jButton19.setBorderPainted(false);
         jButton19.setContentAreaFilled(false);
@@ -369,7 +374,7 @@ public class infacer extends javax.swing.JFrame {
         jButton19.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton19.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton20.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number37.png")); // NOI18N
+        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number37.png"))); // NOI18N
         jButton20.setBorder(null);
         jButton20.setBorderPainted(false);
         jButton20.setContentAreaFilled(false);
@@ -379,7 +384,7 @@ public class infacer extends javax.swing.JFrame {
         jButton20.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton20.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton21.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number38.png")); // NOI18N
+        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number38.png"))); // NOI18N
         jButton21.setBorder(null);
         jButton21.setBorderPainted(false);
         jButton21.setContentAreaFilled(false);
@@ -389,7 +394,7 @@ public class infacer extends javax.swing.JFrame {
         jButton21.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton21.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton22.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number39.png")); // NOI18N
+        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number39.png"))); // NOI18N
         jButton22.setBorder(null);
         jButton22.setBorderPainted(false);
         jButton22.setContentAreaFilled(false);
@@ -399,7 +404,7 @@ public class infacer extends javax.swing.JFrame {
         jButton22.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton22.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton23.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\number35.png")); // NOI18N
+        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/number35.png"))); // NOI18N
         jButton23.setBorder(null);
         jButton23.setBorderPainted(false);
         jButton23.setContentAreaFilled(false);
@@ -409,7 +414,7 @@ public class infacer extends javax.swing.JFrame {
         jButton23.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton23.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton25.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\plus74.png")); // NOI18N
+        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plus74.png"))); // NOI18N
         jButton25.setBorder(null);
         jButton25.setBorderPainted(false);
         jButton25.setContentAreaFilled(false);
@@ -419,7 +424,7 @@ public class infacer extends javax.swing.JFrame {
         jButton25.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton25.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton24.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\minus90.png")); // NOI18N
+        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/minus90.png"))); // NOI18N
         jButton24.setBorder(null);
         jButton24.setBorderPainted(false);
         jButton24.setContentAreaFilled(false);
@@ -495,7 +500,7 @@ public class infacer extends javax.swing.JFrame {
             .addGap(0, 360, Short.MAX_VALUE)
         );
 
-        jButton26.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\play84.png")); // NOI18N
+        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play84.png"))); // NOI18N
         jButton26.setBorder(null);
         jButton26.setBorderPainted(false);
         jButton26.setContentAreaFilled(false);
@@ -510,7 +515,7 @@ public class infacer extends javax.swing.JFrame {
             }
         });
 
-        jButton27.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\pause39.png")); // NOI18N
+        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pause39.png"))); // NOI18N
         jButton27.setBorder(null);
         jButton27.setBorderPainted(false);
         jButton27.setContentAreaFilled(false);
@@ -525,7 +530,7 @@ public class infacer extends javax.swing.JFrame {
             }
         });
 
-        jButton28.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\stop39.png")); // NOI18N
+        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stop39.png"))); // NOI18N
         jButton28.setBorder(null);
         jButton28.setBorderPainted(false);
         jButton28.setContentAreaFilled(false);
@@ -646,6 +651,10 @@ public class infacer extends javax.swing.JFrame {
         actualizador.initDetCont(false);
         actualizador.resetContador();
     }//GEN-LAST:event_jButton28MouseClicked
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton15MouseClicked
 
     /**
      * @param args the command line arguments
