@@ -18,14 +18,19 @@ public class ActualizarReloj implements Runnable {
     public boolean vivo;                                                        //Para que se repita el run
     private int stop = 0;                                                       //Para detener el hilo
     private Relojrun reloj;
-    
-    
-    
-    public ActualizarReloj(JLabel label, Relojrun reloj) {
-        this.etiqueta = label;
-        this.reloj = reloj;
+    private ProgramaEjercicio progEjer;
+    private ModoPrestablecido modoPres;
+    private ModoLibre modoLibre;
+
+    public ActualizarReloj(JLabel etiqueta, Relojrun reloj, ProgramaEjercicio progEjer, ModoPrestablecido modoPres, ModoLibre modoLibre) {
+        this.etiqueta = etiqueta;
         this.vivo = true;
+        this.reloj = reloj;
+        this.progEjer = progEjer;
+        this.modoPres = modoPres;
+        this.modoLibre = modoLibre;
     }
+    
 
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
@@ -50,7 +55,7 @@ public class ActualizarReloj implements Runnable {
                     long horaFinal = System.currentTimeMillis();                //Obtiene la hora final
                     reloj.setHoraFinal(horaFinal);
                     System.out.println("La hora final es: "+reloj.getHoraFinal());
-                    long difHoras=reloj.calcularDeltaHoras();                              //Obtiene la diferencia de las horas
+                    float difHoras=reloj.calcularDeltaHoras();                              //Obtiene la diferencia de las horas
                     System.out.println("La diferencia de horas es: "+ difHoras);
                     vivo=false;
                 }

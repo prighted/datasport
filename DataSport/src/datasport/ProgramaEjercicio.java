@@ -47,7 +47,7 @@ public float getVel() {
 
 
    
-    public float calcularKm(float vel/*, time tiempo*/ ) //Falta colocar el tiempo
+    public float calcularKm(float vel, float tiempo ) //Falta colocar el tiempo
     {
         float tiempoTotal= 100.5f;                              //Esta en segundos
         return tiempoTotal/vel;                                                /* Se coloca 1 para evitar 
@@ -55,7 +55,7 @@ public float getVel() {
                                                                 */
     }
     
-    public int calcularVueltas(float vel/*, time tiempo*/)      //Hay que mirar cómo colocar el tiempo
+    public int calcularVueltas(float vel, float tiempo)      //Hay que mirar cómo colocar el tiempo
     {
       return 1;
               

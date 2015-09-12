@@ -4,8 +4,13 @@
  * and open the template in the editor.
  */
 package datasport.interfaz;
+
 import datasport.ActualizarReloj;
+import datasport.ModoLibre;
+import datasport.ModoPrestablecido;
+import datasport.ProgramaEjercicio;
 import datasport.Relojrun;
+
 /**
  *
  * @author anton
@@ -14,7 +19,10 @@ public class infacer extends javax.swing.JFrame {
 
     Thread t;
     private ActualizarReloj actualizador;
-    private  Relojrun reloj;
+    private Relojrun reloj;
+    private ProgramaEjercicio progEjer;
+    private ModoPrestablecido modoPres;
+    private ModoLibre modoLibre;
     /**
      * Creates new form Gui
      */
@@ -25,10 +33,13 @@ public class infacer extends javax.swing.JFrame {
      */
     public infacer() {
          initComponents();
-         reloj = new Relojrun();
-         long horaInicial = System.currentTimeMillis();                  //Obtengo la HoraInicial y la guardo en la instancia
-         reloj.setHoraInicial(horaInicial);
-         actualizador = new ActualizarReloj(jLabel3, reloj);
+         reloj = new Relojrun();                                                //Creo la instacia de reloj
+         long horaInicial = System.currentTimeMillis();                         //Obtengo la HoraInicial y la guardo en la instancia
+         reloj.setHoraInicial(horaInicial);                                     //Se establece la horaInicial
+         progEjer = new ProgramaEjercicio(4f, 4f);
+         modoPres = new ModoPrestablecido(4f, 4f);
+         modoLibre = new ModoLibre(4f, 4f);
+         actualizador = new ActualizarReloj(jLabel3, reloj, progEjer, modoPres, modoLibre);                    //Creo la instancia del Runnable
          t = new Thread(actualizador,"t");
          t.start();
         

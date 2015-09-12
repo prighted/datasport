@@ -22,7 +22,7 @@ public class Relojrun {
     
     private long horaInicial;
     private long horaFinal;
-    private long difHoras;
+    private float difHoras;
 
     public long getHoraInicial() {
         return horaInicial;
@@ -42,8 +42,8 @@ public class Relojrun {
     }
 
 
-    public long calcularDeltaHoras(){
-        difHoras = (this.horaFinal - this.horaInicial)/1000;               //Estoy intentando calcular el delta aquí porque el profesor 
+    public float calcularDeltaHoras(){
+        this.difHoras = (float)(this.horaFinal - this.horaInicial)/1000;               //Estoy intentando calcular el delta aquí porque el profesor 
         return difHoras;                                                     //dijo que Reloj debía hacer ese cálculo
         
     }
