@@ -47,7 +47,7 @@ vuelta=0;
 
   public void resetKm()
     {
-    distanciaAcum=0;
+ distanciaAcum=0;
     }
   
 public float getVel() 
