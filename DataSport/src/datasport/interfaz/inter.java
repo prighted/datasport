@@ -641,7 +641,7 @@ public class inter extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(51, 51, 60));
         jLabel17.setText("Modo Libre");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\1.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
 
