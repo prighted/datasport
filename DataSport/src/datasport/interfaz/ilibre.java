@@ -22,6 +22,7 @@ private ModoLibre mL;
     public ilibre() {
          initComponents();
          mL=new ModoLibre(0,0,0,0);
+         System.out.println();
     }
 
     /**
@@ -94,7 +95,7 @@ private ModoLibre mL;
         jButton15.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton15.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton16.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\off.png")); // NOI18N
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/off.png"))); // NOI18N
         jButton16.setBorder(null);
         jButton16.setBorderPainted(false);
         jButton16.setContentAreaFilled(false);
@@ -108,11 +109,16 @@ private ModoLibre mL;
                 jButton16MouseClicked(evt);
             }
         });
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jButton2.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\1.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
@@ -127,7 +133,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\7.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/7.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -142,7 +148,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\8.png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8.png"))); // NOI18N
         jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
@@ -157,7 +163,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\2.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
@@ -172,7 +178,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton5.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\3.png")); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3.png"))); // NOI18N
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
@@ -187,7 +193,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton6.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\9.png")); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/9.png"))); // NOI18N
         jButton6.setBorder(null);
         jButton6.setBorderPainted(false);
         jButton6.setContentAreaFilled(false);
@@ -202,7 +208,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton8.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\10.png")); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/10.png"))); // NOI18N
         jButton8.setBorder(null);
         jButton8.setBorderPainted(false);
         jButton8.setContentAreaFilled(false);
@@ -217,7 +223,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton7.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\4.png")); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/4.png"))); // NOI18N
         jButton7.setBorder(null);
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
@@ -232,7 +238,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton9.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\5.png")); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5.png"))); // NOI18N
         jButton9.setBorder(null);
         jButton9.setBorderPainted(false);
         jButton9.setContentAreaFilled(false);
@@ -247,7 +253,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton10.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\11.png")); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/11.png"))); // NOI18N
         jButton10.setBorder(null);
         jButton10.setBorderPainted(false);
         jButton10.setContentAreaFilled(false);
@@ -262,7 +268,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton12.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\12.png")); // NOI18N
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/12.png"))); // NOI18N
         jButton12.setBorder(null);
         jButton12.setBorderPainted(false);
         jButton12.setContentAreaFilled(false);
@@ -277,7 +283,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton13.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\6.png")); // NOI18N
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.png"))); // NOI18N
         jButton13.setBorder(null);
         jButton13.setBorderPainted(false);
         jButton13.setContentAreaFilled(false);
@@ -292,7 +298,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton14.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\menos.png")); // NOI18N
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menos.png"))); // NOI18N
         jButton14.setBorder(null);
         jButton14.setBorderPainted(false);
         jButton14.setContentAreaFilled(false);
@@ -302,7 +308,7 @@ private ModoLibre mL;
         jButton14.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton14.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton11.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\mas.png")); // NOI18N
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
         jButton11.setBorder(null);
         jButton11.setBorderPainted(false);
         jButton11.setContentAreaFilled(false);
@@ -402,7 +408,7 @@ private ModoLibre mL;
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jButton17.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\0.png")); // NOI18N
+        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/0.png"))); // NOI18N
         jButton17.setBorder(null);
         jButton17.setBorderPainted(false);
         jButton17.setContentAreaFilled(false);
@@ -417,7 +423,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton18.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\1.png")); // NOI18N
+        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
         jButton18.setBorder(null);
         jButton18.setBorderPainted(false);
         jButton18.setContentAreaFilled(false);
@@ -432,7 +438,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton19.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\2.png")); // NOI18N
+        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
         jButton19.setBorder(null);
         jButton19.setBorderPainted(false);
         jButton19.setContentAreaFilled(false);
@@ -447,7 +453,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton20.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\3.png")); // NOI18N
+        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3.png"))); // NOI18N
         jButton20.setBorder(null);
         jButton20.setBorderPainted(false);
         jButton20.setContentAreaFilled(false);
@@ -462,7 +468,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton21.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\4.png")); // NOI18N
+        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/4.png"))); // NOI18N
         jButton21.setBorder(null);
         jButton21.setBorderPainted(false);
         jButton21.setContentAreaFilled(false);
@@ -477,7 +483,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton22.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\5.png")); // NOI18N
+        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5.png"))); // NOI18N
         jButton22.setBorder(null);
         jButton22.setBorderPainted(false);
         jButton22.setContentAreaFilled(false);
@@ -492,7 +498,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton23.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\6.png")); // NOI18N
+        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.png"))); // NOI18N
         jButton23.setBorder(null);
         jButton23.setBorderPainted(false);
         jButton23.setContentAreaFilled(false);
@@ -507,7 +513,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton25.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\mas.png")); // NOI18N
+        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
         jButton25.setBorder(null);
         jButton25.setBorderPainted(false);
         jButton25.setContentAreaFilled(false);
@@ -527,7 +533,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton24.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\menos.png")); // NOI18N
+        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menos.png"))); // NOI18N
         jButton24.setBorder(null);
         jButton24.setBorderPainted(false);
         jButton24.setContentAreaFilled(false);
@@ -620,13 +626,13 @@ private ModoLibre mL;
         jLabel10.setForeground(new java.awt.Color(51, 51, 60));
         jLabel10.setText("0.0");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\atleta.JPG")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/atleta.JPG"))); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 60));
         jLabel11.setText("0.0");
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\reloj.JPG")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reloj.JPG"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 60));
@@ -699,7 +705,7 @@ private ModoLibre mL;
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
-        jButton26.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\play.png")); // NOI18N
+        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
         jButton26.setBorder(null);
         jButton26.setBorderPainted(false);
         jButton26.setContentAreaFilled(false);
@@ -714,7 +720,7 @@ private ModoLibre mL;
             }
         });
 
-        jButton27.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\pause.png")); // NOI18N
+        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pause.png"))); // NOI18N
         jButton27.setBorder(null);
         jButton27.setBorderPainted(false);
         jButton27.setContentAreaFilled(false);
@@ -724,7 +730,7 @@ private ModoLibre mL;
         jButton27.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton27.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton28.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\stop.png")); // NOI18N
+        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stop.png"))); // NOI18N
         jButton28.setBorder(null);
         jButton28.setBorderPainted(false);
         jButton28.setContentAreaFilled(false);
@@ -740,7 +746,7 @@ private ModoLibre mL;
         jLabel2.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
         jLabel2.setText("Panel de Control de Inclinacion");
 
-        jButton29.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\speed.png")); // NOI18N
+        jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/speed.png"))); // NOI18N
         jButton29.setBorder(null);
         jButton29.setBorderPainted(false);
         jButton29.setContentAreaFilled(false);
@@ -939,6 +945,10 @@ this.setVisible(false);
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
 
     /**
      * @param args the command line arguments
