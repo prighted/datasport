@@ -23,6 +23,7 @@ private ModoLibre mL;
          initComponents();
          mL=new ModoLibre(0,0,0,0);
          System.out.println();
+         System.out.println();
     }
 
     /**
