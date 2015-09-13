@@ -88,6 +88,8 @@ public class ipre extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
         jButton28 = new javax.swing.JButton();
@@ -109,7 +111,7 @@ public class ipre extends javax.swing.JFrame {
         jButton15.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton15.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton16.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\off.png")); // NOI18N
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/off.png"))); // NOI18N
         jButton16.setBorder(null);
         jButton16.setBorderPainted(false);
         jButton16.setContentAreaFilled(false);
@@ -127,17 +129,7 @@ public class ipre extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jButton2.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\1.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
@@ -152,17 +144,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\7.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/7.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -177,17 +159,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\8.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8.png"))); // NOI18N
         jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
@@ -202,17 +174,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\2.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
@@ -227,17 +189,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\3.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3.png"))); // NOI18N
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
@@ -252,17 +204,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\9.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/9.png"))); // NOI18N
         jButton6.setBorder(null);
         jButton6.setBorderPainted(false);
         jButton6.setContentAreaFilled(false);
@@ -277,17 +219,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\10.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/10.png"))); // NOI18N
         jButton8.setBorder(null);
         jButton8.setBorderPainted(false);
         jButton8.setContentAreaFilled(false);
@@ -302,17 +234,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\4.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/4.png"))); // NOI18N
         jButton7.setBorder(null);
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
@@ -327,17 +249,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\5.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5.png"))); // NOI18N
         jButton9.setBorder(null);
         jButton9.setBorderPainted(false);
         jButton9.setContentAreaFilled(false);
@@ -352,17 +264,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\11.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/11.png"))); // NOI18N
         jButton10.setBorder(null);
         jButton10.setBorderPainted(false);
         jButton10.setContentAreaFilled(false);
@@ -377,17 +279,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton12.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\12.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/12.png"))); // NOI18N
         jButton12.setBorder(null);
         jButton12.setBorderPainted(false);
         jButton12.setContentAreaFilled(false);
@@ -402,17 +294,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton13.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\6.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.png"))); // NOI18N
         jButton13.setBorder(null);
         jButton13.setBorderPainted(false);
         jButton13.setContentAreaFilled(false);
@@ -427,17 +309,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton14.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\menos.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menos.png"))); // NOI18N
         jButton14.setBorder(null);
         jButton14.setBorderPainted(false);
         jButton14.setContentAreaFilled(false);
@@ -447,17 +319,7 @@ public class ipre extends javax.swing.JFrame {
         jButton14.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton14.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton11.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\mas.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
         jButton11.setBorder(null);
         jButton11.setBorderPainted(false);
         jButton11.setContentAreaFilled(false);
@@ -577,17 +439,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton18.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\1.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
         jButton18.setBorder(null);
         jButton18.setBorderPainted(false);
         jButton18.setContentAreaFilled(false);
@@ -602,17 +454,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton19.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\2.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
         jButton19.setBorder(null);
         jButton19.setBorderPainted(false);
         jButton19.setContentAreaFilled(false);
@@ -627,17 +469,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton20.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\3.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3.png"))); // NOI18N
         jButton20.setBorder(null);
         jButton20.setBorderPainted(false);
         jButton20.setContentAreaFilled(false);
@@ -652,17 +484,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton21.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\4.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/4.png"))); // NOI18N
         jButton21.setBorder(null);
         jButton21.setBorderPainted(false);
         jButton21.setContentAreaFilled(false);
@@ -677,17 +499,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton22.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\5.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5.png"))); // NOI18N
         jButton22.setBorder(null);
         jButton22.setBorderPainted(false);
         jButton22.setContentAreaFilled(false);
@@ -702,17 +514,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton23.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\6.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.png"))); // NOI18N
         jButton23.setBorder(null);
         jButton23.setBorderPainted(false);
         jButton23.setContentAreaFilled(false);
@@ -727,17 +529,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton25.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\mas.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
         jButton25.setBorder(null);
         jButton25.setBorderPainted(false);
         jButton25.setContentAreaFilled(false);
@@ -757,17 +549,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton24.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\menos.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menos.png"))); // NOI18N
         jButton24.setBorder(null);
         jButton24.setBorderPainted(false);
         jButton24.setContentAreaFilled(false);
@@ -840,9 +622,9 @@ public class ipre extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(51, 51, 60));
         jLabel5.setText("1");
 
-        jLabel6.setFont(new java.awt.Font("Play", 0, 120)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Play", 0, 40)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel6.setText("00:00");
+        jLabel6.setText("1");
 
         jLabel7.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 60));
@@ -860,13 +642,13 @@ public class ipre extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(51, 51, 60));
         jLabel10.setText("0.0");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\atleta.JPG")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/atleta.JPG"))); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 60));
         jLabel11.setText("0.0");
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\reloj.JPG")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reloj.JPG"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 60));
@@ -878,35 +660,18 @@ public class ipre extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(51, 51, 60));
         jLabel14.setText("Modo Prestablecido");
 
+        jLabel15.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel15.setText("00:00");
+
+        jLabel16.setFont(new java.awt.Font("Play", 0, 40)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel16.setText("00:00");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -918,6 +683,42 @@ public class ipre extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addContainerGap())))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6)
+                                .addGap(78, 78, 78)
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)))
+                .addGap(81, 81, 81))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jLabel16)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -927,41 +728,36 @@ public class ipre extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 35, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel10)
-                                .addComponent(jLabel9)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel11))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                        .addComponent(jLabel13)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel12)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6))))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel10)
+                        .addComponent(jLabel9)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel16)
+                .addGap(19, 19, 19)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addContainerGap())
         );
 
-        jButton26.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\play.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
         jButton26.setBorder(null);
         jButton26.setBorderPainted(false);
         jButton26.setContentAreaFilled(false);
@@ -971,17 +767,7 @@ public class ipre extends javax.swing.JFrame {
         jButton26.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton26.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton27.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\pause.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pause.png"))); // NOI18N
         jButton27.setBorder(null);
         jButton27.setBorderPainted(false);
         jButton27.setContentAreaFilled(false);
@@ -991,17 +777,7 @@ public class ipre extends javax.swing.JFrame {
         jButton27.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton27.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton28.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\stop.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stop.png"))); // NOI18N
         jButton28.setBorder(null);
         jButton28.setBorderPainted(false);
         jButton28.setContentAreaFilled(false);
@@ -1017,17 +793,7 @@ public class ipre extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
         jLabel2.setText("Panel de Control de Inclinacion");
 
-        jButton29.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\speed.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/speed.png"))); // NOI18N
         jButton29.setBorder(null);
         jButton29.setBorderPainted(false);
         jButton29.setContentAreaFilled(false);
@@ -1119,7 +885,7 @@ public class ipre extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
-this.setVisible(false);
+     System.exit(0);
     }//GEN-LAST:event_jButton16MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
@@ -1298,6 +1064,8 @@ this.setVisible(false);
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
