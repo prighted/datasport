@@ -5,24 +5,11 @@
  */
 package datasport.interfaz;
 
-import datasport.ActualizarReloj;
-import datasport.ModoLibre;
-import datasport.ModoPrestablecido;
-import datasport.ProgramaEjercicio;
-import datasport.Relojrun;
-
 /**
  *
  * @author anton
  */
 public class ilibre extends javax.swing.JFrame {
-
-    Thread t;
-    private ActualizarReloj actualizador;
-    private Relojrun reloj;
-    private ProgramaEjercicio progEjer;
-    private ModoPrestablecido modoPres;
-    private ModoLibre modoLibre;
     /**
      * Creates new form Gui
      */
@@ -33,16 +20,7 @@ public class ilibre extends javax.swing.JFrame {
      */
     public ilibre() {
          initComponents();
-         reloj = new Relojrun();                                                //Creo la instacia de reloj
-         long horaInicial = System.currentTimeMillis();                         //Obtengo la HoraInicial y la guardo en la instancia
-         reloj.setHoraInicial(horaInicial);                                     //Se establece la horaInicial
-         progEjer = new ProgramaEjercicio(4f, 4f);
-         modoPres = new ModoPrestablecido(4f, 4f);
-         modoLibre = new ModoLibre(4f, 4f);
-         actualizador = new ActualizarReloj(jLabel3, reloj, progEjer, modoPres, modoLibre);                    //Creo la instancia del Runnable
-         t = new Thread(actualizador,"t");
-         t.start();
-        
+     
     
     }
 
@@ -84,21 +62,29 @@ public class ilibre extends javax.swing.JFrame {
         jButton25 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
         jButton28 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jButton29 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton15.setIcon(new javax.swing.ImageIcon("D:\\Ingenieria de Software I\\proye\\prot\\datasport\\DataSport\\src\\imagenes\\off1.png")); // NOI18N
         jButton15.setBorder(null);
         jButton15.setBorderPainted(false);
         jButton15.setContentAreaFilled(false);
@@ -108,17 +94,7 @@ public class ilibre extends javax.swing.JFrame {
         jButton15.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton15.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton16.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\speed9.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton16.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\off.png")); // NOI18N
         jButton16.setBorder(null);
         jButton16.setBorderPainted(false);
         jButton16.setContentAreaFilled(false);
@@ -127,6 +103,11 @@ public class ilibre extends javax.swing.JFrame {
         jButton16.setIconTextGap(-3);
         jButton16.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton16.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton16MouseClicked(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -135,7 +116,7 @@ public class ilibre extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number41.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\1.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -150,12 +131,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton2.setIconTextGap(-3);
         jButton2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jButton1.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number34.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\7.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -170,12 +156,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton1.setIconTextGap(-3);
         jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton4.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number32.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\8.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -190,12 +181,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton4.setIconTextGap(-3);
         jButton4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jButton3.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number40.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\2.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -210,12 +206,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton3.setIconTextGap(-3);
         jButton3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         jButton5.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number37.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\3.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -230,12 +231,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton5.setIconTextGap(-3);
         jButton5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
 
         jButton6.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number36.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\9.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -250,12 +256,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton6.setIconTextGap(-3);
         jButton6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
 
         jButton8.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number41.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\10.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -270,12 +281,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton8.setIconTextGap(-3);
         jButton8.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
 
         jButton7.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number38.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\4.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -290,12 +306,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton7.setIconTextGap(-3);
         jButton7.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
 
         jButton9.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number39.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\5.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -310,12 +331,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton9.setIconTextGap(-3);
         jButton9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
 
         jButton10.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number41.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\11.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -330,12 +356,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton10.setIconTextGap(-3);
         jButton10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
 
         jButton12.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number41.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\12.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -350,12 +381,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton12.setIconTextGap(-3);
         jButton12.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton12.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton12MouseClicked(evt);
+            }
+        });
 
         jButton13.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number35.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\6.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -370,12 +406,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton13.setIconTextGap(-3);
         jButton13.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton13.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
 
         jButton14.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\minus90.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\menos.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -395,7 +436,7 @@ public class ilibre extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\plus74.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\mas.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -410,6 +451,11 @@ public class ilibre extends javax.swing.JFrame {
         jButton11.setIconTextGap(-3);
         jButton11.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -495,7 +541,7 @@ public class ilibre extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number33.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\0.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -510,12 +556,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton17.setIconTextGap(-3);
         jButton17.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton17.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton17MouseClicked(evt);
+            }
+        });
 
         jButton18.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number41.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\1.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -530,12 +581,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton18.setIconTextGap(-3);
         jButton18.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton18.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton18MouseClicked(evt);
+            }
+        });
 
         jButton19.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number40.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\2.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -550,12 +606,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton19.setIconTextGap(-3);
         jButton19.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton19.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton19MouseClicked(evt);
+            }
+        });
 
         jButton20.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number37.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\3.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -570,12 +631,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton20.setIconTextGap(-3);
         jButton20.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton20.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton20MouseClicked(evt);
+            }
+        });
 
         jButton21.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number38.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\4.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -590,12 +656,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton21.setIconTextGap(-3);
         jButton21.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton21.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton21MouseClicked(evt);
+            }
+        });
 
         jButton22.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number39.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\5.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -610,12 +681,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton22.setIconTextGap(-3);
         jButton22.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton22.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton22MouseClicked(evt);
+            }
+        });
 
         jButton23.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\number35.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\6.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -630,12 +706,17 @@ public class ilibre extends javax.swing.JFrame {
         jButton23.setIconTextGap(-3);
         jButton23.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton23.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton23MouseClicked(evt);
+            }
+        });
 
         jButton25.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\plus74.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\mas.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -650,12 +731,22 @@ public class ilibre extends javax.swing.JFrame {
         jButton25.setIconTextGap(-3);
         jButton25.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton25.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton25MouseClicked(evt);
+            }
+        });
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
 
         jButton24.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\minus90.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\menos.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -723,37 +814,123 @@ public class ilibre extends javax.swing.JFrame {
         );
 
         jPanel4.setBackground(new java.awt.Color(240, 103, 33));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 60)));
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.setToolTipText("");
+        jPanel4.setMaximumSize(new java.awt.Dimension(640, 360));
+        jPanel4.setMinimumSize(new java.awt.Dimension(640, 360));
+        jPanel4.setPreferredSize(new java.awt.Dimension(640, 360));
 
-        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel5.setText("Modo Libre");
 
-        jLabel4.setText("jLabel4");
+        jLabel6.setFont(new java.awt.Font("Play", 0, 120)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel6.setText("00:00");
+
+        jLabel7.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel7.setText("0000");
+
+        jLabel8.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel8.setText("Calorias:");
+
+        jLabel9.setFont(new java.awt.Font("Play", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel9.setText("Km/h");
+
+        jLabel10.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel10.setText("0.0");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\atleta.JPG")); // NOI18N
+
+        jLabel11.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel11.setText("0.0");
+
+        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\reloj.JPG")); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel4.setText("°");
+
+        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\line.JPG")); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(273, 273, 273))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(293, 293, 293)
-                .addComponent(jLabel4)
-                .addContainerGap(313, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(71, 71, 71)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel12))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel9)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 11, Short.MAX_VALUE)
-                .addComponent(jLabel4)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6)
+                        .addGap(4, 4, 4)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel10)
+                                .addComponent(jLabel9)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel11))))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jButton26.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\play84.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\play.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -773,7 +950,7 @@ public class ilibre extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\pause39.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\pause.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -793,7 +970,7 @@ public class ilibre extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\stop39.png")
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\stop.png")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -809,35 +986,57 @@ public class ilibre extends javax.swing.JFrame {
         jButton28.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton28.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
+        jLabel1.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
         jLabel1.setText("Panel de Control de Velocidad");
 
+        jLabel2.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
         jLabel2.setText("Panel de Control de Inclinacion");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("jLabel3");
+        jButton29.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\speed.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
+        jButton29.setBorder(null);
+        jButton29.setBorderPainted(false);
+        jButton29.setContentAreaFilled(false);
+        jButton29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton29.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton29.setIconTextGap(-3);
+        jButton29.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton29.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(60, 60, 60)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                                    .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -845,37 +1044,36 @@ public class ilibre extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(98, 98, 98)
                         .addComponent(jButton15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton16))
+                        .addComponent(jButton16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton29))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(161, 161, 161)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton28)
                             .addComponent(jButton27)
-                            .addComponent(jButton26))))
+                            .addComponent(jButton26)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -886,9 +1084,7 @@ public class ilibre extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -899,6 +1095,100 @@ public class ilibre extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
+this.setVisible(false);
+    }//GEN-LAST:event_jButton16MouseClicked
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+      double x=Double.parseDouble(jLabel10.getText())+0.1;
+      jLabel10.setText(""+x);
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton25MouseClicked
+      double x=Double.parseDouble(jLabel11.getText())+0.1;
+      jLabel11.setText(""+x);
+    }//GEN-LAST:event_jButton25MouseClicked
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+       jLabel10.setText(""+1.0);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+       jLabel10.setText(""+2.0);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+       jLabel10.setText(""+3.0);
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        jLabel10.setText(""+4.0);
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+       jLabel10.setText(""+5.0);
+    }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+      jLabel10.setText(""+6.0);
+    }//GEN-LAST:event_jButton13MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        jLabel10.setText(""+7.0);
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        jLabel10.setText(""+8.0);
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        jLabel10.setText(""+9.0);
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+       jLabel10.setText(""+10.0);
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        jLabel10.setText(""+11.0);
+    }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+       jLabel10.setText(""+12.0);
+    }//GEN-LAST:event_jButton12MouseClicked
+
+    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+       jLabel11.setText(""+0.0);
+    }//GEN-LAST:event_jButton17MouseClicked
+
+    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
+        jLabel11.setText(""+1.0);
+    }//GEN-LAST:event_jButton18MouseClicked
+
+    private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
+       jLabel11.setText(""+2.0);
+    }//GEN-LAST:event_jButton19MouseClicked
+
+    private void jButton20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton20MouseClicked
+        jLabel11.setText(""+3.0);
+    }//GEN-LAST:event_jButton20MouseClicked
+
+    private void jButton21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton21MouseClicked
+       jLabel11.setText(""+4.0);
+    }//GEN-LAST:event_jButton21MouseClicked
+
+    private void jButton22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton22MouseClicked
+        jLabel11.setText(""+5.0);
+    }//GEN-LAST:event_jButton22MouseClicked
+
+    private void jButton23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton23MouseClicked
+        jLabel11.setText(""+6.0);
+    }//GEN-LAST:event_jButton23MouseClicked
 
     /**
      * @param args the command line arguments
@@ -964,6 +1254,7 @@ public class ilibre extends javax.swing.JFrame {
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -972,13 +1263,21 @@ public class ilibre extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
