@@ -44,4 +44,49 @@ public class Conexion {
         }
  
     }
+    
+    /*
+    String url = "/home/rafael/NetBeansProjects/datasport/DataSport/src/datasport/BDdatasport1";
+    Connection connect;
+    
+    public void connect(){
+        try {
+            connect = DriverManager.getConnection("jdbc:sqlite:"+url);
+            if (connect!=null) {
+                System.out.println("Conectado a la BD");
+            }
+        }catch (SQLException ex) {
+            System.err.println("No se ha podido conectar a la BD\n"+ex.getMessage());
+        }
+    }
+    
+    public void close(){
+        try {
+            connect.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void guardarenBD(int usuario, float calorias, float calAcumuladas, float CI, float CV, float inc, int tiempo, float vel, int vuelta){
+        
+        try {
+            PreparedStatement st = connect.prepareStatement("insert into ejercicio (usuario, calorias, calAcumuladas, CI, CV, inc, tiempo, vel, vuelta) values (?,?,?,?,?,?,?,?,?)");
+            st.setInt(1, usuario);
+            st.setFloat(2, calorias);
+            st.setFloat(3, calAcumuladas);
+            st.setFloat(4, CI);
+            st.setFloat(5,CV);
+            st.setFloat(6, inc);
+            st.setInt(7, tiempo);
+            st.setFloat(8,vel);
+            st.setInt(9, vuelta);            
+            st.execute();
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    
+    }
+    */
+    
 }
