@@ -5,6 +5,8 @@
  */
 package datasport;
 
+import basededatos.Conexion;
+
 /**
  * Sistema de la trotadora
  * @author Reinaldo Pabon
