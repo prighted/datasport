@@ -116,15 +116,10 @@
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace pref="11" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="jPanel3" max="32767" attributes="0"/>
                       <Component id="jPanel2" max="32767" attributes="0"/>
@@ -154,7 +149,7 @@
         <Component class="javax.swing.JButton" name="jButton16">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\anton\Pictures\Camera Roll\imagenes\off.png"/>
+              <Image iconType="3" name="/imagenes/off.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -287,7 +282,7 @@
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\1.png"/>
+                  <Image iconType="3" name="/imagenes/1.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -353,7 +348,7 @@
             <Component class="javax.swing.JButton" name="jButton3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\2.png"/>
+                  <Image iconType="3" name="/imagenes/2.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -375,7 +370,7 @@
             <Component class="javax.swing.JButton" name="jButton5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\3.png"/>
+                  <Image iconType="3" name="/imagenes/3.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -419,7 +414,7 @@
             <Component class="javax.swing.JButton" name="jButton8">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\10.png"/>
+                  <Image iconType="3" name="/imagenes/10.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -441,7 +436,7 @@
             <Component class="javax.swing.JButton" name="jButton7">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\4.png"/>
+                  <Image iconType="3" name="/imagenes/4.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -463,7 +458,7 @@
             <Component class="javax.swing.JButton" name="jButton9">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\5.png"/>
+                  <Image iconType="3" name="/imagenes/5.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -485,7 +480,7 @@
             <Component class="javax.swing.JButton" name="jButton10">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\11.png"/>
+                  <Image iconType="3" name="/imagenes/11.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -507,7 +502,7 @@
             <Component class="javax.swing.JButton" name="jButton12">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\12.png"/>
+                  <Image iconType="3" name="/imagenes/12.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -529,7 +524,7 @@
             <Component class="javax.swing.JButton" name="jButton13">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\6.png"/>
+                  <Image iconType="3" name="/imagenes/6.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -551,7 +546,7 @@
             <Component class="javax.swing.JButton" name="jButton14">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\menos.png"/>
+                  <Image iconType="3" name="/imagenes/menos.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -570,7 +565,7 @@
             <Component class="javax.swing.JButton" name="jButton11">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\mas.png"/>
+                  <Image iconType="3" name="/imagenes/mas.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -668,7 +663,7 @@
             <Component class="javax.swing.JButton" name="jButton17">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\0.png"/>
+                  <Image iconType="3" name="/imagenes/0.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -690,7 +685,7 @@
             <Component class="javax.swing.JButton" name="jButton18">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\1.png"/>
+                  <Image iconType="3" name="/imagenes/1.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -712,7 +707,7 @@
             <Component class="javax.swing.JButton" name="jButton19">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\2.png"/>
+                  <Image iconType="3" name="/imagenes/2.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -734,7 +729,7 @@
             <Component class="javax.swing.JButton" name="jButton20">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\3.png"/>
+                  <Image iconType="3" name="/imagenes/3.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -756,7 +751,7 @@
             <Component class="javax.swing.JButton" name="jButton21">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\4.png"/>
+                  <Image iconType="3" name="/imagenes/4.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -778,7 +773,7 @@
             <Component class="javax.swing.JButton" name="jButton22">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\5.png"/>
+                  <Image iconType="3" name="/imagenes/5.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -800,7 +795,7 @@
             <Component class="javax.swing.JButton" name="jButton23">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\6.png"/>
+                  <Image iconType="3" name="/imagenes/6.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -822,7 +817,7 @@
             <Component class="javax.swing.JButton" name="jButton25">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\mas.png"/>
+                  <Image iconType="3" name="/imagenes/mas.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -845,7 +840,7 @@
             <Component class="javax.swing.JButton" name="jButton24">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\menos.png"/>
+                  <Image iconType="3" name="/imagenes/menos.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -1047,7 +1042,7 @@
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\anton\Pictures\Camera Roll\imagenes\atleta.JPG"/>
+                  <Image iconType="3" name="/imagenes/atleta.JPG"/>
                 </Property>
               </Properties>
             </Component>
@@ -1065,7 +1060,7 @@
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\anton\Pictures\Camera Roll\imagenes\reloj.JPG"/>
+                  <Image iconType="3" name="/imagenes/reloj.JPG"/>
                 </Property>
               </Properties>
             </Component>
@@ -1092,7 +1087,7 @@
         <Component class="javax.swing.JButton" name="jButton26">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\play.png"/>
+              <Image iconType="3" name="/imagenes/play.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -1111,7 +1106,7 @@
         <Component class="javax.swing.JButton" name="jButton27">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\pause.png"/>
+              <Image iconType="3" name="/imagenes/pause.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -1130,7 +1125,7 @@
         <Component class="javax.swing.JButton" name="jButton28">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\stop.png"/>
+              <Image iconType="3" name="/imagenes/stop.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -1165,7 +1160,7 @@
         <Component class="javax.swing.JButton" name="jButton29">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="1" name="file:/C:\Users\anton\Pictures\Camera Roll\imagenes\speed.png"/>
+              <Image iconType="3" name="/imagenes/speed.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
