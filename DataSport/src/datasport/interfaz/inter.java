@@ -22,6 +22,7 @@ public class inter extends javax.swing.JFrame {
          initComponents();
          //jPanel4.setMinimumSize([640,480]);
          //se desabilitan los botones que no se usaran en esta ventana
+         /*
          jButton1.setEnabled(false);
          jButton27.setEnabled(false);
          jButton28.setEnabled(false);
@@ -48,12 +49,12 @@ public class inter extends javax.swing.JFrame {
          jButton25.setEnabled(false);
          
          //Ocultar menu especial en caso de apagado repentino
-         jLabel16.setVisible(false);
-         jLabel3.setVisible(false);
-         
+         //jLabel16.setVisible(false);
+         //jLabel3.setVisible(false);
+         */
          //De forma prestablecida esta desabilitado pero se habilita cuando 
          //la trotaodra se apaga de forma inesperada
-         jButton2.setEnabled(false);
+         //jButton2.setEnabled(false);
      
     
     }
