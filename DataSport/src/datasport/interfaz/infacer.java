@@ -36,7 +36,7 @@ public class infacer extends javax.swing.JFrame {
          reloj = new Relojrun();                                                //Creo la instacia de reloj
          long horaInicial = System.currentTimeMillis();                         //Obtengo la HoraInicial y la guardo en la instancia
          reloj.setHoraInicial(horaInicial);                                     //Se establece la horaInicial
-         progEjer = new ProgramaEjercicio(4f, 4f,0);
+         progEjer = new ProgramaEjercicio(4f, 4f,0,60);
         /* modoPres = new ModoPrestablecido(4f, 4f,0);
          modoLibre = new ModoLibre(4f, 4f ,0);*/
          actualizador = new ActualizarReloj(jLabel3, reloj, progEjer, modoPres, modoLibre);                    //Creo la instancia del Runnable
@@ -194,7 +194,7 @@ public class infacer extends javax.swing.JFrame {
         jButton6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/10.png"))); // NOI18N
         jButton8.setBorder(null);
         jButton8.setBorderPainted(false);
         jButton8.setContentAreaFilled(false);
@@ -229,7 +229,7 @@ public class infacer extends javax.swing.JFrame {
         jButton9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/11.png"))); // NOI18N
         jButton10.setBorder(null);
         jButton10.setBorderPainted(false);
         jButton10.setContentAreaFilled(false);
@@ -239,7 +239,7 @@ public class infacer extends javax.swing.JFrame {
         jButton10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/12.png"))); // NOI18N
         jButton12.setBorder(null);
         jButton12.setBorderPainted(false);
         jButton12.setContentAreaFilled(false);
@@ -545,7 +545,7 @@ public class infacer extends javax.swing.JFrame {
             }
         });
 
-        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stop.png"))); // NOI18N
+        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pause.png"))); // NOI18N
         jButton28.setBorder(null);
         jButton28.setBorderPainted(false);
         jButton28.setContentAreaFilled(false);
@@ -668,6 +668,7 @@ public class infacer extends javax.swing.JFrame {
         progEjer.resetKm();
         progEjer.resetVuelta();
         progEjer.resetCalorias();
+        System.out.println();
     }//GEN-LAST:event_jButton28MouseClicked
 
     private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked

@@ -10,11 +10,11 @@ package datasport;
  * @author Reinaldo Pabon
  */
 public class ModoPrestablecido extends ProgramaEjercicio {
-  
-    public ModoPrestablecido(float vel,float inc,int tiempo)
-    {
-    super(vel,inc,tiempo);
+
+    public ModoPrestablecido(float vel, float inc, int tiempo, int intervalo) {
+        super(vel, inc, tiempo, intervalo);
     }
+
           
     
 }
