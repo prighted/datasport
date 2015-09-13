@@ -121,7 +121,6 @@ public class inter extends javax.swing.JFrame {
         jButton15.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton15.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton16.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\off.png")); // NOI18N
         jButton16.setBorder(null);
         jButton16.setBorderPainted(false);
         jButton16.setContentAreaFilled(false);
@@ -833,7 +832,7 @@ public class inter extends javax.swing.JFrame {
                     .addComponent(jButton21))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton24)
                     .addComponent(jButton25))
@@ -848,8 +847,6 @@ public class inter extends javax.swing.JFrame {
         jPanel4.setMinimumSize(new java.awt.Dimension(640, 480));
         jPanel4.setName(""); // NOI18N
         jPanel4.setPreferredSize(new java.awt.Dimension(640, 360));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\line.JPG")); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(51, 51, 60));
@@ -866,12 +863,6 @@ public class inter extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Play", 0, 36)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(51, 51, 60));
         jLabel17.setText("Modo Libre");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\1.png")); // NOI18N
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\play.png")); // NOI18N
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\speed.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -894,7 +885,7 @@ public class inter extends javax.swing.JFrame {
                             .addComponent(jLabel17)
                             .addComponent(jLabel15)
                             .addComponent(jLabel16))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1042,7 +1033,7 @@ public class inter extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1058,7 +1049,7 @@ public class inter extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton29))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(161, 161, 161)
+                                .addGap(119, 119, 119)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jButton28)
                                     .addComponent(jButton27)
@@ -1081,7 +1072,10 @@ public class inter extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

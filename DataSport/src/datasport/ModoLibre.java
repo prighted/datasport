@@ -10,8 +10,8 @@ package datasport;
  * @author Reinaldo Pabon
  */
 public class ModoLibre extends ProgramaEjercicio {
-    public ModoLibre(float vel,float inc,int tiempo)
-    {
-        super(vel,inc,tiempo);
+   
+    public ModoLibre(float vel, float inc, int tiempo, int intervalo) {
+        super(vel, inc, tiempo, intervalo);
     }
 }

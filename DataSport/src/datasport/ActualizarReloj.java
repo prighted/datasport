@@ -22,7 +22,8 @@ public class ActualizarReloj implements Runnable {
     private ModoPrestablecido modoPres;
     private ModoLibre modoLibre;
     private boolean mantenerContador=false;
-    private int contador=1;
+    private int contador=1;                                                     //Tiempo
+    private int intervalo;
 
     public ActualizarReloj(JLabel etiqueta, Relojrun reloj, ProgramaEjercicio progEjer, ModoPrestablecido modoPres, ModoLibre modoLibre) {
         this.etiqueta = etiqueta;
@@ -31,6 +32,7 @@ public class ActualizarReloj implements Runnable {
         this.progEjer = progEjer;
         this.modoPres = modoPres;
         this.modoLibre = modoLibre;
+        int intervalo = progEjer.getIntervalo();
     }
     
     public void initDetCont(boolean v)//Para e inicia contador
@@ -79,8 +81,9 @@ public class ActualizarReloj implements Runnable {
                 if (mantenerContador==true)
                 {
                 progEjer.calcularKm(20,contador);//calcula la distancia por ahora la vel es 5 (superClase).
-                progEjer.calAcum(contador);//calcula las cal acumuladas del programa (superClase)
+                progEjer.calAcum();//calcula las cal acumuladas del programa (superClase)
                 progEjer.calculaTimeLap(contador);
+                progEjer.calcularCal(contador, intervalo);
                 System.out.println(contador++);
                 System.out.println("\n");
                 }
