@@ -137,7 +137,7 @@
         <Component class="javax.swing.JButton" name="jButton15">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\off.png"/>
+              <Image iconType="3" name="/imagenes/off.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -160,7 +160,7 @@
         <Component class="javax.swing.JButton" name="jButton16">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\speed.png"/>
+              <Image iconType="3" name="/imagenes/speed.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -293,7 +293,7 @@
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\1.png"/>
+                  <Image iconType="3" name="/imagenes/1.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -312,7 +312,7 @@
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\7.png"/>
+                  <Image iconType="3" name="/imagenes/7.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -331,7 +331,7 @@
             <Component class="javax.swing.JButton" name="jButton4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\8.png"/>
+                  <Image iconType="3" name="/imagenes/8.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -350,7 +350,7 @@
             <Component class="javax.swing.JButton" name="jButton3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\2.png"/>
+                  <Image iconType="3" name="/imagenes/2.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -369,7 +369,7 @@
             <Component class="javax.swing.JButton" name="jButton5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\3.png"/>
+                  <Image iconType="3" name="/imagenes/3.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -388,7 +388,7 @@
             <Component class="javax.swing.JButton" name="jButton6">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\9.png"/>
+                  <Image iconType="3" name="/imagenes/9.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -407,7 +407,7 @@
             <Component class="javax.swing.JButton" name="jButton8">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\10.png"/>
+                  <Image iconType="3" name="/imagenes/10.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -426,7 +426,7 @@
             <Component class="javax.swing.JButton" name="jButton7">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\4.png"/>
+                  <Image iconType="3" name="/imagenes/4.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -448,7 +448,7 @@
             <Component class="javax.swing.JButton" name="jButton9">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\5.png"/>
+                  <Image iconType="3" name="/imagenes/5.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -467,7 +467,7 @@
             <Component class="javax.swing.JButton" name="jButton10">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\11.png"/>
+                  <Image iconType="3" name="/imagenes/11.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -486,7 +486,7 @@
             <Component class="javax.swing.JButton" name="jButton12">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\12.png"/>
+                  <Image iconType="3" name="/imagenes/12.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -505,7 +505,7 @@
             <Component class="javax.swing.JButton" name="jButton13">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\6.png"/>
+                  <Image iconType="3" name="/imagenes/6.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -524,7 +524,7 @@
             <Component class="javax.swing.JButton" name="jButton14">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\menos.png"/>
+                  <Image iconType="3" name="/imagenes/menos.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -543,7 +543,7 @@
             <Component class="javax.swing.JButton" name="jButton11">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\mas.png"/>
+                  <Image iconType="3" name="/imagenes/mas.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -638,7 +638,7 @@
             <Component class="javax.swing.JButton" name="jButton17">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\0.png"/>
+                  <Image iconType="3" name="/imagenes/0.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -657,7 +657,7 @@
             <Component class="javax.swing.JButton" name="jButton18">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\1.png"/>
+                  <Image iconType="3" name="/imagenes/1.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -676,7 +676,7 @@
             <Component class="javax.swing.JButton" name="jButton19">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\2.png"/>
+                  <Image iconType="3" name="/imagenes/2.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -695,7 +695,7 @@
             <Component class="javax.swing.JButton" name="jButton20">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\3.png"/>
+                  <Image iconType="3" name="/imagenes/3.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -714,7 +714,7 @@
             <Component class="javax.swing.JButton" name="jButton21">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\4.png"/>
+                  <Image iconType="3" name="/imagenes/4.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -733,7 +733,7 @@
             <Component class="javax.swing.JButton" name="jButton22">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\5.png"/>
+                  <Image iconType="3" name="/imagenes/5.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -752,7 +752,7 @@
             <Component class="javax.swing.JButton" name="jButton23">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\6.png"/>
+                  <Image iconType="3" name="/imagenes/6.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -771,7 +771,7 @@
             <Component class="javax.swing.JButton" name="jButton25">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\mas.png"/>
+                  <Image iconType="3" name="/imagenes/mas.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -790,7 +790,7 @@
             <Component class="javax.swing.JButton" name="jButton24">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\menos.png"/>
+                  <Image iconType="3" name="/imagenes/menos.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -835,7 +835,7 @@
         <Component class="javax.swing.JButton" name="jButton26">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\play.png"/>
+              <Image iconType="3" name="/imagenes/play.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -857,7 +857,7 @@
         <Component class="javax.swing.JButton" name="jButton27">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\pause.png"/>
+              <Image iconType="3" name="/imagenes/pause.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -879,7 +879,7 @@
         <Component class="javax.swing.JButton" name="jButton28">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="E:\ProyectoSoftware\datasport\DataSport\src\imagenes\stop.png"/>
+              <Image iconType="3" name="/imagenes/pause.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
