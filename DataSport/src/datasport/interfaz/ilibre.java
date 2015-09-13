@@ -863,11 +863,11 @@ this.setVisible(false);
     }//GEN-LAST:event_jButton16MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
-      mL.aumentar(jLabel10,1.0,12.0,0.1);
+      mL.aumentar(jLabel10,1.0f,12.0f,0.1f);
     }//GEN-LAST:event_jButton11MouseClicked
 
     private void jButton25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton25MouseClicked
-      mL.aumentar(jLabel11,0.0,6.0,0.2);
+      mL.aumentar(jLabel11,0.0f,6.0f,0.2f);
     }//GEN-LAST:event_jButton25MouseClicked
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
@@ -967,7 +967,7 @@ this.setVisible(false);
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
-    mL.reducirVelocidad(jLabel10);    // TODO add your handling code here:
+    mL.reducirVelocidad(jLabel10,1.0f,0.1f);    // TODO add your handling code here:
     }//GEN-LAST:event_jButton14MouseClicked
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -975,7 +975,7 @@ this.setVisible(false);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-    mL.reducirInclinacion(jLabel11);        // TODO add your handling code here:
+    mL.reducirInclinacion(jLabel11,0.0f,0.2f);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton24ActionPerformed
 
     /**

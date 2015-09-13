@@ -17,14 +17,14 @@ public class ModoLibre extends ProgramaEjercicio {
         super(vel, inc, tiempo, intervalo);
     }
     
-    public void aumentar(JLabel etiqueta, double limInf,
-            double limSup,  double aumento)
+    public void aumentar(JLabel etiqueta, float limInf,
+            float limSup,  float aumento)
             /*
-            limInf, limSup deben ser doubles, esto es 1.0, 12.0 para que se imprima
+            limInf, limSup deben ser float, esto es 1.0f, 12.0f para que se imprima
             bien en pantalla
             */
     {
-      double x=Double.parseDouble(etiqueta.getText());
+      double x=Float.parseFloat(etiqueta.getText());
       
         if((x<limInf)){                                                              //Limite Inferior= limInf
           etiqueta.setText(""+limInf);
@@ -33,38 +33,38 @@ public class ModoLibre extends ProgramaEjercicio {
           etiqueta.setText(""+limSup);                                             //Limite Superior= limSup
         }else{
             x=x+aumento;
-            x=Math.rint(x*10)/10;
+            x=Math.rint(x*10)/10;                                               //redondea a dos dígitos
             etiqueta.setText(""+x);
           }
       }
     }
     
-    public void reducirVelocidad(JLabel etiqueta)
+    public void reducirVelocidad(JLabel etiqueta, float limInf, float disminucion)
     {
-     double x=Double.parseDouble(etiqueta.getText());
+      double x=Float.parseFloat(etiqueta.getText());
       if(x==0){
-              etiqueta.setText("0.0");
-             }
+              etiqueta.setText("0.0");                                          //Se crea este límite porque en la pantalla aparece en 0.0
+             }                                                                  //Y por ahora la velocidad va desde 1=limInf hasta 12=limSup
       else{
-      if((x==1))
+      if((x==limInf))
       {
-          etiqueta.setText("1.0");
+          etiqueta.setText(""+limInf);
       }
          else{
-            x=x-0.1;
+            x=x-disminucion;
             x=Math.rint(x*10)/10;
             etiqueta.setText(""+x);   
            }
          }   
     }
-    public void reducirInclinacion(JLabel etiqueta)
+    public void reducirInclinacion(JLabel etiqueta, float limInf, float disminucion)
     {
-     double x=Double.parseDouble(etiqueta.getText());
-      if(x==0){
-              etiqueta.setText("0.0");
+      double x=Float.parseFloat(etiqueta.getText());
+      if(x==limInf){
+              etiqueta.setText(""+limInf);
              }
       else{
-            x=x-0.2;
+            x=x-disminucion;
             x=Math.rint(x*10)/10;
             etiqueta.setText(""+x);   
            }
