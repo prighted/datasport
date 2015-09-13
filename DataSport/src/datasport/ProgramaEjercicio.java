@@ -35,8 +35,18 @@ public class ProgramaEjercicio{
         this.intervalo=intervalo;
     }
    
+//metodos setter de velocidad e inclinacion
 
-  //metodos reset mandan al valor inicial cuando son invocados
+    public void setVel(float vel) {
+        this.vel = vel;
+    }
+    public void setInc(float inc)
+    {
+        this.inc = inc;
+    }
+   
+
+//metodos reset mandan al valor inicial cuando son invocados
 public void resetCalorias()
 {
 caloriasAcumuladas=0;
