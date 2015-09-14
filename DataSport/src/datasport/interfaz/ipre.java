@@ -5,6 +5,11 @@
  */
 package datasport.interfaz;
 
+import datasport.ActualizarReloj;
+import datasport.ModoPrestablecido;
+import datasport.ProgramaEjercicio;
+import datasport.Relojrun;
+
 /**
  *
  * @author anton
@@ -13,14 +18,17 @@ public class ipre extends javax.swing.JFrame {
     /**
      * Creates new form Gui
      */
-    
-    
+    Thread t;
+    private ActualizarReloj actualizador;
+    private Relojrun reloj;
+    private ModoPrestablecido mP;
     /**
      * Creates new form inface
      */
     public ipre() {
          initComponents();
-         
+       
+         reloj = new Relojrun();                                               
          jButton14.setEnabled(false);
          jButton11.setEnabled(false);
          jButton17.setEnabled(false);
@@ -113,7 +121,7 @@ public class ipre extends javax.swing.JFrame {
         jButton15.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton15.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/off.png"))); // NOI18N
+        jButton16.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\off.png")); // NOI18N
         jButton16.setBorder(null);
         jButton16.setBorderPainted(false);
         jButton16.setContentAreaFilled(false);
@@ -131,7 +139,7 @@ public class ipre extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\1.png")); // NOI18N
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
@@ -146,7 +154,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/7.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\7.png")); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -161,7 +169,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\8.png")); // NOI18N
         jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
@@ -176,7 +184,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\2.png")); // NOI18N
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
@@ -191,7 +199,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\3.png")); // NOI18N
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
@@ -206,7 +214,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/9.png"))); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\9.png")); // NOI18N
         jButton6.setBorder(null);
         jButton6.setBorderPainted(false);
         jButton6.setContentAreaFilled(false);
@@ -221,7 +229,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/10.png"))); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\10.png")); // NOI18N
         jButton8.setBorder(null);
         jButton8.setBorderPainted(false);
         jButton8.setContentAreaFilled(false);
@@ -236,7 +244,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/4.png"))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\4.png")); // NOI18N
         jButton7.setBorder(null);
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
@@ -250,8 +258,13 @@ public class ipre extends javax.swing.JFrame {
                 jButton7MouseClicked(evt);
             }
         });
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5.png"))); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\5.png")); // NOI18N
         jButton9.setBorder(null);
         jButton9.setBorderPainted(false);
         jButton9.setContentAreaFilled(false);
@@ -266,7 +279,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/11.png"))); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\11.png")); // NOI18N
         jButton10.setBorder(null);
         jButton10.setBorderPainted(false);
         jButton10.setContentAreaFilled(false);
@@ -281,7 +294,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/12.png"))); // NOI18N
+        jButton12.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\12.png")); // NOI18N
         jButton12.setBorder(null);
         jButton12.setBorderPainted(false);
         jButton12.setContentAreaFilled(false);
@@ -296,7 +309,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.png"))); // NOI18N
+        jButton13.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\6.png")); // NOI18N
         jButton13.setBorder(null);
         jButton13.setBorderPainted(false);
         jButton13.setContentAreaFilled(false);
@@ -311,7 +324,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menos.png"))); // NOI18N
+        jButton14.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\menos.png")); // NOI18N
         jButton14.setBorder(null);
         jButton14.setBorderPainted(false);
         jButton14.setContentAreaFilled(false);
@@ -320,8 +333,13 @@ public class ipre extends javax.swing.JFrame {
         jButton14.setIconTextGap(-3);
         jButton14.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton14.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
 
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
+        jButton11.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\mas.png")); // NOI18N
         jButton11.setBorder(null);
         jButton11.setBorderPainted(false);
         jButton11.setContentAreaFilled(false);
@@ -441,7 +459,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
+        jButton18.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\1.png")); // NOI18N
         jButton18.setBorder(null);
         jButton18.setBorderPainted(false);
         jButton18.setContentAreaFilled(false);
@@ -456,7 +474,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
+        jButton19.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\2.png")); // NOI18N
         jButton19.setBorder(null);
         jButton19.setBorderPainted(false);
         jButton19.setContentAreaFilled(false);
@@ -471,7 +489,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3.png"))); // NOI18N
+        jButton20.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\3.png")); // NOI18N
         jButton20.setBorder(null);
         jButton20.setBorderPainted(false);
         jButton20.setContentAreaFilled(false);
@@ -486,7 +504,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/4.png"))); // NOI18N
+        jButton21.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\4.png")); // NOI18N
         jButton21.setBorder(null);
         jButton21.setBorderPainted(false);
         jButton21.setContentAreaFilled(false);
@@ -501,7 +519,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5.png"))); // NOI18N
+        jButton22.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\5.png")); // NOI18N
         jButton22.setBorder(null);
         jButton22.setBorderPainted(false);
         jButton22.setContentAreaFilled(false);
@@ -516,7 +534,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.png"))); // NOI18N
+        jButton23.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\6.png")); // NOI18N
         jButton23.setBorder(null);
         jButton23.setBorderPainted(false);
         jButton23.setContentAreaFilled(false);
@@ -531,7 +549,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
+        jButton25.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\mas.png")); // NOI18N
         jButton25.setBorder(null);
         jButton25.setBorderPainted(false);
         jButton25.setContentAreaFilled(false);
@@ -551,7 +569,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menos.png"))); // NOI18N
+        jButton24.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\menos.png")); // NOI18N
         jButton24.setBorder(null);
         jButton24.setBorderPainted(false);
         jButton24.setContentAreaFilled(false);
@@ -560,6 +578,16 @@ public class ipre extends javax.swing.JFrame {
         jButton24.setIconTextGap(-3);
         jButton24.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton24.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton24MouseClicked(evt);
+            }
+        });
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -644,19 +672,17 @@ public class ipre extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(51, 51, 60));
         jLabel10.setText("0.0");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/atleta.JPG"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\atleta.JPG")); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 60));
         jLabel11.setText("0.0");
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reloj.JPG"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\reloj.JPG")); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 60));
         jLabel4.setText("°");
-
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\line.JPG")); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(51, 51, 60));
@@ -696,20 +722,15 @@ public class ipre extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(94, 94, 94)))
+                        .addContainerGap(112, Short.MAX_VALUE)
+                        .addComponent(jLabel6)
+                        .addGap(94, 94, 94)
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(72, 72, 72)
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -723,17 +744,19 @@ public class ipre extends javax.swing.JFrame {
                         .addComponent(jLabel4)))
                 .addGap(81, 81, 81))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel18))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel7)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel15)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel17)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel18))
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGap(45, 45, 45)
+                            .addComponent(jLabel8)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel7))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -768,9 +791,9 @@ public class ipre extends javax.swing.JFrame {
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel15)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(1, 1, 1)
                                 .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel8))
@@ -781,7 +804,7 @@ public class ipre extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))))))
         );
 
-        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
+        jButton26.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\play.png")); // NOI18N
         jButton26.setBorder(null);
         jButton26.setBorderPainted(false);
         jButton26.setContentAreaFilled(false);
@@ -791,7 +814,7 @@ public class ipre extends javax.swing.JFrame {
         jButton26.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton26.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pause.png"))); // NOI18N
+        jButton27.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\pause.png")); // NOI18N
         jButton27.setBorder(null);
         jButton27.setBorderPainted(false);
         jButton27.setContentAreaFilled(false);
@@ -801,7 +824,7 @@ public class ipre extends javax.swing.JFrame {
         jButton27.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton27.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stop.png"))); // NOI18N
+        jButton28.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\stop.png")); // NOI18N
         jButton28.setBorder(null);
         jButton28.setBorderPainted(false);
         jButton28.setContentAreaFilled(false);
@@ -812,12 +835,12 @@ public class ipre extends javax.swing.JFrame {
         jButton28.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         jLabel1.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
-        jLabel1.setText("Panel de Control de Velocidad");
+        jLabel1.setText("Seleccion de modo prestablecido");
 
         jLabel2.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
         jLabel2.setText("Panel de Control de Inclinacion");
 
-        jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/speed.png"))); // NOI18N
+        jButton29.setIcon(new javax.swing.ImageIcon("D:\\datasport\\DataSport\\src\\imagenes\\speed.png")); // NOI18N
         jButton29.setBorder(null);
         jButton29.setBorderPainted(false);
         jButton29.setContentAreaFilled(false);
@@ -913,13 +936,11 @@ public class ipre extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton16MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
-      double x=Double.parseDouble(jLabel10.getText())+0.1;
-      jLabel10.setText(""+x);
+       
     }//GEN-LAST:event_jButton11MouseClicked
 
     private void jButton25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton25MouseClicked
-      double x=Double.parseDouble(jLabel11.getText())+0.1;
-      jLabel11.setText(""+x);
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton25MouseClicked
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
@@ -927,80 +948,147 @@ public class ipre extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-       jLabel10.setText(""+1.0);
+   
+        
+        mP=new ModoPrestablecido(1,1,0,0);
+       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
+         t = new Thread(actualizador,"t");
+         t.start();
+       mP.setPrograma(jLabel5,1);
+        
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-       jLabel10.setText(""+2.0);
+        mP=new ModoPrestablecido(2,2,0,0);
+        actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
+         t = new Thread(actualizador,"t");
+         t.start();
+        mP.setPrograma(jLabel5,2);
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-       jLabel10.setText(""+3.0);
+        mP=new ModoPrestablecido(3,3,0,0);
+        actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
+         t = new Thread(actualizador,"t");
+         t.start();
+        mP.setPrograma(jLabel5,3);
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
-        jLabel10.setText(""+4.0);
+       mP=new ModoPrestablecido(4,4,0,0);
+       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
+         t = new Thread(actualizador,"t");
+         t.start();
+       mP.setPrograma(jLabel5,4);
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-       jLabel10.setText(""+5.0);
+       mP=new ModoPrestablecido(5,5,0,0);
+       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
+         t = new Thread(actualizador,"t");
+         t.start();
+       mP.setPrograma(jLabel5,5);
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
-      jLabel10.setText(""+6.0);
+       mP=new ModoPrestablecido(6,6,0,0);
+       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
+         t = new Thread(actualizador,"t");
+         t.start();
+       mP.setPrograma(jLabel5,6);
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        jLabel10.setText(""+7.0);
+       mP=new ModoPrestablecido(7,1,0,0);
+       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
+         t = new Thread(actualizador,"t");
+         t.start();
+       mP.setPrograma(jLabel5,7);
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        jLabel10.setText(""+8.0);
+       mP=new ModoPrestablecido(8,2,0,0);
+       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
+         t = new Thread(actualizador,"t");
+         t.start();
+       mP.setPrograma(jLabel5,8);
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        jLabel10.setText(""+9.0);
+       mP=new ModoPrestablecido(9,3,0,0);
+       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
+         t = new Thread(actualizador,"t");
+         t.start();
+       mP.setPrograma(jLabel5,9);
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
-       jLabel10.setText(""+10.0);
+      mP=new ModoPrestablecido(10,4,0,0);
+      actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
+         t = new Thread(actualizador,"t");
+         t.start();
+      mP.setPrograma(jLabel5,10);
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
-        jLabel10.setText(""+11.0);
+      mP=new ModoPrestablecido(11,5,0,0);
+      actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
+         t = new Thread(actualizador,"t");
+         t.start();
+      mP.setPrograma(jLabel5,11);
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
-       jLabel10.setText(""+12.0);
+      mP=new ModoPrestablecido(12,6,0,0);
+      actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
+         t = new Thread(actualizador,"t");
+         t.start();
+      mP.setPrograma(jLabel5,12);
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
-       jLabel11.setText(""+0.0);
+      
     }//GEN-LAST:event_jButton17MouseClicked
 
     private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
-        jLabel11.setText(""+1.0);
+      
     }//GEN-LAST:event_jButton18MouseClicked
 
     private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
-       jLabel11.setText(""+2.0);
+       
     }//GEN-LAST:event_jButton19MouseClicked
 
     private void jButton20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton20MouseClicked
-        jLabel11.setText(""+3.0);
+  
     }//GEN-LAST:event_jButton20MouseClicked
 
     private void jButton21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton21MouseClicked
-       jLabel11.setText(""+4.0);
+     
     }//GEN-LAST:event_jButton21MouseClicked
 
     private void jButton22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton22MouseClicked
-        jLabel11.setText(""+5.0);
+    
     }//GEN-LAST:event_jButton22MouseClicked
 
     private void jButton23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton23MouseClicked
-        jLabel11.setText(""+6.0);
+    
     }//GEN-LAST:event_jButton23MouseClicked
+
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+     
+    }//GEN-LAST:event_jButton14MouseClicked
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton24MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton24MouseClicked
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton24ActionPerformed
 
     /**
      * @param args the command line arguments
