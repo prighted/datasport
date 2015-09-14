@@ -1,0 +1,7 @@
+limInf,1
+limSup,12
+noLaps,5
+inc,5
+vel,5
+K,10
+
