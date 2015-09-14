@@ -5,6 +5,7 @@
  */
 package datasport;
 
+import java.util.Date;
 import javax.swing.JLabel;
 
 /**
@@ -15,24 +16,26 @@ public class ActualizarReloj implements Runnable {
     //Codigo que se ejecutara durante el thread
 
     private JLabel etiqueta;
+     private JLabel etiqueta1;
     public boolean vivo;                                                        //Para que se repita el run
-    private int stop = 0;                                                       //Para detener el hilo
     private Relojrun reloj;
-    private ProgramaEjercicio progEjer;
-    private ModoPrestablecido modoPres;
-    private ModoLibre modoLibre;
     private boolean mantenerContador=false;
     private int contador=1;                                                     //Tiempo
     private int intervalo;
+    private int horas,minutos,segundos;
+    private String tiempoTranscurrido;
 
-    public ActualizarReloj(JLabel etiqueta, Relojrun reloj, ProgramaEjercicio progEjer, ModoPrestablecido modoPres, ModoLibre modoLibre) {
+
+    private DataSport programa;
+
+    public ActualizarReloj(JLabel etiqueta, JLabel etiqueta1, Relojrun reloj, DataSport programa) {
         this.etiqueta = etiqueta;
+        this.etiqueta1 = etiqueta1;
         this.vivo = true;
         this.reloj = reloj;
-        this.progEjer = progEjer;
-        this.modoPres = modoPres;
-        this.modoLibre = modoLibre;
-        int intervalo = progEjer.getIntervalo();
+        this.programa = programa;
+        
+        int intervalo = programa.getIntervalo();
     }
     
     public void initDetCont(boolean v)//Para e inicia contador
@@ -49,14 +52,10 @@ public class ActualizarReloj implements Runnable {
         return contador;
     }
 
-
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
     }
 
-    public int getStop() {
-        return stop;
-    }
   
     @Override
     public void run() {
@@ -64,30 +63,14 @@ public class ActualizarReloj implements Runnable {
             try {
                 String hora = reloj.getHoraString();                          //Obtención de la Hora a mostrar en pantalla
                 etiqueta.setText(hora);
-                Thread.sleep(1000);
-                /*stop=stop+1;
-                System.out.println(stop);
-                if (stop==10)
-                {
-                 
-                    long horaFinal = System.currentTimeMillis();                //Obtiene la hora final
-                    reloj.setHoraFinal(horaFinal);
-                    System.out.println("La hora final es: "+reloj.getHoraFinal());
-                    float difHoras=reloj.calcularDeltaHoras();                              //Obtiene la diferencia de las horas
-                    System.out.println("La diferencia de horas es: "+ difHoras);
-                    vivo=false;
-                }
-                */
-                if (mantenerContador==true)
-                {
-                progEjer.calcularKm(20,contador);//calcula la distancia por ahora la vel es 5 (superClase).
-                progEjer.calAcum();//calcula las cal acumuladas del programa (superClase)
-                progEjer.calculaTimeLap(contador);
-                progEjer.calcularCal(contador, intervalo);
-                System.out.println(contador++);
-                System.out.println("\n");
-                }
-                
+                Thread.sleep(500);
+                    segundos = (contador ) % 60 ;
+                    minutos = ((contador /60)  %  60);
+                    horas  = ((contador / (60*60)) % 24);
+                    tiempoTranscurrido =  horas + ":" + minutos + ":" + segundos;
+                    etiqueta1.setText(tiempoTranscurrido);
+                    contador++;
+            
             } catch (InterruptedException ex) {
             };
             

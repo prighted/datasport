@@ -19,7 +19,6 @@ public class Relojrun {
     /*
      Variables para obtener la hora.
      */
-    
     private long horaInicial;
     private long horaFinal;
     private float difHoras;

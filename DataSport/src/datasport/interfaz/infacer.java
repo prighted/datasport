@@ -28,9 +28,7 @@ public class infacer extends javax.swing.JFrame {
      */
     
     
-    /**
-     * Creates new form inface
-     */
+    
     public infacer() {
          initComponents();
          reloj = new Relojrun();                                                //Creo la instacia de reloj
@@ -43,7 +41,7 @@ public class infacer extends javax.swing.JFrame {
          t = new Thread(actualizador,"t");
          t.start();
         
-         System.out.println();
+         
     }
 
     /**

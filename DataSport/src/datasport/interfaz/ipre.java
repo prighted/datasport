@@ -6,8 +6,7 @@
 package datasport.interfaz;
 
 import datasport.ActualizarReloj;
-import datasport.ModoPrestablecido;
-import datasport.ProgramaEjercicio;
+import datasport.DataSport;
 import datasport.Relojrun;
 
 
@@ -22,31 +21,51 @@ public class ipre extends javax.swing.JFrame {
     Thread t;
     private ActualizarReloj actualizador;
     private Relojrun reloj;
-    private ModoPrestablecido mP;
+    private DataSport mL;
+    private DataSport[] prestablecidos;
+    private int modo=0;  //seleccion de modo en 2
+
     /**
      * Creates new form inface
      */
-    public ipre() {
-         initComponents();
-          System.out.println();
-         reloj = new Relojrun();                                               
-         jButton14.setEnabled(false);
-         jButton11.setEnabled(false);
-         jButton17.setEnabled(false);
-         jButton18.setEnabled(false);
-         jButton19.setEnabled(false);
-         jButton20.setEnabled(false);
-         jButton21.setEnabled(false);
-         jButton22.setEnabled(false);
-         jButton23.setEnabled(false);
-         jButton24.setEnabled(false);
-         jButton25.setEnabled(false);
-         jButton29.setEnabled(false);
-         
+    public ipre() { 
+        initComponents();
+        inicializar();
+         prestablecidos = new DataSport[12];
+         cambio();     
+    
+                            
+         t = new Thread(actualizador,"t");
+         t.start();
+    
      
     
     }
 
+public void inicializar(){
+         reloj = new Relojrun(); 
+         mL=new DataSport(60);
+//         prestablecidos[0]=new DataSport();
+    //     prestablecidos[1]=new DataSport();
+         actualizador = new ActualizarReloj(jLabel16,jLabel15, reloj, mL); 
+         }
+
+public void cambio(){
+    if(modo==0)                     //Se construye el modoLibre
+    {
+      jLabel14.setVisible(false);
+      jLabel5.setVisible(false);
+      jLabel6.setVisible(false);
+      
+    }
+    else
+    {
+       jLabel14.setVisible(true); 
+       jLabel5.setVisible(true);
+       jLabel6.setVisible(true);
+    }
+    
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,16 +93,6 @@ public class ipre extends javax.swing.JFrame {
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -98,15 +107,25 @@ public class ipre extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
         jButton28 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton29 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
+        jButton22 = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
+        jButton24 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -122,7 +141,7 @@ public class ipre extends javax.swing.JFrame {
         jButton15.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton15.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/off.png"))); // NOI18N
+        jButton16.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\off.png")); // NOI18N
         jButton16.setBorder(null);
         jButton16.setBorderPainted(false);
         jButton16.setContentAreaFilled(false);
@@ -140,7 +159,7 @@ public class ipre extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\1.png")); // NOI18N
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
@@ -155,7 +174,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/7.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\7.png")); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -170,7 +189,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\8.png")); // NOI18N
         jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
@@ -185,7 +204,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\2.png")); // NOI18N
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
@@ -200,7 +219,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\3.png")); // NOI18N
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
@@ -215,7 +234,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/9.png"))); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\9.png")); // NOI18N
         jButton6.setBorder(null);
         jButton6.setBorderPainted(false);
         jButton6.setContentAreaFilled(false);
@@ -230,7 +249,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/10.png"))); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\10.png")); // NOI18N
         jButton8.setBorder(null);
         jButton8.setBorderPainted(false);
         jButton8.setContentAreaFilled(false);
@@ -245,7 +264,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/4.png"))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\4.png")); // NOI18N
         jButton7.setBorder(null);
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
@@ -265,7 +284,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5.png"))); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\5.png")); // NOI18N
         jButton9.setBorder(null);
         jButton9.setBorderPainted(false);
         jButton9.setContentAreaFilled(false);
@@ -280,7 +299,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/11.png"))); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\11.png")); // NOI18N
         jButton10.setBorder(null);
         jButton10.setBorderPainted(false);
         jButton10.setContentAreaFilled(false);
@@ -295,7 +314,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/12.png"))); // NOI18N
+        jButton12.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\12.png")); // NOI18N
         jButton12.setBorder(null);
         jButton12.setBorderPainted(false);
         jButton12.setContentAreaFilled(false);
@@ -310,7 +329,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.png"))); // NOI18N
+        jButton13.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\6.png")); // NOI18N
         jButton13.setBorder(null);
         jButton13.setBorderPainted(false);
         jButton13.setContentAreaFilled(false);
@@ -325,7 +344,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menos.png"))); // NOI18N
+        jButton14.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\menos.png")); // NOI18N
         jButton14.setBorder(null);
         jButton14.setBorderPainted(false);
         jButton14.setContentAreaFilled(false);
@@ -340,7 +359,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
+        jButton11.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\mas.png")); // NOI18N
         jButton11.setBorder(null);
         jButton11.setBorderPainted(false);
         jButton11.setContentAreaFilled(false);
@@ -394,7 +413,7 @@ public class ipre extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 158, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
@@ -432,20 +451,231 @@ public class ipre extends javax.swing.JFrame {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        jPanel4.setBackground(new java.awt.Color(240, 103, 33));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 60)));
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.setToolTipText("");
+        jPanel4.setMaximumSize(new java.awt.Dimension(640, 360));
+        jPanel4.setMinimumSize(new java.awt.Dimension(640, 360));
+        jPanel4.setPreferredSize(new java.awt.Dimension(640, 360));
+
+        jLabel5.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel5.setText("1");
+
+        jLabel6.setFont(new java.awt.Font("Play", 0, 40)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel6.setText("1");
+
+        jLabel7.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel7.setText("0000");
+
+        jLabel8.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel8.setText("Calorias:");
+
+        jLabel9.setFont(new java.awt.Font("Play", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel9.setText("Km/h");
+
+        jLabel10.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel10.setText("1.0");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\atleta.JPG")); // NOI18N
+
+        jLabel11.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel11.setText("0.0");
+
+        jLabel12.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\reloj.JPG")); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel4.setText("°");
+
+        jLabel14.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel14.setText("Modo Prestablecido");
+
+        jLabel15.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel15.setText("00:00:00");
+
+        jLabel17.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel17.setText("Km recorridos:");
+
+        jLabel18.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(51, 51, 60));
+        jLabel18.setText("0000");
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel16.setText("jLabel16");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel6))
+                .addGap(65, 65, 65)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel9))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)))
+                        .addGap(81, 81, 81))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
+                        .addGap(252, 252, 252))))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel13))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel15)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(jLabel17)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel18))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addGap(45, 45, 45)
+                                    .addComponent(jLabel8)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jLabel7))))
+                        .addGap(0, 314, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel16))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel4))
+                        .addGap(104, 104, 104))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel15)))
+                                .addGap(64, 64, 64)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel18))
+                                .addGap(0, 0, Short.MAX_VALUE))))))
+        );
+
+        jButton26.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\play.png")); // NOI18N
+        jButton26.setBorder(null);
+        jButton26.setBorderPainted(false);
+        jButton26.setContentAreaFilled(false);
+        jButton26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton26.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton26.setIconTextGap(-3);
+        jButton26.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton26.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton26.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton26MouseClicked(evt);
+            }
+        });
+
+        jButton27.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\pause.png")); // NOI18N
+        jButton27.setBorder(null);
+        jButton27.setBorderPainted(false);
+        jButton27.setContentAreaFilled(false);
+        jButton27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton27.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton27.setIconTextGap(-3);
+        jButton27.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton27.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        jButton28.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\stop.png")); // NOI18N
+        jButton28.setBorder(null);
+        jButton28.setBorderPainted(false);
+        jButton28.setContentAreaFilled(false);
+        jButton28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton28.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton28.setIconTextGap(-3);
+        jButton28.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton28.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton28MouseClicked(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
+        jLabel1.setText("Seleccion de modo prestablecido");
+
+        jLabel2.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
+        jLabel2.setText("Panel de Control de Inclinacion");
+
+        jButton29.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\speed.png")); // NOI18N
+        jButton29.setBorder(null);
+        jButton29.setBorderPainted(false);
+        jButton29.setContentAreaFilled(false);
+        jButton29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton29.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton29.setIconTextGap(-3);
+        jButton29.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton29.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton29.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton29MouseClicked(evt);
+            }
+        });
+
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jButton17.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("file:/C:\\Users\\anton\\Pictures\\Camera Roll\\imagenes\\0.png")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jButton17.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\0.png")); // NOI18N
         jButton17.setBorder(null);
         jButton17.setBorderPainted(false);
         jButton17.setContentAreaFilled(false);
@@ -460,7 +690,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
+        jButton18.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\1.png")); // NOI18N
         jButton18.setBorder(null);
         jButton18.setBorderPainted(false);
         jButton18.setContentAreaFilled(false);
@@ -475,7 +705,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
+        jButton19.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\2.png")); // NOI18N
         jButton19.setBorder(null);
         jButton19.setBorderPainted(false);
         jButton19.setContentAreaFilled(false);
@@ -490,7 +720,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3.png"))); // NOI18N
+        jButton20.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\3.png")); // NOI18N
         jButton20.setBorder(null);
         jButton20.setBorderPainted(false);
         jButton20.setContentAreaFilled(false);
@@ -505,7 +735,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/4.png"))); // NOI18N
+        jButton21.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\4.png")); // NOI18N
         jButton21.setBorder(null);
         jButton21.setBorderPainted(false);
         jButton21.setContentAreaFilled(false);
@@ -520,7 +750,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5.png"))); // NOI18N
+        jButton22.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\5.png")); // NOI18N
         jButton22.setBorder(null);
         jButton22.setBorderPainted(false);
         jButton22.setContentAreaFilled(false);
@@ -535,7 +765,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.png"))); // NOI18N
+        jButton23.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\6.png")); // NOI18N
         jButton23.setBorder(null);
         jButton23.setBorderPainted(false);
         jButton23.setContentAreaFilled(false);
@@ -550,7 +780,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
+        jButton25.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\mas.png")); // NOI18N
         jButton25.setBorder(null);
         jButton25.setBorderPainted(false);
         jButton25.setContentAreaFilled(false);
@@ -570,7 +800,7 @@ public class ipre extends javax.swing.JFrame {
             }
         });
 
-        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menos.png"))); // NOI18N
+        jButton24.setIcon(new javax.swing.ImageIcon("E:\\ProyectoSoftware\\datasport\\DataSport\\src\\imagenes\\menos.png")); // NOI18N
         jButton24.setBorder(null);
         jButton24.setBorderPainted(false);
         jButton24.setContentAreaFilled(false);
@@ -582,11 +812,6 @@ public class ipre extends javax.swing.JFrame {
         jButton24.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton24MouseClicked(evt);
-            }
-        });
-        jButton24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton24ActionPerformed(evt);
             }
         });
 
@@ -641,216 +866,6 @@ public class ipre extends javax.swing.JFrame {
                 .addGap(41, 41, 41))
         );
 
-        jPanel4.setBackground(new java.awt.Color(240, 103, 33));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 60)));
-        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel4.setToolTipText("");
-        jPanel4.setMaximumSize(new java.awt.Dimension(640, 360));
-        jPanel4.setMinimumSize(new java.awt.Dimension(640, 360));
-        jPanel4.setPreferredSize(new java.awt.Dimension(640, 360));
-
-        jLabel5.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel5.setText("1");
-
-        jLabel6.setFont(new java.awt.Font("Play", 0, 40)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel6.setText("1");
-
-        jLabel7.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel7.setText("0000");
-
-        jLabel8.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel8.setText("Calorias:");
-
-        jLabel9.setFont(new java.awt.Font("Play", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel9.setText("Km/h");
-
-        jLabel10.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel10.setText("0.0");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/atleta.JPG"))); // NOI18N
-
-        jLabel11.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel11.setText("0.0");
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reloj.JPG"))); // NOI18N
-
-        jLabel4.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel4.setText("°");
-
-        jLabel14.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel14.setText("Modo Prestablecido");
-
-        jLabel15.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel15.setText("00:00");
-
-        jLabel16.setFont(new java.awt.Font("Play", 0, 40)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel16.setText("00:00");
-
-        jLabel17.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel17.setText("Km recorridos:");
-
-        jLabel18.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel18.setText("0000");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5)
-                        .addGap(252, 252, 252))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addContainerGap())))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap(112, Short.MAX_VALUE)
-                        .addComponent(jLabel6)
-                        .addGap(94, 94, 94)
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)))
-                .addGap(81, 81, 81))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel15)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel17)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel18))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addGap(45, 45, 45)
-                            .addComponent(jLabel8)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jLabel7))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel4))
-                        .addGap(104, 104, 104))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel15)))
-                                .addGap(1, 1, 1)
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel17)
-                                    .addComponent(jLabel18))
-                                .addGap(0, 0, Short.MAX_VALUE))))))
-        );
-
-        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
-        jButton26.setBorder(null);
-        jButton26.setBorderPainted(false);
-        jButton26.setContentAreaFilled(false);
-        jButton26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton26.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton26.setIconTextGap(-3);
-        jButton26.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton26.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pause.png"))); // NOI18N
-        jButton27.setBorder(null);
-        jButton27.setBorderPainted(false);
-        jButton27.setContentAreaFilled(false);
-        jButton27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton27.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton27.setIconTextGap(-3);
-        jButton27.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton27.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stop.png"))); // NOI18N
-        jButton28.setBorder(null);
-        jButton28.setBorderPainted(false);
-        jButton28.setContentAreaFilled(false);
-        jButton28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton28.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton28.setIconTextGap(-3);
-        jButton28.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton28.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jLabel1.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
-        jLabel1.setText("Seleccion de modo prestablecido");
-
-        jLabel2.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
-        jLabel2.setText("Panel de Control de Inclinacion");
-
-        jButton29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/speed.png"))); // NOI18N
-        jButton29.setBorder(null);
-        jButton29.setBorderPainted(false);
-        jButton29.setContentAreaFilled(false);
-        jButton29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton29.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton29.setIconTextGap(-3);
-        jButton29.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton29.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -877,13 +892,13 @@ public class ipre extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -906,13 +921,13 @@ public class ipre extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -937,159 +952,294 @@ public class ipre extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton16MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
-       
+    if (modo==0)
+    {
+        mL.aumentar(jLabel10,12.0f,1.0f,0.1f,0);       
+    }
+    else
+    {
+       //
+    }
     }//GEN-LAST:event_jButton11MouseClicked
 
-    private void jButton25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton25MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton25MouseClicked
-
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton25ActionPerformed
-
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-   
-        
-        mP=new ModoPrestablecido(1,1,0,0);
-       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
-         t = new Thread(actualizador,"t");
-         t.start();
-       mP.setPrograma(jLabel5,1);
-        
+       if (modo==0)
+    {
+       mL.valorBoton(jLabel10,1.0f,0);       
+    }
+    else
+    {
+       //
+    }   
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        mP=new ModoPrestablecido(2,2,0,0);
-        actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
-         t = new Thread(actualizador,"t");
-         t.start();
-        mP.setPrograma(jLabel5,2);
+          if (modo==0)
+    {
+      mL.valorBoton(jLabel10,2.0f,0);       
+    }
+    else
+    {
+       //
+    }   
+        
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-        mP=new ModoPrestablecido(3,3,0,0);
-        actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
-         t = new Thread(actualizador,"t");
-         t.start();
-        mP.setPrograma(jLabel5,3);
+            if (modo==0)
+    {
+        mL.valorBoton(jLabel10,3.0f,0);      
+    }
+    else
+    {
+       //
+    }  
+       
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
-       mP=new ModoPrestablecido(4,4,0,0);
-       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
-         t = new Thread(actualizador,"t");
-         t.start();
-       mP.setPrograma(jLabel5,4);
+            if (modo==0)
+    {
+       mL.valorBoton(jLabel10,4.0f,0);       
+    }
+    else
+    {
+       //
+    }  
+         
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-       mP=new ModoPrestablecido(5,5,0,0);
-       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
-         t = new Thread(actualizador,"t");
-         t.start();
-       mP.setPrograma(jLabel5,5);
+         if (modo==0)
+    {
+     mL.valorBoton(jLabel10,5.0f,0);     
+    }
+    else
+    {
+       //
+    }  
+       
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
-       mP=new ModoPrestablecido(6,6,0,0);
-       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
-         t = new Thread(actualizador,"t");
-         t.start();
-       mP.setPrograma(jLabel5,6);
+        if (modo==0)
+    {
+       mL.valorBoton(jLabel10,6.0f,0);     
+    }
+    else
+    {
+       //
+    }  
+         
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-       mP=new ModoPrestablecido(7,1,0,0);
-       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
-         t = new Thread(actualizador,"t");
-         t.start();
-       mP.setPrograma(jLabel5,7);
+        if (modo==0)
+    {
+       mL.valorBoton(jLabel10,7.0f,0);       
+    }
+    else
+    {
+       //
+    }  
+               
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-       mP=new ModoPrestablecido(8,2,0,0);
-       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
-         t = new Thread(actualizador,"t");
-         t.start();
-       mP.setPrograma(jLabel5,8);
+       if (modo==0)
+    {
+      mL.valorBoton(jLabel10,8.0f,0);    
+    }
+    else
+    {
+       //
+    }  
+        
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-       mP=new ModoPrestablecido(9,3,0,0);
-       actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
-         t = new Thread(actualizador,"t");
-         t.start();
-       mP.setPrograma(jLabel5,9);
+      if (modo==0)
+    {
+       mL.valorBoton(jLabel10,9.0f,0);      
+    }
+    else
+    {
+       //
+    }  
+        
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
-      mP=new ModoPrestablecido(10,4,0,0);
-      actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
-         t = new Thread(actualizador,"t");
-         t.start();
-      mP.setPrograma(jLabel5,10);
+       if (modo==0)
+    {
+       mL.valorBoton(jLabel10,10.0f,0);      
+    }
+    else
+    {
+       //
+    }  
+       
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
-      mP=new ModoPrestablecido(11,5,0,0);
-      actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
-         t = new Thread(actualizador,"t");
-         t.start();
-      mP.setPrograma(jLabel5,11);
+     
+            if (modo==0)
+    {
+      mL.valorBoton(jLabel10,11.0f,0);   
+    }
+    else
+    {
+       //
+    }  
+            
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
-      mP=new ModoPrestablecido(12,6,0,0);
-      actualizador = new ActualizarReloj(jLabel16, reloj, null,mP,null);                    
-         t = new Thread(actualizador,"t");
-         t.start();
-      mP.setPrograma(jLabel5,12);
+   
+            if (modo==0)
+    {
+       mL.valorBoton(jLabel10,12.0f,0);      
+    }
+    else
+    {
+       //
+    }  
     }//GEN-LAST:event_jButton12MouseClicked
 
-    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
-      
-    }//GEN-LAST:event_jButton17MouseClicked
-
-    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
-      
-    }//GEN-LAST:event_jButton18MouseClicked
-
-    private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
-       
-    }//GEN-LAST:event_jButton19MouseClicked
-
-    private void jButton20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton20MouseClicked
-  
-    }//GEN-LAST:event_jButton20MouseClicked
-
-    private void jButton21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton21MouseClicked
-     
-    }//GEN-LAST:event_jButton21MouseClicked
-
-    private void jButton22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton22MouseClicked
-    
-    }//GEN-LAST:event_jButton22MouseClicked
-
-    private void jButton23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton23MouseClicked
-    
-    }//GEN-LAST:event_jButton23MouseClicked
-
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
-     
+            if (modo==0)
+    {
+       mL.reducir(jLabel10,1.0f,0.1f,0);       
+    }
+    else
+    {
+       //
+    }  
+        mL.reducir(jLabel10,1.0f,0.1f,0);
     }//GEN-LAST:event_jButton14MouseClicked
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+    if (modo==0)
+    {
+       mL.valorBoton(jLabel11,0.0f,1);      
+    }
+    else
+    {
+       //
+    }  
+    }//GEN-LAST:event_jButton17MouseClicked
+
+    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
+ if (modo==0)
+    {
+       mL.valorBoton(jLabel11,1.0f,1);      
+    }
+    else
+    {
+       //
+    }  
+    }//GEN-LAST:event_jButton18MouseClicked
+
+    private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
+if (modo==0)
+    {
+       mL.valorBoton(jLabel11,2.0f,1);      
+    }
+    else
+    {
+       //
+    }  
+    }//GEN-LAST:event_jButton19MouseClicked
+
+    private void jButton20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton20MouseClicked
+if (modo==0)
+    {
+       mL.valorBoton(jLabel11,3.0f,1);      
+    }
+    else
+    {
+       //
+    }  
+    }//GEN-LAST:event_jButton20MouseClicked
+
+    private void jButton21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton21MouseClicked
+if (modo==0)
+    {
+       mL.valorBoton(jLabel11,4.0f,1);      
+    }
+    else
+    {
+       //
+    }  
+    }//GEN-LAST:event_jButton21MouseClicked
+
+    private void jButton22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton22MouseClicked
+if (modo==0)
+    {
+       mL.valorBoton(jLabel11,5.0f,1);      
+    }
+    else
+    {
+       //
+    }  
+    }//GEN-LAST:event_jButton22MouseClicked
+
+    private void jButton23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton23MouseClicked
+if (modo==0)
+    {
+       mL.valorBoton(jLabel11,6.0f,1);      
+    }
+    else
+    {
+       //
+    }  
+    }//GEN-LAST:event_jButton23MouseClicked
+
+    private void jButton25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton25MouseClicked
+if (modo==0)
+    {
+       mL.aumentar(jLabel11,6.0f,0.0f,0.2f,2);      
+    }
+    else
+    {
+       //
+    }  
+    }//GEN-LAST:event_jButton25MouseClicked
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton29MouseClicked
+    modo=1;   
+    cambio();// TODO add your handling code here:
+    }//GEN-LAST:event_jButton29MouseClicked
+
+    private void jButton28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton28MouseClicked
+    modo=0;
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton28MouseClicked
+
     private void jButton24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton24MouseClicked
+if (modo==0)
+    {
+       mL.reducir(jLabel11,0.0f,0.2f,1);      
+    }
+    else
+    {
+       //
+    }  
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton24MouseClicked
 
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+    private void jButton26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton26MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton24ActionPerformed
+        
+    }//GEN-LAST:event_jButton26MouseClicked
 
     /**
      * @param args the command line arguments
