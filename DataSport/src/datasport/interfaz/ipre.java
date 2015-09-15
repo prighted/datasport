@@ -13,6 +13,8 @@ import datasport.Relojrun;
 /**
  *
  * @author anton
+ * lbl=label
+ * btt=button
  */
 public class ipre extends javax.swing.JFrame {
     /**
@@ -43,31 +45,31 @@ public class ipre extends javax.swing.JFrame {
     }
 
 public void modoLibre(){
-    jLabel6.setVisible(false);
+    lblNoVuelta.setVisible(false);
     jLabel5.setVisible(false);
-    jLabel14.setText("Modo Libre");
+    lblModo.setText("Modo Libre");
 }
 public void inicializar(){
          reloj = new Relojrun(); 
          mL=new DataSport(60);
 //         prestablecidos[0]=new DataSport();
     //     prestablecidos[1]=new DataSport();
-         actualizador = new ActualizarReloj(jLabel16,jLabel15, reloj, mL); 
+         actualizador = new ActualizarReloj(lblReloj,lblTiempo, reloj, mL); 
          }
 
 public void cambio(){
     if(modo==0)                     //Se construye el modoLibre
     {
-      jLabel14.setVisible(false);
+      lblModo.setVisible(false);
       jLabel5.setVisible(false);
-      jLabel6.setVisible(false);
+      lblNoVuelta.setVisible(false);
       
     }
     else
     {
-       jLabel14.setVisible(true); 
+       lblModo.setVisible(true); 
        jLabel5.setVisible(true);
-       jLabel6.setVisible(true);
+       lblNoVuelta.setVisible(true);
     }
     
 }
@@ -82,54 +84,54 @@ public void cambio(){
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        bttVel2 = new javax.swing.JButton();
+        bttVel1 = new javax.swing.JButton();
+        bttVel4 = new javax.swing.JButton();
+        bttVel3 = new javax.swing.JButton();
+        bttVel5 = new javax.swing.JButton();
+        bttVel6 = new javax.swing.JButton();
+        bttVel8 = new javax.swing.JButton();
+        bttVel7 = new javax.swing.JButton();
+        bttVel9 = new javax.swing.JButton();
+        bttVel10 = new javax.swing.JButton();
+        bttVel12 = new javax.swing.JButton();
+        bttVelMenos = new javax.swing.JButton();
+        bttVelMas = new javax.swing.JButton();
+        bttVel11 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lblNoVuelta = new javax.swing.JLabel();
+        lblCalorias = new javax.swing.JLabel();
+        lblNombreCalorias = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lblVel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        lblInc = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
+        lblModo = new javax.swing.JLabel();
+        lblTiempo = new javax.swing.JLabel();
+        lblNombreKms = new javax.swing.JLabel();
+        lblKms = new javax.swing.JLabel();
+        lblReloj = new javax.swing.JLabel();
+        lblPlay = new javax.swing.JButton();
+        lblPause = new javax.swing.JButton();
+        lblStop = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
+        bttInc2 = new javax.swing.JButton();
+        bttInc3 = new javax.swing.JButton();
+        bttInc4 = new javax.swing.JButton();
+        bttInc5 = new javax.swing.JButton();
+        bttInc6 = new javax.swing.JButton();
+        bttIncMenos = new javax.swing.JButton();
+        bttIncMas = new javax.swing.JButton();
+        bttInc0 = new javax.swing.JButton();
+        bttInc1 = new javax.swing.JButton();
+        bttSpeed = new javax.swing.JButton();
+        bttOff = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -139,223 +141,223 @@ public void cambio(){
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setIconTextGap(-3);
-        jButton2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
+        bttVel2.setBorder(null);
+        bttVel2.setBorderPainted(false);
+        bttVel2.setContentAreaFilled(false);
+        bttVel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVel2.setIconTextGap(-3);
+        bttVel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVel2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                bttVel2MouseClicked(evt);
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setIconTextGap(-3);
-        jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
+        bttVel1.setBorder(null);
+        bttVel1.setBorderPainted(false);
+        bttVel1.setContentAreaFilled(false);
+        bttVel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVel1.setIconTextGap(-3);
+        bttVel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVel1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                bttVel1MouseClicked(evt);
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/4.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setIconTextGap(-3);
-        jButton4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/4.png"))); // NOI18N
+        bttVel4.setBorder(null);
+        bttVel4.setBorderPainted(false);
+        bttVel4.setContentAreaFilled(false);
+        bttVel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVel4.setIconTextGap(-3);
+        bttVel4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVel4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
+                bttVel4MouseClicked(evt);
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setIconTextGap(-3);
-        jButton3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3.png"))); // NOI18N
+        bttVel3.setBorder(null);
+        bttVel3.setBorderPainted(false);
+        bttVel3.setContentAreaFilled(false);
+        bttVel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVel3.setIconTextGap(-3);
+        bttVel3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVel3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                bttVel3MouseClicked(evt);
             }
         });
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5.png"))); // NOI18N
-        jButton5.setBorder(null);
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton5.setIconTextGap(-3);
-        jButton5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5.png"))); // NOI18N
+        bttVel5.setBorder(null);
+        bttVel5.setBorderPainted(false);
+        bttVel5.setContentAreaFilled(false);
+        bttVel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVel5.setIconTextGap(-3);
+        bttVel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVel5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
+                bttVel5MouseClicked(evt);
             }
         });
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        bttVel5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                bttVel5ActionPerformed(evt);
             }
         });
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.png"))); // NOI18N
-        jButton6.setBorder(null);
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton6.setIconTextGap(-3);
-        jButton6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.png"))); // NOI18N
+        bttVel6.setBorder(null);
+        bttVel6.setBorderPainted(false);
+        bttVel6.setContentAreaFilled(false);
+        bttVel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVel6.setIconTextGap(-3);
+        bttVel6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVel6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton6MouseClicked(evt);
+                bttVel6MouseClicked(evt);
             }
         });
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8.png"))); // NOI18N
-        jButton8.setBorder(null);
-        jButton8.setBorderPainted(false);
-        jButton8.setContentAreaFilled(false);
-        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton8.setIconTextGap(-3);
-        jButton8.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/8.png"))); // NOI18N
+        bttVel8.setBorder(null);
+        bttVel8.setBorderPainted(false);
+        bttVel8.setContentAreaFilled(false);
+        bttVel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVel8.setIconTextGap(-3);
+        bttVel8.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVel8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton8MouseClicked(evt);
+                bttVel8MouseClicked(evt);
             }
         });
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/7.png"))); // NOI18N
-        jButton7.setBorder(null);
-        jButton7.setBorderPainted(false);
-        jButton7.setContentAreaFilled(false);
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton7.setIconTextGap(-3);
-        jButton7.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/7.png"))); // NOI18N
+        bttVel7.setBorder(null);
+        bttVel7.setBorderPainted(false);
+        bttVel7.setContentAreaFilled(false);
+        bttVel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVel7.setIconTextGap(-3);
+        bttVel7.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVel7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton7MouseClicked(evt);
+                bttVel7MouseClicked(evt);
             }
         });
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        bttVel7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                bttVel7ActionPerformed(evt);
             }
         });
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/9.png"))); // NOI18N
-        jButton9.setBorder(null);
-        jButton9.setBorderPainted(false);
-        jButton9.setContentAreaFilled(false);
-        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton9.setIconTextGap(-3);
-        jButton9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/9.png"))); // NOI18N
+        bttVel9.setBorder(null);
+        bttVel9.setBorderPainted(false);
+        bttVel9.setContentAreaFilled(false);
+        bttVel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVel9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVel9.setIconTextGap(-3);
+        bttVel9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVel9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton9MouseClicked(evt);
+                bttVel9MouseClicked(evt);
             }
         });
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/10.png"))); // NOI18N
-        jButton10.setBorder(null);
-        jButton10.setBorderPainted(false);
-        jButton10.setContentAreaFilled(false);
-        jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton10.setIconTextGap(-3);
-        jButton10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/10.png"))); // NOI18N
+        bttVel10.setBorder(null);
+        bttVel10.setBorderPainted(false);
+        bttVel10.setContentAreaFilled(false);
+        bttVel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVel10.setIconTextGap(-3);
+        bttVel10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVel10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton10MouseClicked(evt);
+                bttVel10MouseClicked(evt);
             }
         });
 
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/12.png"))); // NOI18N
-        jButton12.setBorder(null);
-        jButton12.setBorderPainted(false);
-        jButton12.setContentAreaFilled(false);
-        jButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton12.setIconTextGap(-3);
-        jButton12.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton12.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/12.png"))); // NOI18N
+        bttVel12.setBorder(null);
+        bttVel12.setBorderPainted(false);
+        bttVel12.setContentAreaFilled(false);
+        bttVel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVel12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVel12.setIconTextGap(-3);
+        bttVel12.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVel12.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVel12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton12MouseClicked(evt);
+                bttVel12MouseClicked(evt);
             }
         });
 
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menos.png"))); // NOI18N
-        jButton13.setBorder(null);
-        jButton13.setBorderPainted(false);
-        jButton13.setContentAreaFilled(false);
-        jButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton13.setIconTextGap(-3);
-        jButton13.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton13.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVelMenos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menos.png"))); // NOI18N
+        bttVelMenos.setBorder(null);
+        bttVelMenos.setBorderPainted(false);
+        bttVelMenos.setContentAreaFilled(false);
+        bttVelMenos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVelMenos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVelMenos.setIconTextGap(-3);
+        bttVelMenos.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVelMenos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVelMenos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton13MouseClicked(evt);
+                bttVelMenosMouseClicked(evt);
             }
         });
 
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
-        jButton14.setBorder(null);
-        jButton14.setBorderPainted(false);
-        jButton14.setContentAreaFilled(false);
-        jButton14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton14.setIconTextGap(-3);
-        jButton14.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton14.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVelMas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
+        bttVelMas.setBorder(null);
+        bttVelMas.setBorderPainted(false);
+        bttVelMas.setContentAreaFilled(false);
+        bttVelMas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVelMas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVelMas.setIconTextGap(-3);
+        bttVelMas.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVelMas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVelMas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton14MouseClicked(evt);
+                bttVelMasMouseClicked(evt);
             }
         });
 
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/11.png"))); // NOI18N
-        jButton11.setBorder(null);
-        jButton11.setBorderPainted(false);
-        jButton11.setContentAreaFilled(false);
-        jButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton11.setIconTextGap(-3);
-        jButton11.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttVel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/11.png"))); // NOI18N
+        bttVel11.setBorder(null);
+        bttVel11.setBorderPainted(false);
+        bttVel11.setContentAreaFilled(false);
+        bttVel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttVel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttVel11.setIconTextGap(-3);
+        bttVel11.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttVel11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttVel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton11MouseClicked(evt);
+                bttVel11MouseClicked(evt);
             }
         });
 
@@ -366,34 +368,34 @@ public void cambio(){
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bttVel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bttVel7, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttVel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttVel3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttVel4, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bttVel5, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttVel8, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttVel9, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttVel10, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(bttVel11, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bttVel6, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bttVel12, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bttVelMenos, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bttVelMas, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -401,26 +403,26 @@ public void cambio(){
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4)
-                    .addComponent(jButton6)
-                    .addComponent(jButton3))
+                    .addComponent(bttVel2)
+                    .addComponent(bttVel1)
+                    .addComponent(bttVel5)
+                    .addComponent(bttVel4)
+                    .addComponent(bttVel6)
+                    .addComponent(bttVel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton9, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton10, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton12, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton11, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(bttVel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bttVel9, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bttVel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bttVel10, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bttVel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bttVel11, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton14)
-                    .addComponent(jButton13))
+                    .addComponent(bttVelMas)
+                    .addComponent(bttVelMenos))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -436,85 +438,76 @@ public void cambio(){
         jLabel5.setForeground(new java.awt.Color(51, 51, 60));
         jLabel5.setText("1");
 
-        jLabel6.setFont(new java.awt.Font("Play", 0, 40)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel6.setText("1");
+        lblNoVuelta.setFont(new java.awt.Font("Play", 0, 40)); // NOI18N
+        lblNoVuelta.setForeground(new java.awt.Color(51, 51, 60));
+        lblNoVuelta.setText("1");
 
-        jLabel7.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel7.setText("0000");
+        lblCalorias.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        lblCalorias.setForeground(new java.awt.Color(51, 51, 60));
+        lblCalorias.setText("0000");
 
-        jLabel8.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel8.setText("Calorias:");
+        lblNombreCalorias.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        lblNombreCalorias.setForeground(new java.awt.Color(51, 51, 60));
+        lblNombreCalorias.setText("Calorias:");
 
         jLabel9.setFont(new java.awt.Font("Play", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(51, 51, 60));
         jLabel9.setText("Km/h");
 
-        jLabel10.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel10.setText("  1.0");
+        lblVel.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
+        lblVel.setForeground(new java.awt.Color(51, 51, 60));
+        lblVel.setText("  1.0");
 
-        jLabel11.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel11.setText("  0.0");
+        lblInc.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
+        lblInc.setForeground(new java.awt.Color(51, 51, 60));
+        lblInc.setText("  0.0");
 
         jLabel4.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 60));
         jLabel4.setText("°");
 
-        jLabel14.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel14.setText("Modo Prestablecido");
+        lblModo.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
+        lblModo.setForeground(new java.awt.Color(51, 51, 60));
+        lblModo.setText("Modo Prestablecido");
 
-        jLabel15.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel15.setText("0:0:0");
+        lblTiempo.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
+        lblTiempo.setForeground(new java.awt.Color(51, 51, 60));
+        lblTiempo.setText("0:0:0");
 
-        jLabel17.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel17.setText("Km recorridos:");
+        lblNombreKms.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        lblNombreKms.setForeground(new java.awt.Color(51, 51, 60));
+        lblNombreKms.setText("Km recorridos:");
 
-        jLabel18.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(51, 51, 60));
-        jLabel18.setText("0000");
+        lblKms.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
+        lblKms.setForeground(new java.awt.Color(51, 51, 60));
+        lblKms.setText("0000");
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel16.setText("jLabel16");
+        lblReloj.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblReloj.setText("jLabel16");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel6))
+                .addContainerGap(273, Short.MAX_VALUE)
+                .addComponent(lblNoVuelta)
                 .addGap(65, 65, 65)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
+                    .addComponent(lblVel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblInc, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel9))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(jLabel4)))
-                        .addGap(51, 51, 51))
+                        .addComponent(jLabel9))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5)
-                        .addGap(252, 252, 252))))
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel4)))
+                .addGap(51, 51, 51))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
@@ -522,38 +515,47 @@ public void cambio(){
                         .addComponent(jLabel13))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel15)
+                            .addComponent(lblTiempo)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel4Layout.createSequentialGroup()
                                     .addContainerGap()
-                                    .addComponent(jLabel17)
+                                    .addComponent(lblNombreKms)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel18))
+                                    .addComponent(lblKms))
                                 .addGroup(jPanel4Layout.createSequentialGroup()
                                     .addGap(45, 45, 45)
-                                    .addComponent(jLabel8)
+                                    .addComponent(lblNombreCalorias)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jLabel7))))
+                                    .addComponent(lblCalorias))))
                         .addGap(0, 404, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addComponent(lblReloj)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblModo)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addGap(252, 252, 252))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel16))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(lblModo)))
+                    .addComponent(lblReloj))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
+                            .addComponent(lblVel)
                             .addComponent(jLabel9))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
+                            .addComponent(lblInc)
                             .addComponent(jLabel4))
                         .addGap(104, 104, 104))
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -567,57 +569,57 @@ public void cambio(){
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel12)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
+                                        .addComponent(lblNoVuelta)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel15)))
+                                        .addComponent(lblTiempo)))
                                 .addGap(64, 64, 64)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8))
+                                    .addComponent(lblCalorias)
+                                    .addComponent(lblNombreCalorias))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel17)
-                                    .addComponent(jLabel18))
+                                    .addComponent(lblNombreKms)
+                                    .addComponent(lblKms))
                                 .addGap(0, 0, Short.MAX_VALUE))))))
         );
 
-        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
-        jButton26.setBorder(null);
-        jButton26.setBorderPainted(false);
-        jButton26.setContentAreaFilled(false);
-        jButton26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton26.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton26.setIconTextGap(-3);
-        jButton26.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton26.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton26.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
+        lblPlay.setBorder(null);
+        lblPlay.setBorderPainted(false);
+        lblPlay.setContentAreaFilled(false);
+        lblPlay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPlay.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblPlay.setIconTextGap(-3);
+        lblPlay.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lblPlay.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lblPlay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton26MouseClicked(evt);
+                lblPlayMouseClicked(evt);
             }
         });
 
-        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pause.png"))); // NOI18N
-        jButton27.setBorder(null);
-        jButton27.setBorderPainted(false);
-        jButton27.setContentAreaFilled(false);
-        jButton27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton27.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton27.setIconTextGap(-3);
-        jButton27.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton27.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lblPause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pause.png"))); // NOI18N
+        lblPause.setBorder(null);
+        lblPause.setBorderPainted(false);
+        lblPause.setContentAreaFilled(false);
+        lblPause.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPause.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblPause.setIconTextGap(-3);
+        lblPause.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lblPause.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stop.png"))); // NOI18N
-        jButton28.setBorder(null);
-        jButton28.setBorderPainted(false);
-        jButton28.setContentAreaFilled(false);
-        jButton28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton28.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton28.setIconTextGap(-3);
-        jButton28.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton28.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton28.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblStop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stop.png"))); // NOI18N
+        lblStop.setBorder(null);
+        lblStop.setBorderPainted(false);
+        lblStop.setContentAreaFilled(false);
+        lblStop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblStop.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblStop.setIconTextGap(-3);
+        lblStop.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lblStop.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lblStop.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton28MouseClicked(evt);
+                lblStopMouseClicked(evt);
             }
         });
 
@@ -630,138 +632,138 @@ public void cambio(){
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
-        jButton17.setBorder(null);
-        jButton17.setBorderPainted(false);
-        jButton17.setContentAreaFilled(false);
-        jButton17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton17.setIconTextGap(-3);
-        jButton17.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton17.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttInc2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
+        bttInc2.setBorder(null);
+        bttInc2.setBorderPainted(false);
+        bttInc2.setContentAreaFilled(false);
+        bttInc2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttInc2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttInc2.setIconTextGap(-3);
+        bttInc2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttInc2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttInc2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton17MouseClicked(evt);
+                bttInc2MouseClicked(evt);
             }
         });
 
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3.png"))); // NOI18N
-        jButton18.setBorder(null);
-        jButton18.setBorderPainted(false);
-        jButton18.setContentAreaFilled(false);
-        jButton18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton18.setIconTextGap(-3);
-        jButton18.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton18.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton18.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttInc3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3.png"))); // NOI18N
+        bttInc3.setBorder(null);
+        bttInc3.setBorderPainted(false);
+        bttInc3.setContentAreaFilled(false);
+        bttInc3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttInc3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttInc3.setIconTextGap(-3);
+        bttInc3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttInc3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttInc3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton18MouseClicked(evt);
+                bttInc3MouseClicked(evt);
             }
         });
 
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/4.png"))); // NOI18N
-        jButton19.setBorder(null);
-        jButton19.setBorderPainted(false);
-        jButton19.setContentAreaFilled(false);
-        jButton19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton19.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton19.setIconTextGap(-3);
-        jButton19.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton19.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton19.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttInc4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/4.png"))); // NOI18N
+        bttInc4.setBorder(null);
+        bttInc4.setBorderPainted(false);
+        bttInc4.setContentAreaFilled(false);
+        bttInc4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttInc4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttInc4.setIconTextGap(-3);
+        bttInc4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttInc4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttInc4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton19MouseClicked(evt);
+                bttInc4MouseClicked(evt);
             }
         });
 
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5.png"))); // NOI18N
-        jButton20.setBorder(null);
-        jButton20.setBorderPainted(false);
-        jButton20.setContentAreaFilled(false);
-        jButton20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton20.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton20.setIconTextGap(-3);
-        jButton20.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton20.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton20.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttInc5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5.png"))); // NOI18N
+        bttInc5.setBorder(null);
+        bttInc5.setBorderPainted(false);
+        bttInc5.setContentAreaFilled(false);
+        bttInc5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttInc5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttInc5.setIconTextGap(-3);
+        bttInc5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttInc5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttInc5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton20MouseClicked(evt);
+                bttInc5MouseClicked(evt);
             }
         });
 
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.png"))); // NOI18N
-        jButton21.setBorder(null);
-        jButton21.setBorderPainted(false);
-        jButton21.setContentAreaFilled(false);
-        jButton21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton21.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton21.setIconTextGap(-3);
-        jButton21.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton21.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton21.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttInc6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.png"))); // NOI18N
+        bttInc6.setBorder(null);
+        bttInc6.setBorderPainted(false);
+        bttInc6.setContentAreaFilled(false);
+        bttInc6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttInc6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttInc6.setIconTextGap(-3);
+        bttInc6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttInc6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttInc6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton21MouseClicked(evt);
+                bttInc6MouseClicked(evt);
             }
         });
 
-        jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menos.png"))); // NOI18N
-        jButton22.setBorder(null);
-        jButton22.setBorderPainted(false);
-        jButton22.setContentAreaFilled(false);
-        jButton22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton22.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton22.setIconTextGap(-3);
-        jButton22.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton22.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton22.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttIncMenos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menos.png"))); // NOI18N
+        bttIncMenos.setBorder(null);
+        bttIncMenos.setBorderPainted(false);
+        bttIncMenos.setContentAreaFilled(false);
+        bttIncMenos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttIncMenos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttIncMenos.setIconTextGap(-3);
+        bttIncMenos.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttIncMenos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttIncMenos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton22MouseClicked(evt);
+                bttIncMenosMouseClicked(evt);
             }
         });
 
-        jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
-        jButton23.setBorder(null);
-        jButton23.setBorderPainted(false);
-        jButton23.setContentAreaFilled(false);
-        jButton23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton23.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton23.setIconTextGap(-3);
-        jButton23.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton23.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton23.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttIncMas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
+        bttIncMas.setBorder(null);
+        bttIncMas.setBorderPainted(false);
+        bttIncMas.setContentAreaFilled(false);
+        bttIncMas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttIncMas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttIncMas.setIconTextGap(-3);
+        bttIncMas.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttIncMas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttIncMas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton23MouseClicked(evt);
+                bttIncMasMouseClicked(evt);
             }
         });
 
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/0.png"))); // NOI18N
-        jButton15.setBorder(null);
-        jButton15.setBorderPainted(false);
-        jButton15.setContentAreaFilled(false);
-        jButton15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton15.setIconTextGap(-3);
-        jButton15.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton15.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttInc0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/0.png"))); // NOI18N
+        bttInc0.setBorder(null);
+        bttInc0.setBorderPainted(false);
+        bttInc0.setContentAreaFilled(false);
+        bttInc0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttInc0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttInc0.setIconTextGap(-3);
+        bttInc0.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttInc0.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttInc0.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton15MouseClicked(evt);
+                bttInc0MouseClicked(evt);
             }
         });
 
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
-        jButton16.setBorder(null);
-        jButton16.setBorderPainted(false);
-        jButton16.setContentAreaFilled(false);
-        jButton16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton16.setIconTextGap(-3);
-        jButton16.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton16.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttInc1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
+        bttInc1.setBorder(null);
+        bttInc1.setBorderPainted(false);
+        bttInc1.setContentAreaFilled(false);
+        bttInc1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttInc1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttInc1.setIconTextGap(-3);
+        bttInc1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttInc1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttInc1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton16MouseClicked(evt);
+                bttInc1MouseClicked(evt);
             }
         });
 
@@ -773,25 +775,25 @@ public void cambio(){
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttInc4, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttInc5, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttInc6, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttInc0, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                        .addComponent(bttInc1, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                         .addGap(2, 2, 2)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttInc2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(bttInc3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(22, 22, 22)
-                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bttIncMenos, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bttIncMas, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -801,56 +803,56 @@ public void cambio(){
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton18)
-                            .addComponent(jButton17)
-                            .addComponent(jButton15)
-                            .addComponent(jButton16))
+                            .addComponent(bttInc3)
+                            .addComponent(bttInc2)
+                            .addComponent(bttInc0)
+                            .addComponent(bttInc1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton21, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton20, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton19, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(bttInc6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bttInc5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bttInc4, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton22)
-                            .addComponent(jButton23))
+                            .addComponent(bttIncMenos)
+                            .addComponent(bttIncMas))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
-        jButton25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/speed.png"))); // NOI18N
-        jButton25.setBorder(null);
-        jButton25.setBorderPainted(false);
-        jButton25.setContentAreaFilled(false);
-        jButton25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton25.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton25.setIconTextGap(-3);
-        jButton25.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton25.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton25.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttSpeed.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/speed.png"))); // NOI18N
+        bttSpeed.setBorder(null);
+        bttSpeed.setBorderPainted(false);
+        bttSpeed.setContentAreaFilled(false);
+        bttSpeed.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttSpeed.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttSpeed.setIconTextGap(-3);
+        bttSpeed.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttSpeed.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttSpeed.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton25MouseClicked(evt);
+                bttSpeedMouseClicked(evt);
             }
         });
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
+        bttSpeed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
+                bttSpeedActionPerformed(evt);
             }
         });
 
-        jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/off.png"))); // NOI18N
-        jButton24.setBorder(null);
-        jButton24.setBorderPainted(false);
-        jButton24.setContentAreaFilled(false);
-        jButton24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton24.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton24.setIconTextGap(-3);
-        jButton24.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton24.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton24.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttOff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/off.png"))); // NOI18N
+        bttOff.setBorder(null);
+        bttOff.setBorderPainted(false);
+        bttOff.setContentAreaFilled(false);
+        bttOff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttOff.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttOff.setIconTextGap(-3);
+        bttOff.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttOff.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttOff.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton24MouseClicked(evt);
+                bttOffMouseClicked(evt);
             }
         });
 
@@ -863,16 +865,16 @@ public void cambio(){
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(bttSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bttOff, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
-                        .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblPause, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblStop, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -893,15 +895,15 @@ public void cambio(){
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(115, 115, 115)
-                        .addComponent(jButton24)
+                        .addComponent(bttOff)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton25))
+                        .addComponent(bttSpeed))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(161, 161, 161)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton28)
-                            .addComponent(jButton27)
-                            .addComponent(jButton26)))
+                            .addComponent(lblStop)
+                            .addComponent(lblPause)
+                            .addComponent(lblPlay)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -932,91 +934,91 @@ public void cambio(){
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
+    private void bttInc1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc1MouseClicked
       if (modo==0)
     {
-       mL.valorBoton(jLabel11,1.0f,1);       
+       mL.valorBoton(lblInc,1.0f,1);       
     }
     else
     {
        //
     }   
-    }//GEN-LAST:event_jButton16MouseClicked
+    }//GEN-LAST:event_bttInc1MouseClicked
 
-    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+    private void bttVel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel11MouseClicked
     if (modo==0)
     {
-        mL.valorBoton(jLabel10,11.0f,0);       
+        mL.valorBoton(lblVel,11.0f,0);       
     }
     else
     {
        //
     }
-    }//GEN-LAST:event_jButton11MouseClicked
+    }//GEN-LAST:event_bttVel11MouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void bttVel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel2MouseClicked
        if (modo==0)
     {
-       mL.valorBoton(jLabel10,2.0f,0);       
+       mL.valorBoton(lblVel,2.0f,0);       
     }
     else
     {
        //
     }   
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_bttVel2MouseClicked
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void bttVel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel3MouseClicked
           if (modo==0)
     {
-      mL.valorBoton(jLabel10,3.0f,0);       
+      mL.valorBoton(lblVel,3.0f,0);       
     }
     else
     {
        //
     }   
         
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_bttVel3MouseClicked
 
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+    private void bttVel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel5MouseClicked
             if (modo==0)
     {
-        mL.valorBoton(jLabel10,5.0f,0);      
+        mL.valorBoton(lblVel,5.0f,0);      
     }
     else
     {
        //
     }  
        
-    }//GEN-LAST:event_jButton5MouseClicked
+    }//GEN-LAST:event_bttVel5MouseClicked
 
-    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+    private void bttVel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel7MouseClicked
             if (modo==0)
     {
-       mL.valorBoton(jLabel10,7.0f,0);       
+       mL.valorBoton(lblVel,7.0f,0);       
     }
     else
     {
        //
     }  
          
-    }//GEN-LAST:event_jButton7MouseClicked
+    }//GEN-LAST:event_bttVel7MouseClicked
 
-    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+    private void bttVel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel9MouseClicked
          if (modo==0)
     {
-     mL.valorBoton(jLabel10,9.0f,0);     
+     mL.valorBoton(lblVel,9.0f,0);     
     }
     else
     {
        //
     }  
        
-    }//GEN-LAST:event_jButton9MouseClicked
+    }//GEN-LAST:event_bttVel9MouseClicked
 
-    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+    private void bttVelMenosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVelMenosMouseClicked
      if (modo==0)
     {
-       mL.reducir(jLabel10,1.0f,0.1f,0);       
+       mL.reducir(lblVel,1.0f,0.1f,0);       
     }
     else
     {
@@ -1024,219 +1026,219 @@ public void cambio(){
     }  
       
          
-    }//GEN-LAST:event_jButton13MouseClicked
+    }//GEN-LAST:event_bttVelMenosMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void bttVel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel1MouseClicked
         if (modo==0)
     {
-       mL.valorBoton(jLabel10,1.0f,0);       
+       mL.valorBoton(lblVel,1.0f,0);       
     }
     else
     {
        //
     }  
                
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_bttVel1MouseClicked
 
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+    private void bttVel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel4MouseClicked
        if (modo==0)
     {
-      mL.valorBoton(jLabel10,4.0f,0);    
+      mL.valorBoton(lblVel,4.0f,0);    
     }
     else
     {
        //
     }  
         
-    }//GEN-LAST:event_jButton4MouseClicked
+    }//GEN-LAST:event_bttVel4MouseClicked
 
-    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+    private void bttVel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel6MouseClicked
       if (modo==0)
     {
-       mL.valorBoton(jLabel10,6.0f,0);      
+       mL.valorBoton(lblVel,6.0f,0);      
     }
     else
     {
        //
     }  
         
-    }//GEN-LAST:event_jButton6MouseClicked
+    }//GEN-LAST:event_bttVel6MouseClicked
 
-    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+    private void bttVel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel8MouseClicked
        if (modo==0)
     {
-       mL.valorBoton(jLabel10,8.0f,0);      
+       mL.valorBoton(lblVel,8.0f,0);      
     }
     else
     {
        //
     }  
        
-    }//GEN-LAST:event_jButton8MouseClicked
+    }//GEN-LAST:event_bttVel8MouseClicked
 
-    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+    private void bttVel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel10MouseClicked
      
             if (modo==0)
     {
-      mL.valorBoton(jLabel10,10.0f,0);   
+      mL.valorBoton(lblVel,10.0f,0);   
     }
     else
     {
        //
     }  
             
-    }//GEN-LAST:event_jButton10MouseClicked
+    }//GEN-LAST:event_bttVel10MouseClicked
 
-    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+    private void bttVel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel12MouseClicked
    
             if (modo==0)
     {
-       mL.valorBoton(jLabel10,12.0f,0);      
+       mL.valorBoton(lblVel,12.0f,0);      
     }
     else
     {
        //
     }  
-    }//GEN-LAST:event_jButton12MouseClicked
+    }//GEN-LAST:event_bttVel12MouseClicked
 
-    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+    private void bttVelMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVelMasMouseClicked
           if (modo==0)
     {
-       mL.aumentar(jLabel10,12.0f,1.0f,0.1f,0);      
+       mL.aumentar(lblVel,12.0f,1.0f,0.1f,0);      
     }
     else
     {
        //
     }  
-    }//GEN-LAST:event_jButton14MouseClicked
+    }//GEN-LAST:event_bttVelMasMouseClicked
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void bttVel7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttVel7ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_bttVel7ActionPerformed
 
-    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+    private void bttInc2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc2MouseClicked
     if (modo==0)
     {
-       mL.valorBoton(jLabel11,2.0f,1);      
+       mL.valorBoton(lblInc,2.0f,1);      
     }
     else
     {
        //
     }  
-    }//GEN-LAST:event_jButton17MouseClicked
+    }//GEN-LAST:event_bttInc2MouseClicked
 
-    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
+    private void bttInc3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc3MouseClicked
  if (modo==0)
     {
-       mL.valorBoton(jLabel11,3.0f,1);      
+       mL.valorBoton(lblInc,3.0f,1);      
     }
     else
     {
        //
     }  
-    }//GEN-LAST:event_jButton18MouseClicked
+    }//GEN-LAST:event_bttInc3MouseClicked
 
-    private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
+    private void bttInc4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc4MouseClicked
 if (modo==0)
     {
-       mL.valorBoton(jLabel11,4.0f,1);      
+       mL.valorBoton(lblInc,4.0f,1);      
     }
     else
     {
        //
     }  
-    }//GEN-LAST:event_jButton19MouseClicked
+    }//GEN-LAST:event_bttInc4MouseClicked
 
-    private void jButton20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton20MouseClicked
+    private void bttInc5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc5MouseClicked
 if (modo==0)
     {
-       mL.valorBoton(jLabel11,5.0f,1);      
+       mL.valorBoton(lblInc,5.0f,1);      
     }
     else
     {
        //
     }  
-    }//GEN-LAST:event_jButton20MouseClicked
+    }//GEN-LAST:event_bttInc5MouseClicked
 
-    private void jButton21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton21MouseClicked
+    private void bttInc6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc6MouseClicked
 if (modo==0)
     {
-       mL.valorBoton(jLabel11,6.0f,1);      
+       mL.valorBoton(lblInc,6.0f,1);      
     }
     else
     {
        //
     }  
-    }//GEN-LAST:event_jButton21MouseClicked
+    }//GEN-LAST:event_bttInc6MouseClicked
 
-    private void jButton22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton22MouseClicked
+    private void bttIncMenosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttIncMenosMouseClicked
 if (modo==0)
     {
-       mL.reducir(jLabel11,0.0f,0.2f,1);      
+       mL.reducir(lblInc,0.0f,0.2f,1);      
     }
     else
     {
        //
     }  
-    }//GEN-LAST:event_jButton22MouseClicked
+    }//GEN-LAST:event_bttIncMenosMouseClicked
 
-    private void jButton23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton23MouseClicked
+    private void bttIncMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttIncMasMouseClicked
 if (modo==0)
     {
-       mL.aumentar(jLabel11,6.0f,0.0f,0.2f,1);      
+       mL.aumentar(lblInc,6.0f,0.0f,0.2f,1);      
     }
     else
     {
        //
     } 
-    }//GEN-LAST:event_jButton23MouseClicked
+    }//GEN-LAST:event_bttIncMasMouseClicked
 
-    private void jButton25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton25MouseClicked
+    private void bttSpeedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttSpeedMouseClicked
         modo=1;
         
         cambio();
-    }//GEN-LAST:event_jButton25MouseClicked
+    }//GEN-LAST:event_bttSpeedMouseClicked
 
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    private void bttSpeedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttSpeedActionPerformed
       // TODO add your handling code here:
-    }//GEN-LAST:event_jButton25ActionPerformed
+    }//GEN-LAST:event_bttSpeedActionPerformed
 
-    private void jButton28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton28MouseClicked
+    private void lblStopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblStopMouseClicked
     
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton28MouseClicked
+    }//GEN-LAST:event_lblStopMouseClicked
 
-    private void jButton24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton24MouseClicked
+    private void bttOffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttOffMouseClicked
         System.exit(0);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton24MouseClicked
+    }//GEN-LAST:event_bttOffMouseClicked
 
-    private void jButton26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton26MouseClicked
+    private void lblPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlayMouseClicked
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jButton26MouseClicked
+    }//GEN-LAST:event_lblPlayMouseClicked
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void bttVel5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttVel5ActionPerformed
           if (modo==0)
     {
-       mL.valorBoton(jLabel10,5.0f,0);      
+       mL.valorBoton(lblVel,5.0f,0);      
     }
     else
     {
        //
     }   // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_bttVel5ActionPerformed
 
-    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+    private void bttInc0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc0MouseClicked
        if(modo==0){
-               mL.valorBoton(jLabel11,0.0f,1);
+               mL.valorBoton(lblInc,0.0f,1);
        }
        else
        {
            
        }
            
-    }//GEN-LAST:event_jButton15MouseClicked
+    }//GEN-LAST:event_bttInc0MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1289,55 +1291,55 @@ if (modo==0)
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton bttInc0;
+    private javax.swing.JButton bttInc1;
+    private javax.swing.JButton bttInc2;
+    private javax.swing.JButton bttInc3;
+    private javax.swing.JButton bttInc4;
+    private javax.swing.JButton bttInc5;
+    private javax.swing.JButton bttInc6;
+    private javax.swing.JButton bttIncMas;
+    private javax.swing.JButton bttIncMenos;
+    private javax.swing.JButton bttOff;
+    private javax.swing.JButton bttSpeed;
+    private javax.swing.JButton bttVel1;
+    private javax.swing.JButton bttVel10;
+    private javax.swing.JButton bttVel11;
+    private javax.swing.JButton bttVel12;
+    private javax.swing.JButton bttVel2;
+    private javax.swing.JButton bttVel3;
+    private javax.swing.JButton bttVel4;
+    private javax.swing.JButton bttVel5;
+    private javax.swing.JButton bttVel6;
+    private javax.swing.JButton bttVel7;
+    private javax.swing.JButton bttVel8;
+    private javax.swing.JButton bttVel9;
+    private javax.swing.JButton bttVelMas;
+    private javax.swing.JButton bttVelMenos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel lblCalorias;
+    private javax.swing.JLabel lblInc;
+    private javax.swing.JLabel lblKms;
+    private javax.swing.JLabel lblModo;
+    private javax.swing.JLabel lblNoVuelta;
+    private javax.swing.JLabel lblNombreCalorias;
+    private javax.swing.JLabel lblNombreKms;
+    private javax.swing.JButton lblPause;
+    private javax.swing.JButton lblPlay;
+    private javax.swing.JLabel lblReloj;
+    private javax.swing.JButton lblStop;
+    private javax.swing.JLabel lblTiempo;
+    private javax.swing.JLabel lblVel;
     // End of variables declaration//GEN-END:variables
 }
