@@ -42,6 +42,11 @@ public class ipre extends javax.swing.JFrame {
     
     }
 
+public void modoLibre(){
+    jLabel6.setVisible(false);
+    jLabel5.setVisible(false);
+    jLabel14.setText("Modo Libre");
+}
 public void inicializar(){
          reloj = new Relojrun(); 
          mL=new DataSport(60);

@@ -933,7 +933,9 @@ public class inter extends javax.swing.JFrame {
     private void jButton29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton29MouseClicked
         ipre x =new ipre();
         this.setVisible(false);
+        x.modoLibre();
         x.setVisible(true);
+       
     }//GEN-LAST:event_jButton29MouseClicked
 
     private void jButton26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton26MouseClicked
