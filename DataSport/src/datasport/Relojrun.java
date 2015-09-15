@@ -21,7 +21,17 @@ public class Relojrun {
      */
     private long horaInicial;
     private long horaFinal;
-    private float difHoras;
+    private long difHoras;
+    private long horaParcial;
+    private long tiempoTranscurrido;
+
+    public long getDifHoras() {
+        return difHoras;
+    }
+
+    public long getTiempoTranscurrido() {
+        return tiempoTranscurrido;
+    }
 
     public long getHoraInicial() {
         return horaInicial;
@@ -29,6 +39,10 @@ public class Relojrun {
 
     public long getHoraFinal() {
         return horaFinal;
+    }
+
+    public void setHoraParcial(long horaParcial) {
+        this.horaParcial = horaParcial;
     }
 
 
@@ -39,14 +53,25 @@ public class Relojrun {
     public void setHoraFinal(long horaFinal) {
         this.horaFinal = horaFinal;
     }
+    
+    public String calcularTiempoTranscurrido(){
+        horaParcial = System.currentTimeMillis();
+        tiempoTranscurrido = (horaParcial - horaInicial)/1000;
+        int segundos = (int)(tiempoTranscurrido ) % 60 ;
+        int minutos = (int) ((tiempoTranscurrido /60)  %  60);
+        int horas  = (int) ((tiempoTranscurrido / (60*60)) % 24);
+        String tiempoMostrar =  horas + ":" + minutos + ":" + segundos;
+        return tiempoMostrar;
+    }
 
-
-    public float calcularDeltaHoras(){
-        this.difHoras = (float)(this.horaFinal - this.horaInicial)/1000;               //Estoy intentando calcular el delta aquí porque el profesor 
+    public long calcularDeltaHoras(){
+        horaFinal  = System.currentTimeMillis();
+        difHoras = (horaFinal - horaInicial)/1000;               //Estoy intentando calcular el delta aquí porque el profesor 
         return difHoras;                                                     //dijo que Reloj debía hacer ese cálculo
         
     }
-
+    
+  
 
     public String getHoraString() {
         Date hoy = new Date ();

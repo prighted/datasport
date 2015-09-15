@@ -14,8 +14,8 @@ import basededatos.Conexion;
 public class Launcher {
     public static void main(String[] args) {
         
-     DataSport Trotadora= new DataSport();
-    Conexion DB = new Conexion(); // Posiblemente se implemente factory
+     //DataSport Trotadora= new DataSport();
+    //Conexion DB = new Conexion(); // Posiblemente se implemente factory
                   
     }
 }
