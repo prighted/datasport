@@ -133,39 +133,75 @@ private Intensidad intensidad;
     {
       double x=Float.parseFloat(etiqueta.getText());
       if(idAtributo==0){
-        if((x<limInf)){                                                              //Limite Inferior= limInf
-          etiqueta.setText(""+limInf);                                               //Limite Superior= limSup           
+        if((x<limInf)){  
+             if(x<10){
+                     etiqueta.setText("  "+limInf);
+                 }                                                              //Para que se vea de una buena forma
+                 else                                                             
+                 {
+                    etiqueta.setText(""+limInf); 
+                 }
           vel=limInf;                                                      //Se establece la velocidad  
-         // imprVel();
+         imprVel();
         }else{
           if(x==limSup){
-          etiqueta.setText(""+limSup);     
+               if(x<10){
+                     etiqueta.setText("  "+limSup);
+                 }
+                 else
+                 {
+                    etiqueta.setText(""+limSup); 
+                 }
           vel=limSup;                                                  
-          //imprVel();
+          imprVel();
         }else{
             x=x+var;
-            x=Math.rint(x*10)/10;                                               //redondea a dos dígitos
-            etiqueta.setText(""+x);
+            x=Math.rint(x*10)/10;
+               if(x<10){
+                     etiqueta.setText("  "+x);
+                 }
+                 else
+                 {
+                    etiqueta.setText(""+x); 
+                 }
             vel=(float)x; 
-            //imprVel();
+            imprVel();
             } 
             }
         }else{
-          if((x<limInf)){                                                              //Limite Inferior= limInf
-          etiqueta.setText(""+limInf);                                               //Limite Superior= limSup           
+          if((x<limInf)){
+                  if(x<10){
+                     etiqueta.setText("  "+limInf);
+                 }
+                 else
+                 {
+                    etiqueta.setText(""+limInf); 
+                 }
           inc=limInf;                                                      //Se establece la velocidad  
-         // imprVel();
+          imprInc();
         }else{
           if(x==limSup){
-          etiqueta.setText(""+limSup);     
+               if(x<10){
+                     etiqueta.setText("  "+limSup);
+                 }
+                 else
+                 {
+                    etiqueta.setText(""+limSup); 
+                 }
           inc=limSup;                                                  
-          //imprVel();
+          imprInc();
         }else{
             x=x+var;
-            x=Math.rint(x*10)/10;                                               //redondea a dos dígitos
-            etiqueta.setText(""+x);
+            x=Math.rint(x*10)/10;   
+             if(x<10){
+                     etiqueta.setText("  "+x);
+                 }
+                 else
+                 {
+                    etiqueta.setText(""+x); 
+                 }//redondea a dos dígitos
             inc=(float)x; 
-            //imprVel();
+            imprInc();
       }
       }
       }
@@ -177,44 +213,83 @@ public void reducir(JLabel etiqueta, float limInf, float var, int idAtributo)
       double x=Float.parseFloat(etiqueta.getText());
       if(idAtributo==0)
       {
+         
              if(x==limInf){
-                etiqueta.setText(""+limInf);
+                 if(x<10){
+                     etiqueta.setText("  "+limInf);
+                 }
+                 else
+                 {
+                    etiqueta.setText(""+limInf); 
+                 }
                 vel=limInf;
-                //imprInc();
+                imprVel();
                            }
              else{
                 x=x-var;
                 x=Math.rint(x*10)/10;
-                etiqueta.setText(""+x);  
+                if(x<10){
+                     etiqueta.setText("  "+x);
+                 }
+                 else
+                 {
+                    etiqueta.setText(""+x); 
+                 }
                 vel=(float)x;
-                //imprInc();
+                imprVel();
                 }
       }else{
             if(x==limInf){
-                etiqueta.setText(""+limInf);
+                  if(x<10){
+                     etiqueta.setText("  "+x);
+                 }
+                 else
+                 {
+                    etiqueta.setText(""+x); 
+                 }
                 inc=limInf;
-                //imprInc();
+                imprInc();
                           }
             else{
                 x=x-var;
                 x=Math.rint(x*10)/10;
-                etiqueta.setText(""+x);  
+                   if(x<10){
+                     etiqueta.setText("  "+x);
+                 }
+                 else
+                 {
+                    etiqueta.setText(""+x); 
+                 }
                 inc=(float)x;
-                //imprInc();
+                imprInc();
                 }
-      }   
+      }
     }
+    
     
    public void valorBoton(JLabel etiqueta,float n, int idAtritbuto)
     {
-       
+     if(n<10)
+     {
+     etiqueta.setText("  "+n);
+     }
+     else{
      etiqueta.setText(""+n);
+     }
       if(idAtritbuto==0){
             vel=n;
+            imprVel();
         }else{
            inc=n;  
+           imprInc();
         }
     }
+   public void imprVel(){
+    System.out.println("La velocidad es: "+vel);
+}
+public void imprInc(){
+    System.out.println("La inclinación es: "+inc);
+}
 
 
 }

@@ -63,7 +63,7 @@ public class ActualizarReloj implements Runnable {
             try {
                 String hora = reloj.getHoraString();                          //Obtención de la Hora a mostrar en pantalla
                 etiqueta.setText(hora);
-                Thread.sleep(500);
+                Thread.sleep(1000);
                     segundos = (contador ) % 60 ;
                     minutos = ((contador /60)  %  60);
                     horas  = ((contador / (60*60)) % 24);
