@@ -41,26 +41,40 @@ public class Relojrun {
         return horaFinal;
     }
 
-    public void setHoraParcial(long horaParcial) {
-        this.horaParcial = horaParcial;
+    public void setHoraInicial(){
+        horaInicial = System.currentTimeMillis();
+        
     }
 
 
-    public void setHoraInicial(long horaInicial) {
-        this.horaInicial = horaInicial;
-    }
 
-    public void setHoraFinal(long horaFinal) {
-        this.horaFinal = horaFinal;
-    }
-    
     public String calcularTiempoTranscurrido(){
+        String seg, min, hor;
         horaParcial = System.currentTimeMillis();
         tiempoTranscurrido = (horaParcial - horaInicial)/1000;
         int segundos = (int)(tiempoTranscurrido ) % 60 ;
         int minutos = (int) ((tiempoTranscurrido /60)  %  60);
         int horas  = (int) ((tiempoTranscurrido / (60*60)) % 24);
-        String tiempoMostrar =  horas + ":" + minutos + ":" + segundos;
+        /*
+        Lo que se encuentra adelante son arreglos para que el tiempo transcurrido
+        se vea bien
+        */
+        if(segundos<10){
+           seg = ":0"+segundos; 
+        }else{
+           seg = ":"+segundos;
+        }
+        if(minutos<10){                                                         //
+           min = ":0"+minutos; 
+        }else{
+           min = ":"+minutos;
+        }
+        if(horas<10){
+           hor = "0"+horas; 
+        }else{
+           hor = ""+horas;
+        }
+        String tiempoMostrar =  hor+""+min+""+seg;
         return tiempoMostrar;
     }
 
@@ -90,7 +104,6 @@ public class Relojrun {
     
     public void resetHora(){
         long horaNueva = System.currentTimeMillis();
-        setHoraInicial(horaNueva);
     }
     
     public void imprimirHoraInicial(){

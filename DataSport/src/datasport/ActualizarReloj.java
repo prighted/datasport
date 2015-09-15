@@ -15,22 +15,21 @@ import javax.swing.JLabel;
 public class ActualizarReloj implements Runnable {
     //Codigo que se ejecutara durante el thread
     private int stop;
-    private JLabel etiqueta;
-    private JLabel etiqueta1;
+    private JLabel lblReloj, lblTiempo;
     public boolean vivo;                                                        //Para que se repita el run
     private Relojrun reloj;
     private int intervalo;
     private DataSport programa;
     
-    public ActualizarReloj(JLabel etiqueta, JLabel etiqueta1, Relojrun reloj, DataSport programa) {
-        this.etiqueta = etiqueta;
-        this.etiqueta1 = etiqueta1;
-        this.vivo = true;
+
+    public ActualizarReloj(JLabel lblReloj, JLabel lblTiempo, Relojrun reloj, int intervalo, DataSport programa) {
+        this.lblReloj = lblReloj;
+        this.lblTiempo = lblTiempo;
         this.reloj = reloj;
+        this.intervalo = intervalo;
         this.programa = programa;
-        int intervalo = programa.getIntervalo();
-        stop=0;
-        
+        vivo = true;
+        stop = 0;
     }
     
    
@@ -42,8 +41,7 @@ public class ActualizarReloj implements Runnable {
   
     @Override
     public void run() {
-        long horaInicial = System.currentTimeMillis();                          //Captura y setea la horaInicial
-        reloj.setHoraInicial(horaInicial);
+        reloj.setHoraInicial();
         while (vivo) {
             try {
                 System.out.println(System.getProperty("user.dir"));
@@ -53,8 +51,9 @@ public class ActualizarReloj implements Runnable {
                 String tiempoTranscurrido = reloj.calcularTiempoTranscurrido();
                 System.out.println("El tiempo transcurrido (atributo)"+reloj.getTiempoTranscurrido());
                 System.out.println("El tiempo transcurrido es: "+tiempoTranscurrido);
-                etiqueta.setText(hora);
-                etiqueta1.setText(tiempoTranscurrido);
+                lblReloj.setText(hora);
+                lblTiempo.setText(tiempoTranscurrido);
+                
                 
                 stop=stop+1;
                 //System.out.println(stop);

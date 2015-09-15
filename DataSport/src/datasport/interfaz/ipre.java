@@ -54,7 +54,7 @@ public void inicializar(){
          mL=new DataSport(60);
 //         prestablecidos[0]=new DataSport();
     //     prestablecidos[1]=new DataSport();
-         actualizador = new ActualizarReloj(lblReloj,lblTiempo, reloj, mL); 
+         actualizador = new ActualizarReloj(lblReloj, lblTiempo, reloj, 60, mL); 
          }
 
 public void cambio(){
@@ -111,10 +111,10 @@ public void cambio(){
         jLabel4 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         lblModo = new javax.swing.JLabel();
-        lblTiempo = new javax.swing.JLabel();
         lblNombreKms = new javax.swing.JLabel();
         lblKms = new javax.swing.JLabel();
         lblReloj = new javax.swing.JLabel();
+        lblTiempo = new javax.swing.JLabel();
         lblPlay = new javax.swing.JButton();
         lblPause = new javax.swing.JButton();
         lblStop = new javax.swing.JButton();
@@ -428,7 +428,6 @@ public void cambio(){
 
         jPanel4.setBackground(new java.awt.Color(240, 103, 33));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 60)));
-        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.setToolTipText("");
         jPanel4.setMaximumSize(new java.awt.Dimension(640, 360));
         jPanel4.setMinimumSize(new java.awt.Dimension(640, 360));
@@ -470,10 +469,6 @@ public void cambio(){
         lblModo.setForeground(new java.awt.Color(51, 51, 60));
         lblModo.setText("Modo Prestablecido");
 
-        lblTiempo.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
-        lblTiempo.setForeground(new java.awt.Color(51, 51, 60));
-        lblTiempo.setText("0:0:0");
-
         lblNombreKms.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
         lblNombreKms.setForeground(new java.awt.Color(51, 51, 60));
         lblNombreKms.setText("Km recorridos:");
@@ -482,21 +477,49 @@ public void cambio(){
         lblKms.setForeground(new java.awt.Color(51, 51, 60));
         lblKms.setText("0000");
 
-        lblReloj.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblReloj.setText("jLabel16");
+        lblReloj.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblReloj.setText("00:00:00");
+
+        lblTiempo.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        lblTiempo.setText("00:00:00");
+        lblTiempo.setToolTipText("");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(273, Short.MAX_VALUE)
-                .addComponent(lblNoVuelta)
-                .addGap(65, 65, 65)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(145, 145, 145)
+                                        .addComponent(lblNoVuelta))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(35, 35, 35)
+                                        .addComponent(lblNombreCalorias))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(35, 35, 35)
+                                        .addComponent(lblNombreKms)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addGap(10, 10, 10)
+                                                .addComponent(lblKms))
+                                            .addComponent(lblCalorias))))
+                                .addGap(0, 103, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblTiempo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblVel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblInc, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -509,27 +532,11 @@ public void cambio(){
                         .addComponent(jLabel4)))
                 .addGap(51, 51, 51))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel13))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblTiempo)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(lblNombreKms)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblKms))
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGap(45, 45, 45)
-                                    .addComponent(lblNombreCalorias)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(lblCalorias))))
-                        .addGap(0, 404, Short.MAX_VALUE)))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel13)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(lblReloj)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblModo)
@@ -540,12 +547,10 @@ public void cambio(){
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(lblModo)))
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(lblModo)
                     .addComponent(lblReloj))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -564,23 +569,21 @@ public void cambio(){
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap())
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(lblNoVuelta)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblTiempo)))
-                                .addGap(64, 64, 64)
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblNoVuelta)
+                                .addGap(9, 9, 9)
+                                .addComponent(lblTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblCalorias)
                                     .addComponent(lblNombreCalorias))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblNombreKms)
-                                    .addComponent(lblKms))
-                                .addGap(0, 0, Short.MAX_VALUE))))))
+                                    .addComponent(lblKms)
+                                    .addComponent(lblNombreKms)))))))
         );
 
         lblPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
@@ -869,7 +872,7 @@ public void cambio(){
                             .addComponent(bttOff, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
+                        .addGap(53, 53, 53)
                         .addComponent(lblPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblPause, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -905,8 +908,8 @@ public void cambio(){
                             .addComponent(lblPause)
                             .addComponent(lblPlay)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(44, 44, 44)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -928,7 +931,7 @@ public void cambio(){
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 22, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
