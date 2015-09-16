@@ -6,52 +6,58 @@
 package datasport;
 
 //import testeando.Reloj2;
-
 import javax.swing.JLabel;
-
 
 /**
  * Esta sera la clase principal de la app Aclaro no sera el ejecutable.
+ *
  * @author Reinaldo Pabonh
  */
-public class DataSport{
+public class DataSport {
     /*
-    vel=velocidad
-    inc=inclinación
-    limSup=Limite Superior de las etiquetas del ModoLibre
-    limInf=Limite Inferior de las etiquetas del ModoLibre
-    var= Variación de la vel/inc con +y -
-    tiempo= tiempo transcurrido
-    intervalo= cada cuanto se hace el cálculo de las calorías
-    modo=0:ModoLibre, 1:Prestablecido
-    idAtributo=0:Velocidad, 1:Inclinacion
-    */
-private float vel, inc, limSup, limInf, var, calorias, caloriasAcum;
-private int tiempo, intervalo, vuelta, kmVuelta, km, distanciaAcum, K, modo, idAtributo;
-private Intensidad intensidad;
+     vel=velocidad
+     inc=inclinación
+     limSup=Limite Superior de las etiquetas del ModoLibre
+     limInf=Limite Inferior de las etiquetas del ModoLibre
+     var= Variación de la vel/inc con +y -
+     tiempo= tiempo transcurrido
+     intervalo= cada cuanto se hace el cálculo de las calorías
+     modo=0:ModoLibre, 1:Prestablecido
+     idAtributo=0:Velocidad, 1:Inclinacion
+     */
 
-    public DataSport(int intervalo) {
+    private float vel, inc, cal, calAcum, K, distanciaAcum;
+    private int vuelta, kmVuelta, modo;
+    //private int intervalo
+    private Intensidad intensidad;
+   // private Relojrun reloj;
+
+    public DataSport() {
         //Modo Libre
-        this.intervalo = intervalo;
-        this.modo = 0;
+    //    this.reloj = reloj;
+       // this.intervalo = 60;
+        modo = 0;
+        K = 10f;
+        //tiempo = (int) reloj.getTiempoTranscurrido();
     }
 
-    public DataSport(int intervalo,int kmVuelta) {
+    public DataSport(/*int intervalo, */int kmVuelta) {
         //Modo Prestablecido
-        this.intervalo = intervalo;
+      //  this.intervalo = intervalo;
         this.kmVuelta = kmVuelta;
-        this.modo=1;
-        this.intensidad = intensidad;
-        
-    }
-    
-/*
-    INICIO Declaración de getters y Setters
-*/
+        modo = 1;
+        cal=0.0f;
+        vel=0.0f;
+        inc=0.0f;
+        //this.intensidad = intensidad;
+        K = 10f;
 
-    public int getIntervalo() {
-        return intervalo;
     }
+
+    /*
+     INICIO Declaración de getters y Setters
+     */
+ 
 
     public float getVel() {
         return vel;
@@ -61,235 +67,227 @@ private Intensidad intensidad;
         return inc;
     }
 
-    public float getCalorias() {
-        return calorias;
+    public float getCal() {
+        return cal;
     }
 
-    public float getCaloriasAcum() {
-        return caloriasAcum;
+    public float getCalAcum() {
+        return calAcum;
     }
 
-    public int getTiempo() {
-        return tiempo;
-    }
-
+ 
     public int getVuelta() {
         return vuelta;
     }
 
-    public int getKm() {
-        return km;
-    }
 
-    public int getDistanciaAcum() {
+    public float getDistanciaAcum() {
         return distanciaAcum;
     }
 
     public int getModo() {
         return modo;
     }
-
-    public void setVel(float vel) {
-        this.vel = vel;
-    }
-
-    public void setInc(float inc) {
-        this.inc = inc;
-    }
-
-    public void setCalorias(float calorias) {
-        this.calorias = calorias;
-    }
-
-    public void setCaloriasAcum(float caloriasAcum) {
-        this.caloriasAcum = caloriasAcum;
-    }
-
-    public void setTiempo(int tiempo) {
-        this.tiempo = tiempo;
-    }
-
-    public void setVuelta(int vuelta) {
-        this.vuelta = vuelta;
-    }
-
-    public void setKm(int km) {
-        this.km = km;
-    }
-
-    public void setDistanciaAcum(int distanciaAcum) {
-        this.distanciaAcum = distanciaAcum;
-    }
-
-    public void setModo(int modo) {
-        this.modo = modo;
-    }
-  
-       /*
-        FIN Declaración Getters y Setters
-        */ 
+    
+    /*
+     FIN Declaración Getters y Setters
+     */
     public void aumentar(JLabel etiqueta, float limSup, float limInf, float var,
-                    int idAtributo)
-    {
-      double x=Float.parseFloat(etiqueta.getText());
-      if(idAtributo==0){
-        if((x<limInf)){  
-             if(x<10){
-                     etiqueta.setText("  "+limInf);
-                 }                                                              //Para que se vea de una buena forma
-                 else                                                             
-                 {
-                    etiqueta.setText(""+limInf); 
-                 }
-          vel=limInf;                                                      //Se establece la velocidad  
-         imprVel();
-        }else{
-          if(x==limSup){
-               if(x<10){
-                     etiqueta.setText("  "+limSup);
-                 }
-                 else
-                 {
-                    etiqueta.setText(""+limSup); 
-                 }
-          vel=limSup;                                                  
-          imprVel();
-        }else{
-            x=x+var;
-            x=Math.rint(x*10)/10;
-               if(x<10){
-                     etiqueta.setText("  "+x);
-                 }
-                 else
-                 {
-                    etiqueta.setText(""+x); 
-                 }
-            vel=(float)x; 
-            imprVel();
-            } 
+            int idAtributo) {
+        double x = Float.parseFloat(etiqueta.getText());
+        if (idAtributo == 0) {
+            if ((x < limInf)) {
+                if (x < 10) {
+                    etiqueta.setText("  " + limInf);
+                } //Para que se vea de una buena forma
+                else {
+                    etiqueta.setText("" + limInf);
+                }
+                vel = limInf;                                                      //Se establece la velocidad  
+                imprVel();
+            } else {
+                if (x == limSup) {
+                    if (x < 10) {
+                        etiqueta.setText("  " + limSup);
+                    } else {
+                        etiqueta.setText("" + limSup);
+                    }
+                    vel = limSup;
+                    imprVel();
+                } else {
+                    x = x + var;
+                    x = Math.rint(x * 10) / 10;
+                    if (x < 10) {
+                        etiqueta.setText("  " + x);
+                    } else {
+                        etiqueta.setText("" + x);
+                    }
+                    vel = (float) x;
+                    imprVel();
+                }
             }
-        }else{
-          if((x<limInf)){
-                  if(x<10){
-                     etiqueta.setText("  "+limInf);
-                 }
-                 else
-                 {
-                    etiqueta.setText(""+limInf); 
-                 }
-          inc=limInf;                                                      //Se establece la velocidad  
-          imprInc();
-        }else{
-          if(x==limSup){
-               if(x<10){
-                     etiqueta.setText("  "+limSup);
-                 }
-                 else
-                 {
-                    etiqueta.setText(""+limSup); 
-                 }
-          inc=limSup;                                                  
-          imprInc();
-        }else{
-            x=x+var;
-            x=Math.rint(x*10)/10;   
-             if(x<10){
-                     etiqueta.setText("  "+x);
-                 }
-                 else
-                 {
-                    etiqueta.setText(""+x); 
-                 }//redondea a dos dígitos
-            inc=(float)x; 
-            imprInc();
-      }
-      }
-      }
-    }
-    
-   
-public void reducir(JLabel etiqueta, float limInf, float var, int idAtributo)
-    {
-      double x=Float.parseFloat(etiqueta.getText());
-      if(idAtributo==0)
-      {
-         
-             if(x==limInf){
-                 if(x<10){
-                     etiqueta.setText("  "+limInf);
-                 }
-                 else
-                 {
-                    etiqueta.setText(""+limInf); 
-                 }
-                vel=limInf;
-                imprVel();
-                           }
-             else{
-                x=x-var;
-                x=Math.rint(x*10)/10;
-                if(x<10){
-                     etiqueta.setText("  "+x);
-                 }
-                 else
-                 {
-                    etiqueta.setText(""+x); 
-                 }
-                vel=(float)x;
-                imprVel();
+        } else {
+            if ((x < limInf)) {
+                if (x < 10) {
+                    etiqueta.setText("  " + limInf);
+                } else {
+                    etiqueta.setText("" + limInf);
                 }
-      }else{
-            if(x==limInf){
-                  if(x<10){
-                     etiqueta.setText("  "+x);
-                 }
-                 else
-                 {
-                    etiqueta.setText(""+x); 
-                 }
-                inc=limInf;
+                inc = limInf;                                                      //Se establece la velocidad  
                 imprInc();
-                          }
-            else{
-                x=x-var;
-                x=Math.rint(x*10)/10;
-                   if(x<10){
-                     etiqueta.setText("  "+x);
-                 }
-                 else
-                 {
-                    etiqueta.setText(""+x); 
-                 }
-                inc=(float)x;
-                imprInc();
+            } else {
+                if (x == limSup) {
+                    if (x < 10) {
+                        etiqueta.setText("  " + limSup);
+                    } else {
+                        etiqueta.setText("" + limSup);
+                    }
+                    inc = limSup;
+                    imprInc();
+                } else {
+                    x = x + var;
+                    x = Math.rint(x * 10) / 10;
+                    if (x < 10) {
+                        etiqueta.setText("  " + x);
+                    } else {
+                        etiqueta.setText("" + x);
+                    }//redondea a dos dígitos
+                    inc = (float) x;
+                    imprInc();
                 }
-      }
-    }
-    
-    
-   public void valorBoton(JLabel etiqueta,float n, int idAtritbuto)
-    {
-     if(n<10)
-     {
-     etiqueta.setText("  "+n);
-     }
-     else{
-     etiqueta.setText(""+n);
-     }
-      if(idAtritbuto==0){
-            vel=n;
-            imprVel();
-        }else{
-           inc=n;  
-           imprInc();
+            }
         }
     }
-   public void imprVel(){
-    System.out.println("La velocidad es: "+vel);
-}
-public void imprInc(){
-    System.out.println("La inclinación es: "+inc);
-}
 
+    public void reducir(JLabel etiqueta, float limInf, float var, int idAtributo) {
+        double x = Float.parseFloat(etiqueta.getText());
+        if (idAtributo == 0) {
 
+            if (x == limInf) {
+                if (x < 10) {
+                    etiqueta.setText("  " + limInf);
+                } else {
+                    etiqueta.setText("" + limInf);
+                }
+                vel = limInf;
+                imprVel();
+            } else {
+                x = x - var;
+                x = Math.rint(x * 10) / 10;
+                if (x < 10) {
+                    etiqueta.setText("  " + x);
+                } else {
+                    etiqueta.setText("" + x);
+                }
+                vel = (float) x;
+                imprVel();
+            }
+        } else {
+            if (x == limInf) {
+                if (x < 10) {
+                    etiqueta.setText("  " + x);
+                } else {
+                    etiqueta.setText("" + x);
+                }
+                inc = limInf;
+                imprInc();
+            } else {
+                x = x - var;
+                x = Math.rint(x * 10) / 10;
+                if (x < 10) {
+                    etiqueta.setText("  " + x);
+                } else {
+                    etiqueta.setText("" + x);
+                }
+                inc = (float) x;
+                imprInc();
+            }
+        }
+    }
+
+    public void valorBoton(JLabel etiqueta, float n, int idAtritbuto) {
+        if (n < 10) {
+            etiqueta.setText("  " + n);
+        } else {
+            etiqueta.setText("" + n);
+        }
+        if (idAtritbuto == 0) {
+            vel = n;
+            imprVel();
+        } else {
+            inc = n;
+            imprInc();
+        }
+    }
+
+    public void imprVel() {
+        System.out.println("La velocidad es: " + vel);
+    }
+
+    public void imprInc() {
+        System.out.println("La inclinación es: " + inc);
+    }
+
+    public void resetCalorias() {
+        calAcum = 0;
+    }
+
+    public void resetVuelta() {
+        vuelta = 0;
+    }
+
+    public void resetKm() {
+        distanciaAcum = 0;
+    }
+
+//    public float calcularCalAcum(long intervalo) {
+//        calAcum = cal + calcularCal(intervalo);  
+//        return calAcum;
+//    }
+
+//    public String getCalAcumString(){
+//        String calAc = ""+calAcum;
+//        return calAc;
+//    }
+    public String getCalString(){
+        String calorias = ""+cal;
+        return calorias;
+    }
+
+    public void calculaTimeLap() {
+        if (distanciaAcum % 400 == 0) //lleva una vuelta
+        {
+            vuelta++;
+
+            //System.out.println("Tardo " + tiempo + " segundos en dar " + vuelta + "vueltas");
+        }
+    }
+
+    public float  calcularCal(long intervalo) //cambiar para que calcule cada segundo
+    {
+        /*
+        Calcula las calorias guardandolas en el atributo y retorna el String 
+        para mostrar en pantall
+        */
+        float calorias;
+        float cv;
+        float ci;
+        // K = 10 + 10*((30-e)/10) + 10*(p/100);                                 Por si necesita modificar   las calorías deben ser calculadas
+        cv = (K * (1 + (vel - 5) / 10));
+        ci = K * (inc / 12);
+        calorias = (cv + ci)/intervalo;
+        cal = cal+calorias;
+        return cal;
+        //
+    }
+    
+    public void calcularKm(long tiempo ) 
+    {
+        float km = (vel*tiempo)/3600;
+        distanciaAcum = distanciaAcum + km;
+    }
+       public String getDistAcumString(){
+        String kms = ""+distanciaAcum;
+        return kms;
+    }
 }

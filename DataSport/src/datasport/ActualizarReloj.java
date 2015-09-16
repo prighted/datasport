@@ -18,16 +18,16 @@ public class ActualizarReloj implements Runnable {
     private JLabel lblReloj, lblTiempo;
     public boolean vivo;                                                        //Para que se repita el run
     private Relojrun reloj;
-    private int intervalo;
-    private DataSport programa;
+    //private int intervalo;
+   // private DataSport programa;
     
 
-    public ActualizarReloj(JLabel lblReloj, JLabel lblTiempo, Relojrun reloj, int intervalo, DataSport programa) {
+    public ActualizarReloj(JLabel lblReloj, JLabel lblTiempo, Relojrun reloj/*, int intervalo, DataSport programa*/) {
         this.lblReloj = lblReloj;
         this.lblTiempo = lblTiempo;
         this.reloj = reloj;
-        this.intervalo = intervalo;
-        this.programa = programa;
+        //this.intervalo = intervalo;
+        //this.programa = programa;
         vivo = true;
         stop = 0;
     }
@@ -44,13 +44,12 @@ public class ActualizarReloj implements Runnable {
         reloj.setHoraInicial();
         while (vivo) {
             try {
-                System.out.println(System.getProperty("user.dir"));
                 String hora = reloj.getHoraString();                            //Obtención de la Hora a mostrar en pantalla en el reloj
                // System.out.println("La hora Inicial es "+reloj.getHoraInicial()); 
                // reloj.setHoraParcial(horaParcial);
                 String tiempoTranscurrido = reloj.calcularTiempoTranscurrido();
-                System.out.println("El tiempo transcurrido (atributo)"+reloj.getTiempoTranscurrido());
-                System.out.println("El tiempo transcurrido es: "+tiempoTranscurrido);
+//                System.out.println("El tiempo transcurrido (atributo)"+reloj.getTiempoTranscurrido());
+//                System.out.println("El tiempo transcurrido es: "+tiempoTranscurrido);
                 lblReloj.setText(hora);
                 lblTiempo.setText(tiempoTranscurrido);
                 
@@ -58,17 +57,19 @@ public class ActualizarReloj implements Runnable {
                 stop=stop+1;
                 //System.out.println(stop);
                 Thread.sleep(1000);
-                if (stop==1000)
-                {
-                 
-                    //long horaFinal = System.currentTimeMillis();                //Obtiene y setea la hora final
-                    //reloj.setHoraFinal(horaFinal);
-                    System.out.println("La hora Inicial es "+reloj.getHoraInicial());
-                    System.out.println("La hora final es: "+reloj.getHoraFinal());
-                    reloj.calcularDeltaHoras();                              //Obtiene la diferencia de las horas
-                    System.out.println("La diferencia de horas es: " +reloj.getDifHoras());
-                    vivo=false;
-                }
+//                if (stop==60)
+//                {
+//                 
+//                    //long horaFinal = System.currentTimeMillis();                //Obtiene y setea la hora final
+//                    //reloj.setHoraFinal(horaFinal);
+//                  //  System.out.println("La hora Inicial es "+reloj.getHoraInicial());
+//                   // reloj.calcularDeltaHoras();
+//                  //  System.out.println("La hora final es: "+reloj.getHoraFinal());
+//                    
+//                                                  //Obtiene la diferencia de las horas
+//                    //System.out.println("La diferencia de horas es: " + reloj.getDifHoras());
+//                    vivo=false;
+//                }
                 
             
             } catch (InterruptedException ex) {

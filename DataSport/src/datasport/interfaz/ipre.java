@@ -5,74 +5,77 @@
  */
 package datasport.interfaz;
 
+import datasport.ActualizarMetricas;
 import datasport.ActualizarReloj;
 import datasport.DataSport;
 import datasport.Relojrun;
 
-
 /**
  *
- * @author anton
- * lbl=label
- * btt=button
+ * @author anton lbl=label btt=button
  */
 public class ipre extends javax.swing.JFrame {
+
     /**
      * Creates new form Gui
      */
-    Thread t;
-    private ActualizarReloj actualizador;
+    Thread hiloReloj, hiloMetricas;
+    private ActualizarReloj actualizadorReloj;
     private Relojrun reloj;
     private DataSport mL;
     private DataSport[] prestablecidos;
-    private int modo=0;  //seleccion de modo en 2
+    private int modo = 0;  //seleccion de modo en 2
+    private ActualizarMetricas actualizadorMetricas;
 
     /**
      * Creates new form inface
      */
-    public ipre() { 
+    public ipre() {
         initComponents();
         inicializar();
-         prestablecidos = new DataSport[12];
-         cambio();     
-    
-                            
-         t = new Thread(actualizador,"t");
-         t.start();
-    
-     
-    
+        prestablecidos = new DataSport[12];
+        cambio();
+        hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
+        hiloReloj.start();
+        hiloMetricas= new Thread(actualizadorMetricas, "hiloMetricas");
+        hiloMetricas.start();
+
     }
 
-public void modoLibre(){
-    lblNoVuelta.setVisible(false);
-    jLabel5.setVisible(false);
-    lblModo.setText("Modo Libre");
-}
-public void inicializar(){
-         reloj = new Relojrun(); 
-         mL=new DataSport(60);
+    public void modoLibre() {
+        lblNoVuelta.setVisible(false);
+        jLabel5.setVisible(false);
+        lblModo.setText("Modo Libre");
+    }
+
+    public void inicializar() {
+        int intervaloCalculoCalorias = 60;
+        int intervaloMostrarPantallaCal = 2;
+        reloj = new Relojrun();
+        mL = new DataSport();
+        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
+        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms, lblNoVuelta, reloj, mL,
+                intervaloCalculoCalorias, intervaloMostrarPantallaCal);
+
 //         prestablecidos[0]=new DataSport();
-    //     prestablecidos[1]=new DataSport();
-         actualizador = new ActualizarReloj(lblReloj, lblTiempo, reloj, 60, mL); 
-         }
+        //     prestablecidos[1]=new DataSport();
+    }
 
-public void cambio(){
-    if(modo==0)                     //Se construye el modoLibre
-    {
-      lblModo.setVisible(false);
-      jLabel5.setVisible(false);
-      lblNoVuelta.setVisible(false);
-      
+    public void cambio() {
+        if (modo == 0) //Se construye el modoLibre
+        {
+            lblModo.setVisible(false);
+            jLabel5.setVisible(false);
+            lblNoVuelta.setVisible(false);
+
+        } else {
+            lblModo.setVisible(true);
+            jLabel5.setVisible(true);
+            lblNoVuelta.setVisible(true);
+        }
+
     }
-    else
-    {
-       lblModo.setVisible(true); 
-       jLabel5.setVisible(true);
-       lblNoVuelta.setVisible(true);
-    }
-    
-}
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -938,181 +941,136 @@ public void cambio(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void bttInc1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc1MouseClicked
-      if (modo==0)
-    {
-       mL.valorBoton(lblInc,1.0f,1);       
-    }
-    else
-    {
-       //
-    }   
+        if (modo == 0) {
+            mL.valorBoton(lblInc, 1.0f, 1);
+        } else {
+            //
+        }
     }//GEN-LAST:event_bttInc1MouseClicked
 
     private void bttVel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel11MouseClicked
-    if (modo==0)
-    {
-        mL.valorBoton(lblVel,11.0f,0);       
-    }
-    else
-    {
-       //
-    }
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 11.0f, 0);
+        } else {
+            //
+        }
     }//GEN-LAST:event_bttVel11MouseClicked
 
     private void bttVel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel2MouseClicked
-       if (modo==0)
-    {
-       mL.valorBoton(lblVel,2.0f,0);       
-    }
-    else
-    {
-       //
-    }   
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 2.0f, 0);
+        } else {
+            //
+        }
     }//GEN-LAST:event_bttVel2MouseClicked
 
     private void bttVel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel3MouseClicked
-          if (modo==0)
-    {
-      mL.valorBoton(lblVel,3.0f,0);       
-    }
-    else
-    {
-       //
-    }   
-        
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 3.0f, 0);
+        } else {
+            //
+        }
+
     }//GEN-LAST:event_bttVel3MouseClicked
 
     private void bttVel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel5MouseClicked
-            if (modo==0)
-    {
-        mL.valorBoton(lblVel,5.0f,0);      
-    }
-    else
-    {
-       //
-    }  
-       
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 5.0f, 0);
+        } else {
+            //
+        }
+
     }//GEN-LAST:event_bttVel5MouseClicked
 
     private void bttVel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel7MouseClicked
-            if (modo==0)
-    {
-       mL.valorBoton(lblVel,7.0f,0);       
-    }
-    else
-    {
-       //
-    }  
-         
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 7.0f, 0);
+        } else {
+            //
+        }
+
     }//GEN-LAST:event_bttVel7MouseClicked
 
     private void bttVel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel9MouseClicked
-         if (modo==0)
-    {
-     mL.valorBoton(lblVel,9.0f,0);     
-    }
-    else
-    {
-       //
-    }  
-       
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 9.0f, 0);
+        } else {
+            //
+        }
+
     }//GEN-LAST:event_bttVel9MouseClicked
 
     private void bttVelMenosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVelMenosMouseClicked
-     if (modo==0)
-    {
-       mL.reducir(lblVel,1.0f,0.1f,0);       
-    }
-    else
-    {
-       //
-    }  
-      
-         
+        if (modo == 0) {
+            mL.reducir(lblVel, 1.0f, 0.1f, 0);
+        } else {
+            //
+        }
+
+
     }//GEN-LAST:event_bttVelMenosMouseClicked
 
     private void bttVel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel1MouseClicked
-        if (modo==0)
-    {
-       mL.valorBoton(lblVel,1.0f,0);       
-    }
-    else
-    {
-       //
-    }  
-               
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 1.0f, 0);
+        } else {
+            //
+        }
+
     }//GEN-LAST:event_bttVel1MouseClicked
 
     private void bttVel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel4MouseClicked
-       if (modo==0)
-    {
-      mL.valorBoton(lblVel,4.0f,0);    
-    }
-    else
-    {
-       //
-    }  
-        
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 4.0f, 0);
+        } else {
+            //
+        }
+
     }//GEN-LAST:event_bttVel4MouseClicked
 
     private void bttVel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel6MouseClicked
-      if (modo==0)
-    {
-       mL.valorBoton(lblVel,6.0f,0);      
-    }
-    else
-    {
-       //
-    }  
-        
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 6.0f, 0);
+        } else {
+            //
+        }
+
     }//GEN-LAST:event_bttVel6MouseClicked
 
     private void bttVel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel8MouseClicked
-       if (modo==0)
-    {
-       mL.valorBoton(lblVel,8.0f,0);      
-    }
-    else
-    {
-       //
-    }  
-       
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 8.0f, 0);
+        } else {
+            //
+        }
+
     }//GEN-LAST:event_bttVel8MouseClicked
 
     private void bttVel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel10MouseClicked
-     
-            if (modo==0)
-    {
-      mL.valorBoton(lblVel,10.0f,0);   
-    }
-    else
-    {
-       //
-    }  
-            
+
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 10.0f, 0);
+        } else {
+            //
+        }
+
     }//GEN-LAST:event_bttVel10MouseClicked
 
     private void bttVel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel12MouseClicked
-   
-            if (modo==0)
-    {
-       mL.valorBoton(lblVel,12.0f,0);      
-    }
-    else
-    {
-       //
-    }  
+
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 12.0f, 0);
+        } else {
+            //
+        }
     }//GEN-LAST:event_bttVel12MouseClicked
 
     private void bttVelMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVelMasMouseClicked
-          if (modo==0)
-    {
-       mL.aumentar(lblVel,12.0f,1.0f,0.1f,0);      
-    }
-    else
-    {
-       //
-    }  
+        if (modo == 0) {
+            mL.aumentar(lblVel, 12.0f, 1.0f, 0.1f, 0);
+        } else {
+            //
+        }
     }//GEN-LAST:event_bttVelMasMouseClicked
 
     private void bttVel7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttVel7ActionPerformed
@@ -1120,94 +1078,73 @@ public void cambio(){
     }//GEN-LAST:event_bttVel7ActionPerformed
 
     private void bttInc2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc2MouseClicked
-    if (modo==0)
-    {
-       mL.valorBoton(lblInc,2.0f,1);      
-    }
-    else
-    {
-       //
-    }  
+        if (modo == 0) {
+            mL.valorBoton(lblInc, 2.0f, 1);
+        } else {
+            //
+        }
     }//GEN-LAST:event_bttInc2MouseClicked
 
     private void bttInc3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc3MouseClicked
- if (modo==0)
-    {
-       mL.valorBoton(lblInc,3.0f,1);      
-    }
-    else
-    {
-       //
-    }  
+        if (modo == 0) {
+            mL.valorBoton(lblInc, 3.0f, 1);
+        } else {
+            //
+        }
     }//GEN-LAST:event_bttInc3MouseClicked
 
     private void bttInc4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc4MouseClicked
-if (modo==0)
-    {
-       mL.valorBoton(lblInc,4.0f,1);      
-    }
-    else
-    {
-       //
-    }  
+        if (modo == 0) {
+            mL.valorBoton(lblInc, 4.0f, 1);
+        } else {
+            //
+        }
     }//GEN-LAST:event_bttInc4MouseClicked
 
     private void bttInc5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc5MouseClicked
-if (modo==0)
-    {
-       mL.valorBoton(lblInc,5.0f,1);      
-    }
-    else
-    {
-       //
-    }  
+        if (modo == 0) {
+            mL.valorBoton(lblInc, 5.0f, 1);
+        } else {
+            //
+        }
     }//GEN-LAST:event_bttInc5MouseClicked
 
     private void bttInc6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc6MouseClicked
-if (modo==0)
-    {
-       mL.valorBoton(lblInc,6.0f,1);      
-    }
-    else
-    {
-       //
-    }  
+        if (modo == 0) {
+            mL.valorBoton(lblInc, 6.0f, 1);
+        } else {
+            //
+        }
     }//GEN-LAST:event_bttInc6MouseClicked
 
     private void bttIncMenosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttIncMenosMouseClicked
-if (modo==0)
-    {
-       mL.reducir(lblInc,0.0f,0.2f,1);      
-    }
-    else
-    {
-       //
-    }  
+        if (modo == 0) {
+            mL.reducir(lblInc, 0.0f, 0.2f, 1);
+        } else {
+            //
+        }
     }//GEN-LAST:event_bttIncMenosMouseClicked
 
     private void bttIncMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttIncMasMouseClicked
-if (modo==0)
-    {
-       mL.aumentar(lblInc,6.0f,0.0f,0.2f,1);      
-    }
-    else
-    {
-       //
-    } 
+        if (modo == 0) {
+            mL.aumentar(lblInc, 6.0f, 0.0f, 0.2f, 1);
+        } else {
+            //
+        }
     }//GEN-LAST:event_bttIncMasMouseClicked
 
     private void bttSpeedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttSpeedMouseClicked
-        modo=1;
-        
+        modo = 1;
+
         cambio();
     }//GEN-LAST:event_bttSpeedMouseClicked
 
     private void bttSpeedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttSpeedActionPerformed
-      // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_bttSpeedActionPerformed
 
     private void lblStopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblStopMouseClicked
-    
+
         // TODO add your handling code here:
     }//GEN-LAST:event_lblStopMouseClicked
 
@@ -1218,29 +1155,24 @@ if (modo==0)
 
     private void lblPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlayMouseClicked
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_lblPlayMouseClicked
 
     private void bttVel5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttVel5ActionPerformed
-          if (modo==0)
-    {
-       mL.valorBoton(lblVel,5.0f,0);      
-    }
-    else
-    {
-       //
-    }   // TODO add your handling code here:
+        if (modo == 0) {
+            mL.valorBoton(lblVel, 5.0f, 0);
+        } else {
+            //
+        }   // TODO add your handling code here:
     }//GEN-LAST:event_bttVel5ActionPerformed
 
     private void bttInc0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc0MouseClicked
-       if(modo==0){
-               mL.valorBoton(lblInc,0.0f,1);
-       }
-       else
-       {
-           
-       }
-           
+        if (modo == 0) {
+            mL.valorBoton(lblInc, 0.0f, 1);
+        } else {
+
+        }
+
     }//GEN-LAST:event_bttInc0MouseClicked
 
     /**
