@@ -30,12 +30,12 @@ public class DataSport {
     private int vuelta, kmVuelta, modo;
     //private int intervalo
     private Intensidad intensidad;
-   // private Relojrun reloj;
+    // private Relojrun reloj;
 
     public DataSport() {
         //Modo Libre
-    //    this.reloj = reloj;
-       // this.intervalo = 60;
+        //    this.reloj = reloj;
+        // this.intervalo = 60;
         modo = 0;
         K = 10f;
         //tiempo = (int) reloj.getTiempoTranscurrido();
@@ -43,12 +43,12 @@ public class DataSport {
 
     public DataSport(/*int intervalo, */int kmVuelta) {
         //Modo Prestablecido
-      //  this.intervalo = intervalo;
+        //  this.intervalo = intervalo;
         this.kmVuelta = kmVuelta;
         modo = 1;
-        cal=0.0f;
-        vel=0.0f;
-        inc=0.0f;
+        cal = 0.0f;
+        vel = 0.0f;
+        inc = 0.0f;
         //this.intensidad = intensidad;
         K = 10f;
 
@@ -57,8 +57,6 @@ public class DataSport {
     /*
      INICIO Declaración de getters y Setters
      */
- 
-
     public float getVel() {
         return vel;
     }
@@ -75,11 +73,9 @@ public class DataSport {
         return calAcum;
     }
 
- 
     public int getVuelta() {
         return vuelta;
     }
-
 
     public float getDistanciaAcum() {
         return distanciaAcum;
@@ -88,7 +84,7 @@ public class DataSport {
     public int getModo() {
         return modo;
     }
-    
+
     /*
      FIN Declaración Getters y Setters
      */
@@ -240,54 +236,54 @@ public class DataSport {
         distanciaAcum = 0;
     }
 
-//    public float calcularCalAcum(long intervalo) {
-//        calAcum = cal + calcularCal(intervalo);  
-//        return calAcum;
-//    }
-
-//    public String getCalAcumString(){
-//        String calAc = ""+calAcum;
-//        return calAc;
-//    }
-    public String getCalString(){
-        String calorias = ""+cal;
+    public String getCalString() {
+        String calorias = "" + cal;
         return calorias;
     }
 
+    public String getVueltaString() {
+        String sV = "" + vuelta;
+        return sV;
+    }
+
     public void calculaTimeLap() {
-        if (distanciaAcum % 400 == 0) //lleva una vuelta
+       
+/*if (distanciaAcum % 0.4 == 0) //lleva una vuelta
         {
             vuelta++;
 
             //System.out.println("Tardo " + tiempo + " segundos en dar " + vuelta + "vueltas");
-        }
+        }*/
     }
 
-    public float  calcularCal(long intervalo) //cambiar para que calcule cada segundo
+    public float calcularCal(long intervalo) //cambiar para que calcule cada segundo
     {
         /*
-        Calcula las calorias guardandolas en el atributo y retorna el String 
-        para mostrar en pantall
-        */
+         Calcula las calorias guardandolas en el atributo y retorna el String 
+         para mostrar en pantall
+         */
         float calorias;
         float cv;
         float ci;
         // K = 10 + 10*((30-e)/10) + 10*(p/100);                                 Por si necesita modificar   las calorías deben ser calculadas
         cv = (K * (1 + (vel - 5) / 10));
         ci = K * (inc / 12);
-        calorias = (cv + ci)/intervalo;
-        cal = cal+calorias;
+        calorias = (cv + ci) / intervalo;
+        cal = cal + calorias;
+        cal = (float) Math.rint(cal * 100) / 100;
+
         return cal;
         //
     }
-    
-    public void calcularKm(long tiempo ) 
-    {
-        float km = (vel*tiempo)/3600;
+
+    public void calcularKm(long tiempo) {
+        float km = (vel * tiempo) / 3600;
         distanciaAcum = distanciaAcum + km;
+        distanciaAcum = (float) Math.rint(distanciaAcum * 100) / 100;
     }
-       public String getDistAcumString(){
-        String kms = ""+distanciaAcum;
+
+    public String getDistAcumString() {
+        String kms = "" + distanciaAcum;
         return kms;
     }
 }

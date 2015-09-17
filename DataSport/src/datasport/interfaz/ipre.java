@@ -26,6 +26,7 @@ public class ipre extends javax.swing.JFrame {
     private DataSport[] prestablecidos;
     private int modo = 0;  //seleccion de modo en 2
     private ActualizarMetricas actualizadorMetricas;
+    private String boton="";
 
     /**
      * Creates new form inface
@@ -36,8 +37,8 @@ public class ipre extends javax.swing.JFrame {
         prestablecidos = new DataSport[12];
         cambio();
         hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
-        hiloReloj.start();
         hiloMetricas= new Thread(actualizadorMetricas, "hiloMetricas");
+        hiloReloj.start();
         hiloMetricas.start();
 
     }
@@ -446,7 +447,7 @@ public class ipre extends javax.swing.JFrame {
 
         lblCalorias.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
         lblCalorias.setForeground(new java.awt.Color(51, 51, 60));
-        lblCalorias.setText("0000");
+        lblCalorias.setText("0.000");
 
         lblNombreCalorias.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
         lblNombreCalorias.setForeground(new java.awt.Color(51, 51, 60));
@@ -478,7 +479,8 @@ public class ipre extends javax.swing.JFrame {
 
         lblKms.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
         lblKms.setForeground(new java.awt.Color(51, 51, 60));
-        lblKms.setText("0000");
+        lblKms.setText("0.000");
+        lblKms.setToolTipText("");
 
         lblReloj.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblReloj.setText("00:00:00");
@@ -496,33 +498,29 @@ public class ipre extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(145, 145, 145)
+                                .addComponent(lblNoVuelta))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(88, 88, 88)
+                                .addComponent(lblTiempo)))
+                        .addGap(70, 70, 70))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addContainerGap(360, Short.MAX_VALUE)
                                 .addComponent(jLabel12)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel3))
                             .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(145, 145, 145)
-                                        .addComponent(lblNoVuelta))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(35, 35, 35)
-                                        .addComponent(lblNombreCalorias))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(35, 35, 35)
-                                        .addComponent(lblNombreKms)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addGap(10, 10, 10)
-                                                .addComponent(lblKms))
-                                            .addComponent(lblCalorias))))
-                                .addGap(0, 103, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblTiempo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(lblNombreKms)
+                                    .addComponent(lblNombreCalorias))
+                                .addGap(29, 29, 29)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblKms, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblVel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblInc, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -561,7 +559,7 @@ public class ipre extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblVel)
                             .addComponent(jLabel9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblInc)
                             .addComponent(jLabel4))
@@ -575,18 +573,20 @@ public class ipre extends javax.swing.JFrame {
                                 .addContainerGap())
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(44, 44, 44)
                                 .addComponent(lblNoVuelta)
-                                .addGap(9, 9, 9)
-                                .addComponent(lblTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblCalorias)
                                     .addComponent(lblNombreCalorias))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblKms)
-                                    .addComponent(lblNombreKms)))))))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblNombreKms)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                        .addComponent(lblKms)
+                                        .addContainerGap())))))))
         );
 
         lblPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
@@ -613,6 +613,11 @@ public class ipre extends javax.swing.JFrame {
         lblPause.setIconTextGap(-3);
         lblPause.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         lblPause.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        lblPause.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPauseMouseClicked(evt);
+            }
+        });
 
         lblStop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stop.png"))); // NOI18N
         lblStop.setBorder(null);
@@ -875,7 +880,7 @@ public class ipre extends javax.swing.JFrame {
                             .addComponent(bttOff, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
+                        .addGap(18, 18, 18)
                         .addComponent(lblPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblPause, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -900,20 +905,22 @@ public class ipre extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(bttOff)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bttSpeed))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblStop)
-                            .addComponent(lblPause)
-                            .addComponent(lblPlay)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(115, 115, 115)
+                                .addComponent(bttOff)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bttSpeed))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(161, 161, 161)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblStop)
+                                    .addComponent(lblPause)
+                                    .addComponent(lblPlay))))
+                        .addGap(184, 184, 184))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
@@ -1144,7 +1151,8 @@ public class ipre extends javax.swing.JFrame {
     }//GEN-LAST:event_bttSpeedActionPerformed
 
     private void lblStopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblStopMouseClicked
-
+         actualizadorReloj.setBoton("stop");
+        actualizadorMetricas.setBoton("stop");
         // TODO add your handling code here:
     }//GEN-LAST:event_lblStopMouseClicked
 
@@ -1155,7 +1163,8 @@ public class ipre extends javax.swing.JFrame {
 
     private void lblPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlayMouseClicked
         // TODO add your handling code here:
-
+        actualizadorReloj.setBoton("play");
+        actualizadorMetricas.setBoton("play");
     }//GEN-LAST:event_lblPlayMouseClicked
 
     private void bttVel5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttVel5ActionPerformed
@@ -1174,6 +1183,12 @@ public class ipre extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_bttInc0MouseClicked
+
+    private void lblPauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPauseMouseClicked
+        // TODO add your handling code here:
+           actualizadorReloj.setBoton("pause");
+        actualizadorMetricas.setBoton("pause");
+    }//GEN-LAST:event_lblPauseMouseClicked
 
     /**
      * @param args the command line arguments

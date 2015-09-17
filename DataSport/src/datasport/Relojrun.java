@@ -25,6 +25,7 @@ public class Relojrun {
     private long difHoras;
     private long horaParcial;
     private long tiempoTranscurrido;
+    private long transcTemp=0;
 
     public long getDifHoras() {
         return difHoras;
@@ -41,24 +42,22 @@ public class Relojrun {
     public long getHoraFinal() {
         return horaFinal;
     }
+    
+    public void resetsaveT()
+    {
+    transcTemp=0;
+    }
+    
+    public void saveT()
+    {
+    transcTemp=tiempoTranscurrido;
+    }
 
     public void setHoraInicial() {
         horaInicial = System.currentTimeMillis();
 
     }
-//
-//    private String buenFormatoString(int valorInt, String valorString) {
-//        /*
-//         Me arroja el buen formato de los mins, segs, horas.
-//         */
-//        if (valorInt < 10) {
-//            valorString = ":0" + valorInt;
-//            return valorString;
-//        } else {
-//            valorString = ":" + valorInt;
-//            return valorString;
-//        }
-//    }
+ 
 
     public String calcularTiempoTranscurrido() {
         /*
@@ -66,8 +65,8 @@ public class Relojrun {
          toma la horaInicial y la resta con la horaParcial, que se va actualizando cada segundo
          */
         String seg, min, hor;
-        horaParcial = System.currentTimeMillis();
-        tiempoTranscurrido = (horaParcial - horaInicial) / 1000;
+        horaParcial = System.currentTimeMillis()+1;
+        tiempoTranscurrido = ((horaParcial - horaInicial) / 1000)+transcTemp; //transcTemp tiempo que llevaba antes de pausa
         int segundos = (int) (tiempoTranscurrido) % 60;
         int minutos = (int) ((tiempoTranscurrido / 60) % 60);
         int horas = (int) ((tiempoTranscurrido / (60 * 60)) % 24);
@@ -102,15 +101,6 @@ public class Relojrun {
         Date hoy = new Date();
         SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss");                    //De esta forma se obtiene la hora en el
         return s.format(hoy);                                                   //Buen formato
-
-        /*Calendar cal = Calendar.getInstance();
-         int segundos = cal.get(Calendar.SECOND);
-         int minutos = cal.get(Calendar.MINUTE);
-         int horas = cal.get(Calendar.HOUR_OF_DAY);
-         String hora = horas + ":" + minutos + ":" + segundos;
-         //SimpleDateFormat s=new SimpleDateFormat("hh:mm:ss");
-         // lbl.setText(s.format(hoy));   
-         return hora;*/
     }
 
     public void resetHora() {
