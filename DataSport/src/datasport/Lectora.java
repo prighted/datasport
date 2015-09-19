@@ -12,13 +12,12 @@ import java.io.*;
 
 public class Lectora {
     
-    public Lectora(){
-        //clase constructora
-    }
-    
+    private float limInf, limSup, inc, vel, k;
+    private int noLaps;
+        
     public void leerConfig(String ruta){ //recibe la ruta del archivo txt
         BufferedReader br = null;
-       String   limInf, limSup,noLaps,inc,vel,k;
+       
        
        try{
            String linea;
@@ -26,22 +25,22 @@ public class Lectora {
            while((linea = br.readLine())!=null){
                String [] elementos = linea.split(",");
                if(elementos[0].equals("limInf")){
-                   limInf = elementos[1];
+                   limInf = Float.parseFloat(elementos[1]);
                }
                if(elementos[0].equals("limSup")){
-                   limSup = elementos[1];
+                   limSup = Float.parseFloat(elementos[1]);
                }
                if(elementos[0].equals("noLaps")){
-                   noLaps = elementos[1];
+                   noLaps = Integer.parseInt(elementos[1]);
                }
                if(elementos[0].equals("inc")){
-                   inc = elementos[1];
+                   inc = Float.parseFloat(elementos[1]);
                }
                if(elementos[0].equals("vel")){
-                   vel = elementos[1];
+                   vel = Float.parseFloat(elementos[1]);
                }
                if(elementos[0].equals("K")){
-                   k = elementos[1];
+                   k = Float.parseFloat(elementos[1]);
                }
            }
        }catch(Exception e){
@@ -55,6 +54,32 @@ public class Lectora {
             }
         }
     }
+
+    public float getLimInf() {
+        return limInf;
+    }
+
+    public float getLimSup() {
+        return limSup;
+    }
+
+    public float getInc() {
+        return inc;
+    }
+
+    public float getVel() {
+        return vel;
+    }
+
+    public float getK() {
+        return k;
+    }
+
+    public int getNoLaps() {
+        return noLaps;
+    }
+    
+    
     
     
 }
