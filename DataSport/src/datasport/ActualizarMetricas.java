@@ -40,6 +40,7 @@ public class ActualizarMetricas implements Runnable {
     public void setBoton(String b)
     {
     botonM=b;
+        
     }
     
 

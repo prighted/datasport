@@ -47,7 +47,7 @@ public class DataSport {
         this.kmVuelta = kmVuelta;
         modo = 1;
         cal = 0.0f;
-        vel = 0.0f;
+        vel = 10.0f;
         inc = 0.0f;
         //this.intensidad = intensidad;
         K = 10f;
@@ -248,12 +248,11 @@ public class DataSport {
 
     public void calculaTimeLap() {
        
-/*if (distanciaAcum % 0.4 == 0) //lleva una vuelta
+if (distanciaAcum % 0.04 == 0) //lleva una vuelta
         {
             vuelta++;
-
-            //System.out.println("Tardo " + tiempo + " segundos en dar " + vuelta + "vueltas");
-        }*/
+             
+        }
     }
 
     public float calcularCal(long intervalo) //cambiar para que calcule cada segundo
@@ -277,8 +276,8 @@ public class DataSport {
     }
 
     public void calcularKm(long tiempo) {
-        float km = (vel * tiempo) / 3600;
-        distanciaAcum = distanciaAcum + km;
+        float km = (vel * tiempo/3600);
+        distanciaAcum = km;
         distanciaAcum = (float) Math.rint(distanciaAcum * 100) / 100;
     }
 
