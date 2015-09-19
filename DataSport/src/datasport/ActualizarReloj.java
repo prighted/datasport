@@ -76,7 +76,9 @@ public class ActualizarReloj implements Runnable {
                     }
                     else
                     {
-                        
+                       reloj.resetsaveT();
+                       stop=0;
+                       
                     }
                 }
                 

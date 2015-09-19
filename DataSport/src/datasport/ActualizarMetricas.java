@@ -21,6 +21,7 @@ public class ActualizarMetricas implements Runnable {
     private DataSport programa;
     private Relojrun reloj;
     private int t;
+    private int salto;
     private String botonM;
     
 
@@ -55,7 +56,17 @@ public class ActualizarMetricas implements Runnable {
                 //Se ejecuta si esta en play
                if (botonM=="play")
                {
-               int tiempo = (int) reloj.getTiempoTranscurrido();
+               
+                   if (salto!=0) /*
+                       Evita que entre de una vez a ejecutar despues de dar pausa.
+                       Antes se tenia el bug de que por ejemplo se pausaba en el segundo
+                       5 justo antes de 6 mostraba el calculo de calorias para 5 y para 6
+                       o sea por dos. Se hace esto para "desfasar un segundo" este thread
+                       del otro No se adelanta
+                       */
+                   { 
+                       
+                       int tiempo = (int) reloj.getTiempoTranscurrido();
                 
                 programa.calcularCal(intervaloCalculoCalorias);
                 programa.calcularKm(tiempo);
@@ -74,9 +85,35 @@ public class ActualizarMetricas implements Runnable {
                         lblKm.setText(kmAcum);
                         lblVuelta.setText(vueltas);
                 }
-            
-                }    
-                
+                }
+                }
+                   else /*
+                       una vez se salto el primer segundo despues de pausa incrementa
+                       el salto para que entre en los demas ciclos siguientes.
+                       */
+                   {
+                   salto++;
+                   }
+                }
+               else
+               {
+                 if (botonM=="pause") /*
+                     si pausan coloca el salto en 0 para que haga el desfase.
+                     */
+                 {
+                  salto=0;
+                 }
+                 else //usaron stop
+                 {
+                     if (botonM=="stop")
+                     {
+                     System.out.println("usaron stop");
+                     programa.resetCalorias();
+                     programa.resetKm();
+                     programa.resetVuelta();
+                     programa.resetParametros();
+                     }
+                 }
                }
               Thread.sleep(1000);  
             } catch (InterruptedException ex) {

@@ -235,6 +235,14 @@ public class DataSport {
     public void resetKm() {
         distanciaAcum = 0;
     }
+    
+    public void resetParametros()
+    {
+    inc =0;
+    vel=0;
+    vuelta=0;
+    cal=0;
+    }
 
     public String getCalString() {
         String calorias = "" + cal;

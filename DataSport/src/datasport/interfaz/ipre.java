@@ -1186,7 +1186,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void lblPauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPauseMouseClicked
         // TODO add your handling code here:
-           actualizadorReloj.setBoton("pause");
+        actualizadorReloj.setBoton("pause");
         actualizadorMetricas.setBoton("pause");
     }//GEN-LAST:event_lblPauseMouseClicked
 

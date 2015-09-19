@@ -48,6 +48,11 @@ public class Relojrun {
     transcTemp=0;
     }
     
+    public long getSaveT()
+    {
+    return transcTemp;
+    }
+    
     public void saveT()
     {
     transcTemp=tiempoTranscurrido;
