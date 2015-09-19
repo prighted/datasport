@@ -112,6 +112,7 @@ public class ActualizarMetricas implements Runnable {
                      programa.resetKm();
                      programa.resetVuelta();
                      programa.resetParametros();
+                     
                      }
                  }
                }

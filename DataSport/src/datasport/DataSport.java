@@ -238,10 +238,9 @@ public class DataSport {
     
     public void resetParametros()
     {
-    inc =0;
-    vel=0;
     vuelta=0;
     cal=0;
+    
     }
 
     public String getCalString() {
