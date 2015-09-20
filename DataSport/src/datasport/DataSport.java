@@ -5,8 +5,8 @@
  */
 package datasport;
 
-//import testeando.Reloj2;
 import javax.swing.JLabel;
+
 
 /**
  * Esta sera la clase principal de la app Aclaro no sera el ejecutable.
@@ -26,10 +26,10 @@ public class DataSport {
      idAtributo=0:Velocidad, 1:Inclinacion
      */
 
-    private float vel, inc, cal, calAcum, K, distanciaAcum;
+    private float vel, inc, cal, calAcum, K, distanciaAcum, kms;
     private int vuelta, kmVuelta, modo;
     //private int intervalo
-    private Intensidad intensidad;
+    private Intensidad intensidad1, intensidad2;
     // private Relojrun reloj;
 
     public DataSport() {
@@ -266,11 +266,18 @@ public class DataSport {
     }
 
     public void calcularVuelta() {
-        int distanciaM = (int)distanciaAcum/1000; //pasa la distancia metros
-        int modulo = distanciaM%400;
-        if(modulo == 0){
-            vuelta++;
+        float distanciaM =  kms*1000; //pasa la distancia metros
+        float modulo = distanciaM%400;
+        System.out.println("El modulo es: " +modulo);
+        if ((distanciaAcum==0)) {
+            vuelta=0;
         }
+        else{
+            if(modulo == 0){
+            vuelta++;
+        } 
+        }
+       
     }
 
     public float calcularCal(long intervalo) 
@@ -299,7 +306,10 @@ public class DataSport {
     public void calcularKm(long tiempo) {
         float km = (vel * tiempo / 3600);
         distanciaAcum = km;
+        kms = km;
         distanciaAcum = (float) Math.rint(distanciaAcum * 100) / 100;
+        System.out.println("km con formato= "+distanciaAcum);
+        System.out.println("km sin formato= "+kms);
     }
 
     public String getDistAcumString() {

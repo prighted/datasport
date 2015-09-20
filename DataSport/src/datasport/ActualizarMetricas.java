@@ -75,13 +75,14 @@ public class ActualizarMetricas implements Runnable {
                 programa.calcularKm(tiempo);
                 String kmAcum = programa.getDistAcumString();
                 String calSeg = programa.getCalString();
-                programa.calculaTimeLap();
+                programa.calcularVuelta();
                 String vueltas = programa.getVueltaString();
                        //System.out.println("Va en la vuelta no "+programa.getVuelta());
                 
                 if ((tiempo) == 0) {
                     lblCal.setText("0.00");
                     lblKm.setText("0.00");
+                    lblVuelta.setText("0");
                 }else{
                 if (((tiempo+1) % intervaloMostrarPantalla) == 0) {
                      

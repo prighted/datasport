@@ -469,7 +469,7 @@ public class ipre extends javax.swing.JFrame {
 
         lblNoVuelta.setFont(new java.awt.Font("Play", 0, 40)); // NOI18N
         lblNoVuelta.setForeground(new java.awt.Color(51, 51, 60));
-        lblNoVuelta.setText("1");
+        lblNoVuelta.setText("0");
 
         lblCalorias.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
         lblCalorias.setForeground(new java.awt.Color(51, 51, 60));
@@ -592,7 +592,7 @@ public class ipre extends javax.swing.JFrame {
                 .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTitulo)
                     .addComponent(lblModoNo)
-                    .addComponent(lblReloj))
+                    .addComponent(lblReloj, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPpalLayout.createSequentialGroup()
@@ -623,7 +623,7 @@ public class ipre extends javax.swing.JFrame {
                                         .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(lblNoVuelta)
                                             .addComponent(lblVueltaFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPpalLayout.createSequentialGroup()
                                         .addGap(100, 100, 100)
                                         .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
