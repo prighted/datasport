@@ -49,6 +49,7 @@ public class DataSport {
         cal = 0.0f;
         vel = 10.0f;
         inc = 0.0f;
+        distanciaAcum = 0.0f;
         //this.intensidad = intensidad;
         K = 10f;
 
@@ -83,6 +84,10 @@ public class DataSport {
 
     public int getModo() {
         return modo;
+    }
+
+    public void setCal(float cal) {
+        this.cal = cal;
     }
 
     /*
@@ -235,12 +240,11 @@ public class DataSport {
     public void resetKm() {
         distanciaAcum = 0;
     }
-    
-    public void resetParametros()
-    {
-    vuelta=0;
-    cal=0;
-    
+
+    public void resetParametros() {
+        vuelta = 0;
+        cal = 0;
+
     }
 
     public String getCalString() {
@@ -254,11 +258,18 @@ public class DataSport {
     }
 
     public void calculaTimeLap() {
-       
-if (distanciaAcum % 0.04 == 0) //lleva una vuelta
-        {
+//        int 
+//        if ((0.4 % distanciaAcum) == 0) //lleva una vuelta
+//        {
+//            vuelta=1+vuelta;
+//        }
+    }
+
+    public void calcularVuelta() {
+        int distanciaM = (int)distanciaAcum/1000; //pasa la distancia metros
+        int modulo = distanciaM%400;
+        if(modulo == 0){
             vuelta++;
-             
         }
     }
 
@@ -271,7 +282,7 @@ if (distanciaAcum % 0.04 == 0) //lleva una vuelta
         float calorias;
         float cv;
         float ci;
-        // K = 10 + 10*((30-e)/10) + 10*(p/100);                                 Por si necesita modificar   las calorías deben ser calculadas
+     
         cv = (K * (1 + (vel - 5) / 10));
         ci = K * (inc / 12);
         calorias = (cv + ci) / intervalo;
@@ -279,11 +290,14 @@ if (distanciaAcum % 0.04 == 0) //lleva una vuelta
         cal = (float) Math.rint(cal * 100) / 100;
 
         return cal;
+        
+        // K = 10 + 10*((30-e)/10) + 10*(p/100);                                 Por si necesita modificar   las calorías deben ser calculadas
+        
         //
     }
 
     public void calcularKm(long tiempo) {
-        float km = (vel * tiempo/3600);
+        float km = (vel * tiempo / 3600);
         distanciaAcum = km;
         distanciaAcum = (float) Math.rint(distanciaAcum * 100) / 100;
     }

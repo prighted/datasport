@@ -52,7 +52,9 @@ public class ActualizarMetricas implements Runnable {
     @Override
     public void run() {
         while (vivoM) {
+          
             try {
+              
                 //Se ejecuta si esta en play
                if (botonM=="play")
                {
@@ -74,6 +76,7 @@ public class ActualizarMetricas implements Runnable {
                 String calSeg = programa.getCalString();
                 programa.calculaTimeLap();
                 String vueltas = programa.getVueltaString();
+                       //System.out.println("Va en la vuelta no "+programa.getVuelta());
                 
                 if ((tiempo) == 0) {
                     lblCal.setText("0.00");
@@ -95,7 +98,7 @@ public class ActualizarMetricas implements Runnable {
                    salto++;
                    }
                 }
-               else
+             
                {
                  if (botonM=="pause") /*
                      si pausan coloca el salto en 0 para que haga el desfase.
@@ -112,7 +115,9 @@ public class ActualizarMetricas implements Runnable {
                      programa.resetKm();
                      programa.resetVuelta();
                      programa.resetParametros();
-                     
+                     lblCal.setText("00.00");
+                     lblKm.setText("00.00");
+                     lblVuelta.setText("0");
                      }
                  }
                }

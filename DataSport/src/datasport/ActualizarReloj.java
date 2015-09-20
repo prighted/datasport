@@ -48,7 +48,7 @@ public class ActualizarReloj implements Runnable {
     public void run() {
         reloj.setHoraInicial();
         while (vivo) {
-           
+        
             
             try {
                 //calculo innecesario, el cual va a dar 0
@@ -78,7 +78,7 @@ public class ActualizarReloj implements Runnable {
                     {
                        reloj.resetsaveT();
                        stop=0;
-                       
+                       lblTiempo.setText("00:00:00");
                     }
                 }
                 
