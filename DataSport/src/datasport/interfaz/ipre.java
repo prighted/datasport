@@ -483,11 +483,11 @@ public class ipre extends javax.swing.JFrame {
         lblKmFijo.setForeground(new java.awt.Color(51, 51, 60));
         lblKmFijo.setText("Km/h");
 
-        lblVel.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
+        lblVel.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
         lblVel.setForeground(new java.awt.Color(51, 51, 60));
         lblVel.setText("  1.0");
 
-        lblInc.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
+        lblInc.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
         lblInc.setForeground(new java.awt.Color(51, 51, 60));
         lblInc.setText("  0.0");
 
@@ -543,33 +543,31 @@ public class ipre extends javax.swing.JFrame {
                         .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelPpalLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(panelPpalLayout.createSequentialGroup()
-                                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                                .addComponent(jLabel12)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel3))
-                                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(lblKmFIjo)
-                                                    .addComponent(lblCaloriasFijo))
-                                                .addGap(61, 61, 61)
-                                                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(lblKms, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(lblCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(10, 10, 10))
-                                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                                .addComponent(lblTiempoFijo)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lblTiempo)
-                                                .addGap(0, 0, 0)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(panelPpalLayout.createSequentialGroup()
+                                            .addComponent(jLabel12)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel3))
+                                        .addGroup(panelPpalLayout.createSequentialGroup()
+                                            .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(lblKmFIjo)
+                                                .addComponent(lblCaloriasFijo))
+                                            .addGap(61, 61, 61)
+                                            .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(lblKms, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(10, 10, 10))
+                                        .addGroup(panelPpalLayout.createSequentialGroup()
+                                            .addComponent(lblTiempoFijo)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(lblTiempo)
+                                            .addGap(0, 0, 0)))
                                     .addGroup(panelPpalLayout.createSequentialGroup()
                                         .addComponent(lblVueltaFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(lblNoVuelta)
-                                        .addGap(94, 94, 94)))
+                                        .addGap(90, 90, 90)
+                                        .addComponent(lblNoVuelta)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelPpalLayout.createSequentialGroup()
                                         .addComponent(lblVel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -577,7 +575,7 @@ public class ipre extends javax.swing.JFrame {
                                         .addComponent(lblKmFijo))
                                     .addGroup(panelPpalLayout.createSequentialGroup()
                                         .addComponent(lblInc, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lblGradosFijo))))
                             .addGroup(panelPpalLayout.createSequentialGroup()
                                 .addGap(60, 60, 60)
@@ -625,7 +623,7 @@ public class ipre extends javax.swing.JFrame {
                                         .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(lblNoVuelta)
                                             .addComponent(lblVueltaFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPpalLayout.createSequentialGroup()
                                         .addGap(100, 100, 100)
                                         .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
