@@ -9,6 +9,7 @@ import datasport.ActualizarMetricas;
 import datasport.ActualizarReloj;
 import datasport.DataSport;
 import datasport.Relojrun;
+import datasport.Lectora;
 
 /**
  *
@@ -27,12 +28,20 @@ public class ipre extends javax.swing.JFrame {
     private int modo = 0;  //seleccion de modo en 2
     private ActualizarMetricas actualizadorMetricas;
     private String boton = "";
+    private long intervaloCalculoCalorias,intervaloMostrarPantallaCal;
+    
+    
+    //Datos que se obtienen del txt 
+    private Lectora leer;
+     private float limInf,limSup,inc,vel,k,limSupInc,limInfInc,increVel,increInc;
+    private int noLaps;
 
     /**
      * Creates new form inface
      */
     public ipre() {
         initComponents();
+        inicializarDatosLectora();
         inicializar();
         prestablecidos = new DataSport[12];
         cambio();
@@ -40,7 +49,7 @@ public class ipre extends javax.swing.JFrame {
         hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
         hiloReloj.start();
         hiloMetricas.start();
-
+    
     }
 
     public void modoLibre() {
@@ -48,15 +57,31 @@ public class ipre extends javax.swing.JFrame {
         jLabel5.setVisible(false);
         lblModo.setText("Modo Libre");
     }
-
+    //datos a partir del txt
+     public void inicializarDatosLectora()
+    {
+     leer = new Lectora("D:\\datasport\\DataSport\\src\\datasport\\config.txt");
+     limInf = leer.getLimInf();
+     limSup = leer.getLimSup();
+     //inc = leer.getInc();
+    // vel = leer.getVel();
+    // k = leer.getK();
+     noLaps = leer.getNoLaps();
+     intervaloCalculoCalorias = leer.getIntCal();
+     intervaloMostrarPantallaCal = leer.getIntPan();
+     limInfInc = leer.getLimInfInc();
+     limSupInc = leer.getLimSupInc();
+     increVel = leer.getIncreVel();
+     increInc = leer.getIncreInc();
+     
+    }
+    
     public void inicializar() {
-        int intervaloCalculoCalorias = 60;
-        int intervaloMostrarPantallaCal = 2;
         reloj = new Relojrun();
         mL = new DataSport();
         actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
         actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms, lblNoVuelta, reloj, mL,
-                intervaloCalculoCalorias, intervaloMostrarPantallaCal);
+        intervaloCalculoCalorias,intervaloMostrarPantallaCal);
 
 //         prestablecidos[0]=new DataSport();
         //     prestablecidos[1]=new DataSport();
@@ -1017,7 +1042,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVelMenosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVelMenosMouseClicked
         if (modo == 0) {
-            mL.reducir(lblVel, 1.0f, 0.1f, 0);
+            mL.reducir(lblVel,limInf,increVel, 0);
         } else {
             //
         }
@@ -1082,7 +1107,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVelMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVelMasMouseClicked
         if (modo == 0) {
-            mL.aumentar(lblVel, 12.0f, 1.0f, 0.1f, 0);
+            mL.aumentar(lblVel,limSup,limInf,increVel, 0);
         } else {
             //
         }
@@ -1134,7 +1159,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttIncMenosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttIncMenosMouseClicked
         if (modo == 0) {
-            mL.reducir(lblInc, 0.0f, 0.2f, 1);
+            mL.reducir(lblInc,limInfInc,increInc, 1);
         } else {
             //
         }
@@ -1142,7 +1167,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttIncMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttIncMasMouseClicked
         if (modo == 0) {
-            mL.aumentar(lblInc, 6.0f, 0.0f, 0.2f, 1);
+            mL.aumentar(lblInc,limSupInc,limInfInc,increInc, 1);
         } else {
             //
         }

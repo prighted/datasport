@@ -12,9 +12,17 @@ import java.io.*;
 
 public class Lectora {
     
-    private float limInf, limSup, inc, vel, k;
+    private float limInf, limSup, inc, vel, k,limSupInc,limInfInc,increVel,increInc;
     private int noLaps;
-        
+    private long intCal,intPan;
+    private String ruta;
+    
+    public Lectora(String ruta)
+    {
+    this.ruta = ruta;
+    leerConfig(ruta);
+    }
+    
     public void leerConfig(String ruta){ //recibe la ruta del archivo txt
         BufferedReader br = null;
        
@@ -42,6 +50,25 @@ public class Lectora {
                if(elementos[0].equals("K")){
                    k = Float.parseFloat(elementos[1]);
                }
+                if(elementos[0].equals("intCal")){
+                  intCal = (long)Float.parseFloat(elementos[1]);
+               }
+                if(elementos[0].equals("intPan")){
+                  intPan = (long)Float.parseFloat(elementos[1]);
+               }
+                if(elementos[0].equals("limSupInc")){
+                  limSupInc = Float.parseFloat(elementos[1]);
+               }
+                 if(elementos[0].equals("limInfInc")){
+                  limInfInc = Float.parseFloat(elementos[1]);
+               }
+                 if(elementos[0].equals("increInc")){
+                  increInc = Float.parseFloat(elementos[1]);
+               }
+                 if(elementos[0].equals("increVel")){
+                  increVel = Float.parseFloat(elementos[1]);
+               }
+               
            }
        }catch(Exception e){
            System.out.println("No se encuentra el archivo");
@@ -78,6 +105,36 @@ public class Lectora {
     public int getNoLaps() {
         return noLaps;
     }
+
+    public long getIntCal() {
+        return intCal;
+    }
+
+    public long getIntPan() {
+        return intPan;
+    }
+
+    public float getLimSupInc() {
+        return limSupInc;
+    }
+
+    public float getLimInfInc() {
+        return limInfInc;
+    }
+
+    public float getIncreVel() {
+        return increVel;
+    }
+
+    public float getIncreInc() {
+        return increInc;
+    }
+    
+    
+    
+    
+    
+    
     
     
     

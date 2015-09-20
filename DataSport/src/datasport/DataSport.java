@@ -273,7 +273,7 @@ public class DataSport {
         }
     }
 
-    public float calcularCal(long intervalo) //cambiar para que calcule cada segundo
+    public float calcularCal(long intervalo) 
     {
         /*
          Calcula las calorias guardandolas en el atributo y retorna el String 

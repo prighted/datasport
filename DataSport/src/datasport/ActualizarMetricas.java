@@ -48,6 +48,7 @@ public class ActualizarMetricas implements Runnable {
     public void setVivo(boolean vivoM) {
         this.vivoM = vivoM;
     }
+   
 
     @Override
     public void run() {
