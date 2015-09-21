@@ -22,7 +22,7 @@ public class ActualizarMetricas implements Runnable {
     private Relojrun reloj;
     private int t;
     private int salto;
-    private String botonM;
+    private String botonM,vueltas;
     
 
     public ActualizarMetricas(JLabel lblCal, JLabel lblKm, JLabel lblVuelta, Relojrun reloj, DataSport programa,
@@ -70,14 +70,17 @@ public class ActualizarMetricas implements Runnable {
                    { 
                        
                        int tiempo = (int) reloj.getTiempoTranscurrido();
-                
+                if (programa.getModo()==1)
+                {
+                    programa.calcularVuelta();
+                    vueltas = programa.getVueltaString();
+                }
                 programa.calcularCal(intervaloCalculoCalorias);
                 programa.calcularKm(tiempo);
                 String kmAcum = programa.getDistAcumString();
                 String calSeg = programa.getCalString();
-                programa.calcularVuelta();
-                String vueltas = programa.getVueltaString();
-                       //System.out.println("Va en la vuelta no "+programa.getVuelta());
+                
+                
                 
                 if ((tiempo) == 0) {
                     lblCal.setText("0.00");

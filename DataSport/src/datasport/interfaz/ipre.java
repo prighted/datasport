@@ -23,8 +23,7 @@ public class ipre extends javax.swing.JFrame {
     Thread hiloReloj, hiloMetricas;
     private ActualizarReloj actualizadorReloj;
     private Relojrun reloj;
-    private DataSport mL;
-    private DataSport prestablecido;
+    private DataSport programa; 
     private int modo = 0, click = 0;  //seleccion de modo en 2, 
     private ActualizarMetricas actualizadorMetricas;
     private String boton = "";
@@ -32,7 +31,7 @@ public class ipre extends javax.swing.JFrame {
 
     //Datos que se obtienen del txt 
     private Lectora leer;
-    private float limInf, limSup, inc, vel, k, limSupInc, limInfInc, increVel, increInc;
+    private float limInf, limSup, inc, vel, k, limSupInc, limInfInc, increVel, increInc,distVuelta;
     private int noLaps;
 
     /**
@@ -54,7 +53,7 @@ public class ipre extends javax.swing.JFrame {
 
     //datos a partir del txt
     public void inicializarDatosLectora() {
-        leer = new Lectora("E:\\datasport\\DataSport\\src\\datasport\\config.txt");
+        leer = new Lectora("D:\\datasport\\DataSport\\src\\datasport\\config.txt");
         limInf = leer.getLimInf();
         limSup = leer.getLimSup();
         //inc = leer.getInc();
@@ -67,14 +66,17 @@ public class ipre extends javax.swing.JFrame {
         limSupInc = leer.getLimSupInc();
         increVel = leer.getIncreVel();
         increInc = leer.getIncreInc();
+        distVuelta = leer.getDistVuelta();
+        
 
     }
 
     public void inicializar() {
         reloj = new Relojrun();
-        mL = new DataSport();
+        programa = new DataSport(distVuelta);
+        programa.setModo(0);
         actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
-        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms, lblNoVuelta, reloj, mL,
+        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms, lblNoVuelta, reloj, programa,
                 intervaloCalculoCalorias, intervaloMostrarPantallaCal);
 
 //         prestablecidos[0]=new DataSport();
@@ -561,8 +563,7 @@ public class ipre extends javax.swing.JFrame {
                                         .addGroup(panelPpalLayout.createSequentialGroup()
                                             .addComponent(lblTiempoFijo)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(lblTiempo)
-                                            .addGap(0, 0, 0)))
+                                            .addComponent(lblTiempo)))
                                     .addGroup(panelPpalLayout.createSequentialGroup()
                                         .addComponent(lblVueltaFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(90, 90, 90)
@@ -589,17 +590,18 @@ public class ipre extends javax.swing.JFrame {
             panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPpalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTitulo)
-                    .addComponent(lblModoNo)
-                    .addComponent(lblReloj, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
+                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblReloj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblTitulo)
+                        .addComponent(lblModoNo)))
                 .addGap(18, 18, 18)
                 .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPpalLayout.createSequentialGroup()
                         .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblVel)
                             .addComponent(lblKmFijo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                         .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblInc)
                             .addComponent(lblGradosFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1000,7 +1002,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc1MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblInc, 1.0f, 1);
+            programa.valorBoton(lblInc, 1.0f, 1);
 //            System.out.println("Posición de lblVueltaFijo "+lblVueltaFijo.getLocation());
 //            System.out.println("Posición de lblTiempoFijo "+lblTIempoFijo.getLocation());
 //            System.out.println("Posición de lblNoVuelta "+lblNoVuelta.getLocation());
@@ -1012,7 +1014,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel11MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblVel, 11.0f, 0);
+            programa.valorBoton(lblVel, 11.0f, 0);
         } else {
             //
         }
@@ -1020,7 +1022,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel2MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblVel, 2.0f, 0);
+            programa.valorBoton(lblVel, 2.0f, 0);
         } else {
             //
         }
@@ -1028,7 +1030,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel3MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblVel, 3.0f, 0);
+            programa.valorBoton(lblVel, 3.0f, 0);
         } else {
             //
         }
@@ -1037,7 +1039,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel5MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblVel, 5.0f, 0);
+            programa.valorBoton(lblVel, 5.0f, 0);
         } else {
             //
         }
@@ -1046,7 +1048,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel7MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblVel, 7.0f, 0);
+            programa.valorBoton(lblVel, 7.0f, 0);
         } else {
             //
         }
@@ -1055,7 +1057,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel9MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblVel, 9.0f, 0);
+            programa.valorBoton(lblVel, 9.0f, 0);
         } else {
             //
         }
@@ -1064,7 +1066,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVelMenosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVelMenosMouseClicked
         if (modo == 0) {
-            mL.reducir(lblVel, limInf, increVel, 0);
+            programa.reducir(lblVel, limInf, increVel, 0);
         } else {
             //
         }
@@ -1074,7 +1076,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel1MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblVel, 1.0f, 0);
+            programa.valorBoton(lblVel, 1.0f, 0);
         } else {
             //
         }
@@ -1083,7 +1085,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel4MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblVel, 4.0f, 0);
+            programa.valorBoton(lblVel, 4.0f, 0);
         } else {
             //
         }
@@ -1092,7 +1094,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel6MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblVel, 6.0f, 0);
+            programa.valorBoton(lblVel, 6.0f, 0);
         } else {
             //
         }
@@ -1101,7 +1103,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel8MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblVel, 8.0f, 0);
+            programa.valorBoton(lblVel, 8.0f, 0);
         } else {
             //
         }
@@ -1111,7 +1113,7 @@ public class ipre extends javax.swing.JFrame {
     private void bttVel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel10MouseClicked
 
         if (modo == 0) {
-            mL.valorBoton(lblVel, 10.0f, 0);
+            programa.valorBoton(lblVel, 10.0f, 0);
         } else {
             //
         }
@@ -1121,7 +1123,7 @@ public class ipre extends javax.swing.JFrame {
     private void bttVel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel12MouseClicked
 
         if (modo == 0) {
-            mL.valorBoton(lblVel, 12.0f, 0);
+            programa.valorBoton(lblVel, 12.0f, 0);
         } else {
             //
         }
@@ -1129,7 +1131,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVelMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVelMasMouseClicked
         if (modo == 0) {
-            mL.aumentar(lblVel, limSup, limInf, increVel, 0);
+            programa.aumentar(lblVel, limSup, limInf, increVel, 0);
         } else {
             //
         }
@@ -1141,7 +1143,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc2MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblInc, 2.0f, 1);
+            programa.valorBoton(lblInc, 2.0f, 1);
         } else {
             //
         }
@@ -1149,7 +1151,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc3MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblInc, 3.0f, 1);
+            programa.valorBoton(lblInc, 3.0f, 1);
         } else {
             //
         }
@@ -1157,7 +1159,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc4MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblInc, 4.0f, 1);
+            programa.valorBoton(lblInc, 4.0f, 1);
         } else {
             //
         }
@@ -1165,7 +1167,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc5MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblInc, 5.0f, 1);
+            programa.valorBoton(lblInc, 5.0f, 1);
         } else {
             //
         }
@@ -1173,7 +1175,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc6MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblInc, 6.0f, 1);
+            programa.valorBoton(lblInc, 6.0f, 1);
         } else {
             //
         }
@@ -1181,7 +1183,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttIncMenosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttIncMenosMouseClicked
         if (modo == 0) {
-            mL.reducir(lblInc, limInfInc, increInc, 1);
+            programa.reducir(lblInc, limInfInc, increInc, 1);
         } else {
             //
         }
@@ -1189,14 +1191,14 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttIncMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttIncMasMouseClicked
         if (modo == 0) {
-            mL.aumentar(lblInc, limSupInc, limInfInc, increInc, 1);
+            programa.aumentar(lblInc, limSupInc, limInfInc, increInc, 1);
         } else {
             //
         }
     }//GEN-LAST:event_bttIncMasMouseClicked
 
     private void bttSpeedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttSpeedMouseClicked
-        prestablecido = new DataSport();
+        programa.setModo(1);
         modo = 1;
         cambio();
 
@@ -1220,7 +1222,7 @@ public class ipre extends javax.swing.JFrame {
     private void lblPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlayMouseClicked
         // TODO add your handling code here:
         String texto;
-        if (mL.getVel() == 0) {
+        if (programa.getVel() == 0) {
             texto = "<html><body>Seleccione la Velocidad <br> y la<br>Inclinación</body></html>";
             lblConsola.setText(texto);
         } else {
@@ -1233,7 +1235,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttVel5ActionPerformed
         if (modo == 0) {
-            mL.valorBoton(lblVel, 5.0f, 0);
+            programa.valorBoton(lblVel, 5.0f, 0);
         } else {
             //
         }   // TODO add your handling code here:
@@ -1241,7 +1243,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc0MouseClicked
         if (modo == 0) {
-            mL.valorBoton(lblInc, 0.0f, 1);
+            programa.valorBoton(lblInc, 0.0f, 1);
         } else {
 
         }

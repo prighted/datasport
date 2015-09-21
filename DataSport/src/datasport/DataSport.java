@@ -26,34 +26,18 @@ public class DataSport {
      idAtributo=0:Velocidad, 1:Inclinacion
      */
 
-    private float vel, inc, cal, calAcum, K, distanciaAcum, kms;
-    private int vuelta, kmVuelta, modo;
+    private float vel, inc, cal, calAcum, K, distanciaAcum, kms,distVuelta;
+    private int vuelta, modo;
     //private int intervalo
     private Intensidad intensidad1, intensidad2;
     // private Relojrun reloj;
 
-    public DataSport() {
+    public DataSport(float distVuelta) {
         //Modo Libre
-        //    this.reloj = reloj;
-        // this.intervalo = 60;
-        modo = 0;
         K = 10f;
-        //tiempo = (int) reloj.getTiempoTranscurrido();
+        this.distVuelta=distVuelta;
     }
 
-    public DataSport(/*int intervalo, */int kmVuelta) {
-        //Modo Prestablecido
-        //  this.intervalo = intervalo;
-        this.kmVuelta = kmVuelta;
-        modo = 1;
-        cal = 0.0f;
-        vel = 10.0f;
-        inc = 0.0f;
-        distanciaAcum = 0.0f;
-        //this.intensidad = intensidad;
-        K = 10f;
-
-    }
 
     /*
      INICIO Declaración de getters y Setters
@@ -62,6 +46,11 @@ public class DataSport {
         return vel;
     }
 
+    public void setModo(int modo) {
+        this.modo = modo;
+    }
+
+    
     public float getInc() {
         return inc;
     }
@@ -267,7 +256,7 @@ public class DataSport {
 
     public void calcularVuelta() {
         float distanciaM =  kms*1000; //pasa la distancia metros
-        float modulo = distanciaM%400;
+        float modulo = distanciaM%distVuelta;
         System.out.println("El modulo es: " +modulo);
         if ((distanciaAcum==0)) {
             vuelta=0;

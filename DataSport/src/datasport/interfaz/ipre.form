@@ -603,7 +603,6 @@
                                                   <Component id="lblTiempoFijo" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="lblTiempo" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
@@ -644,10 +643,12 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblModoNo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblReloj" alignment="0" pref="42" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblReloj" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblModoNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -656,7 +657,7 @@
                                   <Component id="lblVel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblKmFijo" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="7" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblInc" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblGradosFijo" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
