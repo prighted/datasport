@@ -83,8 +83,8 @@ public class ActualizarMetricas implements Runnable {
                 
                 
                 if ((tiempo) == 0) {
-                    lblCal.setText("0.00");
-                    lblKm.setText("0.00");
+                    lblCal.setText("00000.00");
+                    lblKm.setText("       00.00");
                     lblVuelta.setText("0");
                 }else{
                 if (((tiempo+1) % intervaloMostrarPantalla) == 0) {

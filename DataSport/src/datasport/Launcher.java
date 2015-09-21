@@ -6,6 +6,8 @@
 package datasport;
 
 import basededatos.Conexion;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 
 
 /**
@@ -13,7 +15,13 @@ import basededatos.Conexion;
  * @author Reinaldo Pabon
  */
 public class Launcher {
-    public static void main(String[] args) {      
+    public static void main(String[] args) { 
+DecimalFormatSymbols simbolos = new DecimalFormatSymbols();
+simbolos.setDecimalSeparator(':');
+DecimalFormat formateador = new DecimalFormat("00.00",simbolos);
+
+// Esto sale en pantalla con punto decimal, es decir, 3.4324,
+System.out.println (formateador.format (3.43242383));
     }
  
 }

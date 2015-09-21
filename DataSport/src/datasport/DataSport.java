@@ -5,8 +5,10 @@
  */
 package datasport;
 
-import javax.swing.JLabel;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import javax.swing.JLabel;
 
 /**
  * Esta sera la clase principal de la app Aclaro no sera el ejecutable.
@@ -26,17 +28,23 @@ public class DataSport {
      idAtributo=0:Velocidad, 1:Inclinacion
      */
 
-    private float vel, inc, cal, calAcum, K, distanciaAcum, kms,distVuelta;
+    private float vel, inc, cal, calAcum, K, distanciaAcum, kms, distVuelta;
     private int vuelta, modo;
     //private int intervalo
     private Intensidad intensidad1, intensidad2;
-    // private Relojrun reloj;
+    private DecimalFormatSymbols simbolos;                                         //Para colocar el simbolo de "." a cal y km
 
     public DataSport(float distVuelta) {
         //Modo Libre
         K = 10f;
-        this.distVuelta=distVuelta;
+        this.distVuelta = distVuelta;
+        simbolos = new DecimalFormatSymbols();
+        simbolos.setDecimalSeparator('.');
     }
+
+
+
+
 
 
     /*
@@ -50,7 +58,6 @@ public class DataSport {
         this.modo = modo;
     }
 
-    
     public float getInc() {
         return inc;
     }
@@ -237,40 +244,39 @@ public class DataSport {
     }
 
     public String getCalString() {
-        String calorias = "" + cal;
+        DecimalFormat formateador = new DecimalFormat("00000.00",simbolos);
+        String calorias = formateador.format (cal);
         return calorias;
     }
-
+ public String getDistAcumString() {
+     DecimalFormat formateador = new DecimalFormat(" 00.00",simbolos);          //Formateo lo que muestro en pantalla
+         String kms ="      "+ formateador.format (distanciaAcum);
+         return kms;
+ 
+ }
+    
+ 
     public String getVueltaString() {
         String sV = "" + vuelta;
         return sV;
     }
 
-    public void calculaTimeLap() {
-//        int 
-//        if ((0.4 % distanciaAcum) == 0) //lleva una vuelta
-//        {
-//            vuelta=1+vuelta;
-//        }
-    }
 
     public void calcularVuelta() {
-        float distanciaM =  kms*1000; //pasa la distancia metros
-        float modulo = distanciaM%distVuelta;
-        System.out.println("El modulo es: " +modulo);
-        if ((distanciaAcum==0)) {
-            vuelta=0;
+        float distanciaM = kms * 1000; //pasa la distancia metros
+        float modulo = distanciaM % distVuelta;
+        System.out.println("El modulo es: " + modulo);
+        if ((distanciaAcum == 0)) {
+            vuelta = 0;
+        } else {
+            if (modulo == 0) {
+                vuelta++;
+            }
         }
-        else{
-            if(modulo == 0){
-            vuelta++;
-        } 
-        }
-       
+
     }
 
-    public float calcularCal(long intervalo) 
-    {
+    public float calcularCal(long intervalo) {
         /*
          Calcula las calorias guardandolas en el atributo y retorna el String 
          para mostrar en pantall
@@ -278,7 +284,7 @@ public class DataSport {
         float calorias;
         float cv;
         float ci;
-     
+
         cv = (K * (1 + (vel - 5) / 10));
         ci = K * (inc / 12);
         calorias = (cv + ci) / intervalo;
@@ -286,9 +292,8 @@ public class DataSport {
         cal = (float) Math.rint(cal * 100) / 100;
 
         return cal;
-        
+
         // K = 10 + 10*((30-e)/10) + 10*(p/100);                                 Por si necesita modificar   las calorías deben ser calculadas
-        
         //
     }
 
@@ -297,12 +302,8 @@ public class DataSport {
         distanciaAcum = km;
         kms = km;
         distanciaAcum = (float) Math.rint(distanciaAcum * 100) / 100;
-        System.out.println("km con formato= "+distanciaAcum);
-        System.out.println("km sin formato= "+kms);
+
     }
 
-    public String getDistAcumString() {
-        String kms = "" + distanciaAcum;
-        return kms;
-    }
+   
 }
