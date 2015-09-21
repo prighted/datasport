@@ -74,9 +74,14 @@ public class ActualizarMetricas implements Runnable {
                 {
                     programa.calcularVuelta();
                     vueltas = programa.getVueltaString();
+                    
                 }
                 programa.calcularCal(intervaloCalculoCalorias);
                 programa.calcularKm(tiempo);
+                       System.out.println("la velocidad es en Metricas" +programa.getVel());
+                       System.out.println("La inclinación en Metricas "+programa.getInc());
+     
+                       System.out.println(" Los km en metricas " +programa.getDistAcumString());
                 String kmAcum = programa.getDistAcumString();
                 String calSeg = programa.getCalString();
                 
@@ -102,6 +107,7 @@ public class ActualizarMetricas implements Runnable {
                    {
                    salto++;
                    }
+                   
                 }
              
                {
