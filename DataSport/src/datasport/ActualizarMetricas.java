@@ -16,7 +16,7 @@ public class ActualizarMetricas implements Runnable {
 
     //Codigo que se ejecutara durante el thread
     private long intervaloCalculoCalorias, intervaloMostrarPantalla;
-    private JLabel lblCal, lblKm, lblVuelta;
+    private JLabel lblCal, lblKm, lblVuelta, lblVel, lblInc;
     public boolean vivoM;                                                        //Para que se repita el run
     private DataSport programa;
     private Relojrun reloj;
@@ -25,12 +25,25 @@ public class ActualizarMetricas implements Runnable {
     private String botonM,vueltas;
     
 
-    public ActualizarMetricas(JLabel lblCal, JLabel lblKm, JLabel lblVuelta, Relojrun reloj, DataSport programa,
+    public ActualizarMetricas(JLabel lblCal, JLabel lblKm, Relojrun reloj, DataSport programa,
         long intervaloCalculoCalorias, long intervaloMostrarPantalla) {
         this.lblCal = lblCal;
         this.lblKm = lblKm;
         this.reloj = reloj;
+        this.programa = programa;
+        this.intervaloCalculoCalorias = intervaloCalculoCalorias;
+        this.intervaloMostrarPantalla = intervaloMostrarPantalla;
+        vivoM = true;
+        
+    }
+    public ActualizarMetricas(JLabel lblCal, JLabel lblKm, JLabel lblVuelta, JLabel lblVel, JLabel lblInc,
+            Relojrun reloj, DataSport programa, long intervaloCalculoCalorias, long intervaloMostrarPantalla) {
+        this.lblCal = lblCal;
+        this.lblKm = lblKm;
+        this.reloj = reloj;
         this.lblVuelta = lblVuelta;
+        this.lblVel = lblVel;
+        this.lblInc = lblInc;
         this.programa = programa;
         this.intervaloCalculoCalorias = intervaloCalculoCalorias;
         this.intervaloMostrarPantalla = intervaloMostrarPantalla;
@@ -75,28 +88,36 @@ public class ActualizarMetricas implements Runnable {
                     programa.calcularVuelta();
                     vueltas = programa.getVueltaString();
                     
+                    
                 }
                 programa.calcularCal(intervaloCalculoCalorias);
                 programa.calcularKm(tiempo);
-                       System.out.println("la velocidad es en Metricas" +programa.getVel());
-                       System.out.println("La inclinación en Metricas "+programa.getInc());
-     
-                       System.out.println(" Los km en metricas " +programa.getDistAcumString());
+                    
                 String kmAcum = programa.getDistAcumString();
                 String calSeg = programa.getCalString();
-                
+                   System.out.println("la velocidad  en Metricas " +programa.getVel());
+                       System.out.println("La inclinación en Metricas "+programa.getInc());
+     
+                       System.out.println("Los km en metricas " +programa.getDistAcumString());
+                       System.out.println("Las calorias en metricas son "+programa.getCal());
                 
                 
                 if ((tiempo) == 0) {
+                    if(programa.getModo()==1){
+                        lblVuelta.setText("0");
+                    }
                     lblCal.setText("00000.00");
                     lblKm.setText("       00.00");
-                    lblVuelta.setText("0");
+                    
                 }else{
                 if (((tiempo+1) % intervaloMostrarPantalla) == 0) {
                      
                         lblCal.setText(calSeg);
                         lblKm.setText(kmAcum);
-                        lblVuelta.setText(vueltas);
+                          if(programa.getModo()==1){
+                       lblVuelta.setText(vueltas);
+                    }
+                        
                 }
                 }
                 }

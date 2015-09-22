@@ -22,21 +22,20 @@ public class ipre extends javax.swing.JFrame {
     /**
      * Creates new form Gui
      */
-    Thread hiloReloj, hiloMetricas;
+    Thread hiloReloj, hiloMetricasLibre, hiloMetricasPre;
     private ActualizarReloj actualizadorReloj;
     private Relojrun reloj;
-    private DataSport programa;
+    private DataSport sesionLibre, sesionPre;
 //    private int modo = 0, click = 0;  //seleccion de modo en 2, 
-    private ActualizarMetricas actualizadorMetricas;
+    private ActualizarMetricas actualizadorMetricasLibre, actualizadorMetricasPre;
     private String boton = "";
     private long intervaloCalculoCalorias, intervaloMostrarPantallaCal;
-    private Programa progPrest1;
-    private Programa progPrest2;
+    private Programa progPrest2, progPrest0,progPrest1;
 
     //Datos que se obtienen del txt 
     private Lectora leer;
     private float limInf, limSup, inc, vel, k, limSupInc, limInfInc, increVel, increInc, distVuelta;
-    private int noLaps,modo;
+    private int noLaps, modo;
 
     /**
      * Creates new form inface
@@ -47,9 +46,9 @@ public class ipre extends javax.swing.JFrame {
         inicializar();
         cambio();
         hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
-        hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
         hiloReloj.start();
-        hiloMetricas.start();
+        modo = 0;
+
     }
 
     //datos a partir del txt
@@ -73,16 +72,18 @@ public class ipre extends javax.swing.JFrame {
 
     public void inicializar() {
         reloj = new Relojrun();
-       
-        modo =0;
         actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
-          //Creación del programa1
+        Vuelta[] vueltaProg0 = new Vuelta[1];
+        Vuelta vuelta0 = new Vuelta(0, 0.0f, 0.0f);
+        vueltaProg0[0] = vuelta0;
+        progPrest0 = new Programa(1, vueltaProg0);
+        //Creación del programa1
         Vuelta[] vueltasProg1 = new Vuelta[5];
-        Vuelta vuelta1 = new Vuelta(1, 1.0f, 0.0f);
+        Vuelta vuelta1 = new Vuelta(1, 10.0f, 10.0f);
         vueltasProg1[0] = vuelta1;
-        Vuelta vuelta2 = new Vuelta(2, 2.0f, 0.5f);
+        Vuelta vuelta2 = new Vuelta(2, 15.0f, 15.0f);
         vueltasProg1[1] = vuelta2;
-        Vuelta vuelta3 = new Vuelta(3, 3.0f, 1.0f);
+        Vuelta vuelta3 = new Vuelta(3, 20.0f, 20.0f);
         vueltasProg1[2] = vuelta3;
         Vuelta vuelta4 = new Vuelta(4, 4.0f, 1.5f);
         vueltasProg1[3] = vuelta4;
@@ -98,25 +99,17 @@ public class ipre extends javax.swing.JFrame {
         Vuelta vuelta32 = new Vuelta(3, 3.0f, 5.0f);
         vueltasProg2[1] = vuelta32;
         progPrest2 = new Programa(2, vueltasProg2);
-        if (modo==0) {
-            programa = new DataSport(distVuelta);
-          actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms, lblNoVuelta, reloj, programa,
-                intervaloCalculoCalorias, intervaloMostrarPantallaCal);  
-        }
-        else{
-            if (modo==11){
-                 programa = new DataSport(distVuelta,progPrest1);
-                actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms, lblNoVuelta, reloj, programa,
-                intervaloCalculoCalorias, intervaloMostrarPantallaCal); 
-            }else{
-                if (modo==12){
-                     programa = new DataSport(distVuelta,progPrest2);
-                actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms, lblNoVuelta, reloj, programa,
-                intervaloCalculoCalorias, intervaloMostrarPantallaCal); 
-                }
-            }
-                
-        }
+
+        sesionLibre = new DataSport();
+        actualizadorMetricasLibre = new ActualizarMetricas(lblCalorias, lblKms, reloj, sesionLibre, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
+        hiloMetricasLibre = new Thread(actualizadorMetricasLibre, "hiloMetricasLibre");
+        hiloMetricasLibre.start();
+
+        sesionPre = new DataSport(distVuelta, progPrest0);
+        actualizadorMetricasPre = new ActualizarMetricas(lblVel, lblKms, lblNoVuelta, lblVel,
+                lblInc, reloj, sesionPre, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
+        hiloMetricasPre = new Thread(actualizadorMetricasPre, "hiloMetricasPre");
+        hiloMetricasPre.start();
 
     }
 
@@ -184,9 +177,9 @@ public class ipre extends javax.swing.JFrame {
         lblConsola = new javax.swing.JLabel();
         lblVueltaFijo = new javax.swing.JLabel();
         lblTiempoFijo = new javax.swing.JLabel();
-        lblPlay = new javax.swing.JButton();
-        lblPause = new javax.swing.JButton();
-        lblStop = new javax.swing.JButton();
+        bttPlay = new javax.swing.JButton();
+        bttPause = new javax.swing.JButton();
+        bttStop = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -679,48 +672,53 @@ public class ipre extends javax.swing.JFrame {
                         .addGap(11, 11, 11))))
         );
 
-        lblPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
-        lblPlay.setBorder(null);
-        lblPlay.setBorderPainted(false);
-        lblPlay.setContentAreaFilled(false);
-        lblPlay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblPlay.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblPlay.setIconTextGap(-3);
-        lblPlay.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        lblPlay.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        lblPlay.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
+        bttPlay.setBorder(null);
+        bttPlay.setBorderPainted(false);
+        bttPlay.setContentAreaFilled(false);
+        bttPlay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttPlay.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttPlay.setIconTextGap(-3);
+        bttPlay.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttPlay.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttPlay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblPlayMouseClicked(evt);
+                bttPlayMouseClicked(evt);
             }
         });
 
-        lblPause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pause.png"))); // NOI18N
-        lblPause.setBorder(null);
-        lblPause.setBorderPainted(false);
-        lblPause.setContentAreaFilled(false);
-        lblPause.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblPause.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblPause.setIconTextGap(-3);
-        lblPause.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        lblPause.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        lblPause.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttPause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pause.png"))); // NOI18N
+        bttPause.setBorder(null);
+        bttPause.setBorderPainted(false);
+        bttPause.setContentAreaFilled(false);
+        bttPause.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttPause.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttPause.setIconTextGap(-3);
+        bttPause.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttPause.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttPause.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblPauseMouseClicked(evt);
+                bttPauseMouseClicked(evt);
+            }
+        });
+        bttPause.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttPauseActionPerformed(evt);
             }
         });
 
-        lblStop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stop.png"))); // NOI18N
-        lblStop.setBorder(null);
-        lblStop.setBorderPainted(false);
-        lblStop.setContentAreaFilled(false);
-        lblStop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblStop.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblStop.setIconTextGap(-3);
-        lblStop.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        lblStop.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        lblStop.addMouseListener(new java.awt.event.MouseAdapter() {
+        bttStop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stop.png"))); // NOI18N
+        bttStop.setBorder(null);
+        bttStop.setBorderPainted(false);
+        bttStop.setContentAreaFilled(false);
+        bttStop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttStop.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bttStop.setIconTextGap(-3);
+        bttStop.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        bttStop.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bttStop.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblStopMouseClicked(evt);
+                bttStopMouseClicked(evt);
             }
         });
 
@@ -971,11 +969,11 @@ public class ipre extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(panelPpal, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblPause, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bttPause, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblStop, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bttStop, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1004,9 +1002,9 @@ public class ipre extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(161, 161, 161)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblStop)
-                                    .addComponent(lblPause)
-                                    .addComponent(lblPlay))))
+                                    .addComponent(bttStop)
+                                    .addComponent(bttPause)
+                                    .addComponent(bttPlay))))
                         .addGap(172, 172, 172))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(panelPpal, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1039,7 +1037,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc1MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblInc, 1.0f, 1);
+            sesionLibre.valorBoton(lblInc, 1.0f, 1);
         } else {
             //
         }
@@ -1047,7 +1045,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel11MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblVel, 11.0f, 0);
+            sesionLibre.valorBoton(lblVel, 11.0f, 0);
         } else {
             //
         }
@@ -1055,29 +1053,24 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel2MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblVel, 2.0f, 0);
+            sesionLibre.valorBoton(lblVel, 2.0f, 0);
         } else {
-            //
-          modo=12;
-            System.out.println("estoy en el modo "+ modo);
-            programa = new DataSport(distVuelta,progPrest1);
-                actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms, lblNoVuelta, reloj, programa,
-                intervaloCalculoCalorias, intervaloMostrarPantallaCal); 
+            sesionPre.setProgPrest(progPrest2);
         }
     }//GEN-LAST:event_bttVel2MouseClicked
 
     private void bttVel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel3MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblVel, 3.0f, 0);
+            sesionLibre.valorBoton(lblVel, 3.0f, 0);
         } else {
-            //
+            
         }
 
     }//GEN-LAST:event_bttVel3MouseClicked
 
     private void bttVel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel5MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblVel, 5.0f, 0);
+            sesionLibre.valorBoton(lblVel, 5.0f, 0);
         } else {
             //
         }
@@ -1086,7 +1079,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel7MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblVel, 7.0f, 0);
+            sesionLibre.valorBoton(lblVel, 7.0f, 0);
         } else {
             //
         }
@@ -1095,7 +1088,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel9MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblVel, 9.0f, 0);
+            sesionLibre.valorBoton(lblVel, 9.0f, 0);
         } else {
             //
         }
@@ -1104,7 +1097,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVelMenosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVelMenosMouseClicked
         if (modo == 0) {
-            programa.reducir(lblVel, limInf, increVel, 0);
+            sesionLibre.reducir(lblVel, limInf, increVel, 0);
         } else {
             //
         }
@@ -1114,20 +1107,20 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel1MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblVel, 1.0f, 0);
+            sesionLibre.valorBoton(lblVel, 1.0f, 0);
         } else {
+            sesionPre.setProgPrest(progPrest1);
+            System.out.println("Modo: " + modo);
+            System.out.println("Estoy en el modo " + sesionPre.getProgPrest().getNoPrograma());
+            System.out.println("Velocidad del modo " + sesionPre.getProgPrest().getVelVuelta(0));
 
-           modo=11;
-           programa = new DataSport(distVuelta,progPrest1);
-                actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms, lblNoVuelta, reloj, programa,
-                intervaloCalculoCalorias, intervaloMostrarPantallaCal); 
         }
 
     }//GEN-LAST:event_bttVel1MouseClicked
 
     private void bttVel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel4MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblVel, 4.0f, 0);
+            sesionLibre.valorBoton(lblVel, 4.0f, 0);
         } else {
             //
         }
@@ -1136,7 +1129,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel6MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblVel, 6.0f, 0);
+            sesionLibre.valorBoton(lblVel, 6.0f, 0);
         } else {
             //
         }
@@ -1145,7 +1138,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel8MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblVel, 8.0f, 0);
+            sesionLibre.valorBoton(lblVel, 8.0f, 0);
         } else {
             //
         }
@@ -1155,7 +1148,7 @@ public class ipre extends javax.swing.JFrame {
     private void bttVel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel10MouseClicked
 
         if (modo == 0) {
-            programa.valorBoton(lblVel, 10.0f, 0);
+            sesionLibre.valorBoton(lblVel, 10.0f, 0);
         } else {
             //
         }
@@ -1165,7 +1158,7 @@ public class ipre extends javax.swing.JFrame {
     private void bttVel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel12MouseClicked
 
         if (modo == 0) {
-            programa.valorBoton(lblVel, 12.0f, 0);
+            sesionLibre.valorBoton(lblVel, 12.0f, 0);
         } else {
             //
         }
@@ -1173,7 +1166,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVelMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVelMasMouseClicked
         if (modo == 0) {
-            programa.aumentar(lblVel, limSup, limInf, increVel, 0);
+            sesionLibre.aumentar(lblVel, limSup, limInf, increVel, 0);
         } else {
             //
         }
@@ -1185,7 +1178,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc2MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblInc, 2.0f, 1);
+            sesionLibre.valorBoton(lblInc, 2.0f, 1);
         } else {
             //
         }
@@ -1193,7 +1186,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc3MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblInc, 3.0f, 1);
+            sesionLibre.valorBoton(lblInc, 3.0f, 1);
         } else {
             //
         }
@@ -1201,7 +1194,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc4MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblInc, 4.0f, 1);
+            sesionLibre.valorBoton(lblInc, 4.0f, 1);
         } else {
             //
         }
@@ -1209,7 +1202,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc5MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblInc, 5.0f, 1);
+            sesionLibre.valorBoton(lblInc, 5.0f, 1);
         } else {
             //
         }
@@ -1217,7 +1210,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc6MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblInc, 6.0f, 1);
+            sesionLibre.valorBoton(lblInc, 6.0f, 1);
         } else {
             //
         }
@@ -1225,7 +1218,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttIncMenosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttIncMenosMouseClicked
         if (modo == 0) {
-            programa.reducir(lblInc, limInfInc, increInc, 1);
+            sesionLibre.reducir(lblInc, limInfInc, increInc, 1);
         } else {
             //
         }
@@ -1233,7 +1226,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttIncMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttIncMasMouseClicked
         if (modo == 0) {
-            programa.aumentar(lblInc, limSupInc, limInfInc, increInc, 1);
+            sesionLibre.aumentar(lblInc, limSupInc, limInfInc, increInc, 1);
         } else {
             //
         }
@@ -1241,7 +1234,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttSpeedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttSpeedMouseClicked
 //        programa.setModo(1);
-        modo=1;
+        modo = 1;
         cambio();
         System.out.println("Modo: " + modo);
 
@@ -1251,34 +1244,46 @@ public class ipre extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bttSpeedActionPerformed
 
-    private void lblStopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblStopMouseClicked
+    private void bttStopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttStopMouseClicked
         actualizadorReloj.setBoton("stop");
-        actualizadorMetricas.setBoton("stop");
+        if (modo == 0) {
+            actualizadorMetricasLibre.setBoton("stop");
+        } else {
+            actualizadorMetricasPre.setBoton("stop");
+        }
+
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblStopMouseClicked
+    }//GEN-LAST:event_bttStopMouseClicked
 
     private void bttOffMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttOffMouseClicked
         System.exit(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_bttOffMouseClicked
 
-    private void lblPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPlayMouseClicked
+    private void bttPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttPlayMouseClicked
         // TODO add your handling code here:
         String texto;
-        if (programa.getVel() == 0) {
-            texto = "<html><body>Seleccione la Velocidad <br> y la<br>Inclinación</body></html>";
-            lblConsola.setText(texto);
+        actualizadorReloj.setBoton("play");
+        if (modo == 0) {
+            if (sesionLibre.getVel() == 0) {
+                texto = "<html><body>Seleccione la Velocidad <br> y la<br>Inclinación</body></html>";
+                lblConsola.setText(texto);
+            } else {
+                texto = "<html><body>Modo Libre<br>En<br>Ejecución</body></html>";
+                lblConsola.setText(texto);
+                actualizadorMetricasLibre.setBoton("play");
+            }
         } else {
-            texto = "<html><body>Modo Libre<br>En<br>Ejecución</body></html>";
+            texto = "<html><body>Modo Prestablecido<br>En<br>Ejecución</body></html>";
             lblConsola.setText(texto);
-            actualizadorReloj.setBoton("play");
-            actualizadorMetricas.setBoton("play");
+            actualizadorMetricasPre.setBoton("play");
         }
-    }//GEN-LAST:event_lblPlayMouseClicked
+
+    }//GEN-LAST:event_bttPlayMouseClicked
 
     private void bttVel5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttVel5ActionPerformed
         if (modo == 0) {
-            programa.valorBoton(lblVel, 5.0f, 0);
+            sesionLibre.valorBoton(lblVel, 5.0f, 0);
         } else {
             //
         }   // TODO add your handling code here:
@@ -1286,18 +1291,28 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttInc0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttInc0MouseClicked
         if (modo == 0) {
-            programa.valorBoton(lblInc, 0.0f, 1);
+            sesionLibre.valorBoton(lblInc, 0.0f, 1);
         } else {
 
         }
 
     }//GEN-LAST:event_bttInc0MouseClicked
 
-    private void lblPauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPauseMouseClicked
+    private void bttPauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttPauseMouseClicked
         // TODO add your handling code here:
         actualizadorReloj.setBoton("pause");
-        actualizadorMetricas.setBoton("pause");
-    }//GEN-LAST:event_lblPauseMouseClicked
+        if (modo == 0) {
+            actualizadorMetricasLibre.setBoton("pause");
+        } else {
+            actualizadorMetricasPre.setBoton("pause");
+        }
+
+
+    }//GEN-LAST:event_bttPauseMouseClicked
+
+    private void bttPauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttPauseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bttPauseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1360,7 +1375,10 @@ public class ipre extends javax.swing.JFrame {
     private javax.swing.JButton bttIncMas;
     private javax.swing.JButton bttIncMenos;
     private javax.swing.JButton bttOff;
+    private javax.swing.JButton bttPause;
+    private javax.swing.JButton bttPlay;
     private javax.swing.JButton bttSpeed;
+    private javax.swing.JButton bttStop;
     private javax.swing.JButton bttVel1;
     private javax.swing.JButton bttVel10;
     private javax.swing.JButton bttVel11;
@@ -1393,10 +1411,7 @@ public class ipre extends javax.swing.JFrame {
     private javax.swing.JLabel lblKms;
     private javax.swing.JLabel lblModoNo;
     private javax.swing.JLabel lblNoVuelta;
-    private javax.swing.JButton lblPause;
-    private javax.swing.JButton lblPlay;
     private javax.swing.JLabel lblReloj;
-    private javax.swing.JButton lblStop;
     private javax.swing.JLabel lblTiempo;
     private javax.swing.JLabel lblTiempoFijo;
     private javax.swing.JLabel lblTitulo;
