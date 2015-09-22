@@ -45,7 +45,6 @@ public class DataSport {
     public DataSport(float distVuelta, Programa progPrest) {
         this.distVuelta = distVuelta;
         this.progPrest = progPrest;
-       
         simbolos = new DecimalFormatSymbols();
         simbolos.setDecimalSeparator('.');
         modo = 1;
@@ -55,7 +54,7 @@ public class DataSport {
 
     public void setProgPrest(Programa progPrest) {
         this.progPrest = progPrest;
-         vel = progPrest.getVelVuelta(0);                                        //Esto está bien hecho?
+        vel = progPrest.getVelVuelta(0);                                        //Esto está bien hecho?
         System.out.println("La velocidad del prestablecido es:" +vel);
         inc = progPrest.getIncVuelta(0);
         System.out.println("La inclinacion del prestablecido es:" +inc);
@@ -237,9 +236,14 @@ public class DataSport {
     }
 
     public String getVelPrestablecido(){
-        DecimalFormat formateador = new DecimalFormat("00.00", simbolos);          //Formateo lo que muestro en pantalla
+        DecimalFormat formateador = new DecimalFormat("00.0", simbolos);          //Formateo lo que muestro en pantalla
         String vel1 = "" + formateador.format(vel);
         return vel1;
+    }
+     public String getIncPrestablecido(){
+        DecimalFormat formateador = new DecimalFormat("0.0", simbolos);          //Formateo lo que muestro en pantalla
+        String inc1 = "" + formateador.format(inc);
+        return inc1;
     }
     
     public void imprVel() {
@@ -286,7 +290,7 @@ public class DataSport {
         return sV;
     }
 
-    public void calcularVuelta() {
+    public void calcularVuelta() { //replantear con division entera. Modulo no sirve y usar la funcion round de java para redondear
         float distanciaM = kms * 1000; //pasa la distancia metros
         float modulo = distanciaM % distVuelta;
         //System.out.println("El modulo es: " + modulo);
@@ -295,10 +299,11 @@ public class DataSport {
         } else {
             if (modulo == 0) {
                 vuelta++;
+                System.out.println("Estamos en la vuelta "+vuelta);
                 vel = progPrest.getVelVuelta(vuelta);
-                System.out.println("La velocidad de la vuelta cambiando vuelta es: "+vel);
+                System.out.println("La velocidad de la vuelta en calcularVuelta es: "+vel);
                 inc = progPrest.getIncVuelta(vuelta);
-                System.out.println("La inclinación de la vuelta cambiando vuelta es: "+inc);
+                System.out.println("La inclinación de la vuelta en calcularVuelta es: "+inc);
                 
             }
         }
