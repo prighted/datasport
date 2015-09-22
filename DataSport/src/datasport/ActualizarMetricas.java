@@ -22,11 +22,10 @@ public class ActualizarMetricas implements Runnable {
     private Relojrun reloj;
     private int t;
     private int salto;
-    private String botonM,vueltas;
-    
+    private String botonM, vueltas, calSeg, kmAcum;
 
     public ActualizarMetricas(JLabel lblCal, JLabel lblKm, Relojrun reloj, DataSport programa,
-        long intervaloCalculoCalorias, long intervaloMostrarPantalla) {
+            long intervaloCalculoCalorias, long intervaloMostrarPantalla) {
         this.lblCal = lblCal;
         this.lblKm = lblKm;
         this.reloj = reloj;
@@ -34,8 +33,9 @@ public class ActualizarMetricas implements Runnable {
         this.intervaloCalculoCalorias = intervaloCalculoCalorias;
         this.intervaloMostrarPantalla = intervaloMostrarPantalla;
         vivoM = true;
-        
+
     }
+
     public ActualizarMetricas(JLabel lblCal, JLabel lblKm, JLabel lblVuelta, JLabel lblVel, JLabel lblInc,
             Relojrun reloj, DataSport programa, long intervaloCalculoCalorias, long intervaloMostrarPantalla) {
         this.lblCal = lblCal;
@@ -48,112 +48,114 @@ public class ActualizarMetricas implements Runnable {
         this.intervaloCalculoCalorias = intervaloCalculoCalorias;
         this.intervaloMostrarPantalla = intervaloMostrarPantalla;
         vivoM = true;
-        
+
     }
-    
-    public void setBoton(String b)
-    {
-    botonM=b;
-        
+
+    public void calculos(int tiempo) {
+        programa.calcularCal(intervaloCalculoCalorias);
+        programa.calcularKm(tiempo);
+        if (programa.getModo() == 1) {//modo pre
+            programa.calcularVuelta();
+
+        }
     }
-    
+
+    public void setBoton(String b) {
+        botonM = b;
+
+    }
 
     public void setVivo(boolean vivoM) {
         this.vivoM = vivoM;
     }
-   
+ 
+            
 
     @Override
     public void run() {
         while (vivoM) {
-          
+
             try {
-              
+
                 //Se ejecuta si esta en play
-               if (botonM=="play")
-               {
-               
-                   if (salto!=0) /*
-                       Evita que entre de una vez a ejecutar despues de dar pausa.
-                       Antes se tenia el bug de que por ejemplo se pausaba en el segundo
-                       5 justo antes de 6 mostraba el calculo de calorias para 5 y para 6
-                       o sea por dos. Se hace esto para "desfasar un segundo" este thread
-                       del otro No se adelanta
-                       */
-                   { 
-                       
-                       int tiempo = (int) reloj.getTiempoTranscurrido();
-                if (programa.getModo()==1)
+                if (botonM == "play") {
+
+                    if (salto != 0) /*
+                     Evita que entre de una vez a ejecutar despues de dar pausa.
+                     Antes se tenia el bug de que por ejemplo se pausaba en el segundo
+                     5 justo antes de 6 mostraba el calculo de calorias para 5 y para 6
+                     o sea por dos. Se hace esto para "desfasar un segundo" este thread
+                     del otro No se adelanta
+                     */ {
+
+                        int tiempo = (int) reloj.getTiempoTranscurrido();
+                           calculos(tiempo);
+                         
+                         
+                                   
+                        vueltas = programa.getVueltaString();
+                        kmAcum = programa.getDistAcumString();
+                        calSeg = programa.getCalString();
+//                        System.out.println("la velocidad  en Metricas " + programa.getVel());
+//                        System.out.println("La inclinación en Metricas " + programa.getInc());
+//
+//                        System.out.println("Los km en metricas " + kmAcum);
+//                        System.out.println("Las calorias en metricas son " + calSeg);
+
+                        if ((tiempo) == 0) {
+                            lblCal.setText("00000.00");
+                            lblKm.setText("       00.00");
+
+                            if (programa.getModo() == 1) {
+                                lblVuelta.setText("0");
+                                lblCal.setText("00000.00");
+                                lblKm.setText("       00.00");
+                            }
+
+                        } else {
+                            if (((tiempo + 1) % intervaloMostrarPantalla) == 0) {
+
+                                lblCal.setText(calSeg);
+                                lblKm.setText(kmAcum);
+                                if (programa.getModo() == 1) {
+                                    lblVuelta.setText(vueltas);
+                                    lblCal.setText(calSeg);
+                                    lblKm.setText(kmAcum);
+//                                    lblVel.setText("" + programa.getVelPrestablecido());
+//                                    lblInc.setText("" + programa.getIncPrestablecido());
+                                }
+
+                            }
+                        }
+                    } else /*
+                     una vez se salto el primer segundo despues de pausa incrementa
+                     el salto para que entre en los demas ciclos siguientes.
+                     */ {
+                        salto++;
+                    }
+
+                }
+
                 {
-                    programa.calcularVuelta();
-                    vueltas = programa.getVueltaString();
-                    
-                    
-                }
-                programa.calcularCal(intervaloCalculoCalorias);
-                programa.calcularKm(tiempo);
-                    
-                String kmAcum = programa.getDistAcumString();
-                String calSeg = programa.getCalString();
-                   System.out.println("la velocidad  en Metricas " +programa.getVel());
-                       System.out.println("La inclinación en Metricas "+programa.getInc());
-     
-                       System.out.println("Los km en metricas " +programa.getDistAcumString());
-                       System.out.println("Las calorias en metricas son "+programa.getCal());
-                
-                
-                if ((tiempo) == 0) {
-                    if(programa.getModo()==1){
-                        lblVuelta.setText("0");
-                    }
-                    lblCal.setText("00000.00");
-                    lblKm.setText("       00.00");
-                    
-                }else{
-                if (((tiempo+1) % intervaloMostrarPantalla) == 0) {
-                     
-                        lblCal.setText(calSeg);
-                        lblKm.setText(kmAcum);
-                          if(programa.getModo()==1){
-                       lblVuelta.setText(vueltas);
-                    }
-                        
-                }
-                }
-                }
-                   else /*
-                       una vez se salto el primer segundo despues de pausa incrementa
-                       el salto para que entre en los demas ciclos siguientes.
-                       */
-                   {
-                   salto++;
-                   }
-                   
-                }
-             
-               {
-                 if (botonM=="pause") /*
+                    if (botonM == "pause") /*
                      si pausan coloca el salto en 0 para que haga el desfase.
-                     */
-                 {
-                  salto=0;
-                 }
-                 else //usaron stop
-                 {
-                     if (botonM=="stop")
-                     {
-                     System.out.println("usaron stop");
-                     programa.resetCalorias();
-                     programa.resetKm();
-                     programa.resetVuelta();
-                     programa.resetParametros();
-                     lblCal.setText("00.00");
-                     lblKm.setText("00.00");
-                     lblVuelta.setText("0");
-                     }
-                 }
-               }
-              Thread.sleep(1000);  
+                     */ {
+                        salto = 0;
+                    } else //usaron stop
+                    {
+                        if (botonM == "stop") {
+                            System.out.println("usaron stop");
+                            programa.resetCalorias();
+                            programa.resetKm();
+                            programa.resetVuelta();
+                            programa.resetParametros();
+                            lblCal.setText("00.00");
+                            lblKm.setText("00.00");
+                            lblVuelta.setText("0");
+                        }
+                    }
+                }
+                Thread.sleep(1000);
             } catch (InterruptedException ex) {
             };
 
