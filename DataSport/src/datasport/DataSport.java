@@ -27,38 +27,34 @@ public class DataSport {
      idAtributo=0:Velocidad, 1:Inclinacion
      */
 
-    private float vel, inc, cal, calAcum, K, distanciaAcum, kms, distVuelta;
-    private int vuelta, modo;
+    private float vel, inc, cal, calAcum, K, distanciaAcum, kms;
+    private int vuelta, modo, distVuelta;
     //private int intervalo
     private Programa progPrest;
     private DecimalFormatSymbols simbolos;                                         //Para colocar el simbolo de "." a cal y km
 
-    public DataSport(/*, Programa progPest*/) {
+    public DataSport(int distVuelta) {
         //Modo Libre
+         this.distVuelta = distVuelta;
         modo = 0;
         K = 10f;
         simbolos = new DecimalFormatSymbols();
         simbolos.setDecimalSeparator('.');
-       
+
     }
 
-    public DataSport(float distVuelta, Programa progPrest) {
+    public DataSport(int distVuelta, Programa progPrest) {
+        //Prestablecido
         this.distVuelta = distVuelta;
         this.progPrest = progPrest;
         simbolos = new DecimalFormatSymbols();
         simbolos.setDecimalSeparator('.');
         modo = 1;
-        
-        K=10f;
+        K = 10f;
     }
 
     public void setProgPrest(Programa progPrest) {
         this.progPrest = progPrest;
-        vel = progPrest.getVelVuelta(0);                                        //Esto está bien hecho?
-        System.out.println("La velocidad del prestablecido es:" +vel);
-        inc = progPrest.getIncVuelta(0);
-        System.out.println("La inclinacion del prestablecido es:" +inc);
-        
     }
 
     public Programa getProgPrest() {
@@ -102,6 +98,14 @@ public class DataSport {
 
     public void setCal(float cal) {
         this.cal = cal;
+    }
+
+    public void setVel(float vel) {
+        this.vel = vel;
+    }
+
+    public void setInc(float inc) {
+        this.inc = inc;
     }
 
     /*
@@ -235,17 +239,18 @@ public class DataSport {
         }
     }
 
-    public String getVelPrestablecido(){
+    public String getVelPrestablecido() {
         DecimalFormat formateador = new DecimalFormat("00.0", simbolos);          //Formateo lo que muestro en pantalla
         String vel1 = "" + formateador.format(vel);
         return vel1;
     }
-     public String getIncPrestablecido(){
+
+    public String getIncPrestablecido() {
         DecimalFormat formateador = new DecimalFormat("0.0", simbolos);          //Formateo lo que muestro en pantalla
         String inc1 = "" + formateador.format(inc);
         return inc1;
     }
-    
+
     public void imprVel() {
         System.out.println("La velocidad es: " + vel);
     }
@@ -291,25 +296,20 @@ public class DataSport {
     }
 
     public void calcularVuelta() { //replantear con division entera. Modulo no sirve y usar la funcion round de java para redondear
-        float distanciaM = kms * 1000; //pasa la distancia metros
-        float modulo = distanciaM % distVuelta;
-        //System.out.println("El modulo es: " + modulo);
-        if ((distanciaAcum == 0)) {
-            vuelta = 0;
-        } else {
-            if (modulo == 0) {
-                vuelta++;
-                System.out.println("Estamos en la vuelta "+vuelta);
-                vel = progPrest.getVelVuelta(vuelta);
-                System.out.println("La velocidad de la vuelta en calcularVuelta es: "+vel);
-                inc = progPrest.getIncVuelta(vuelta);
-                System.out.println("La inclinación de la vuelta en calcularVuelta es: "+inc);
-                
-            }
-        }
+//          System.out.println("Km recorridos (impreso desde calcularVuelta()) "+distanciaAcum);
+        float distanciaM = distanciaAcum * 1000; //pasa la distancia metros
 
+        int distanciaRedondeada = Math.round(distanciaM);
+//        System.out.println("Distancia redondeada "+distanciaRedondeada);
+         vuelta = distanciaRedondeada / distVuelta;
+//        System.out.println("va en la vuelta " +vuelta);
+        if(modo == 1){
+                vel = progPrest.getVelVuelta(vuelta);
+//                System.out.println("La velocidad de la vuelta cambiando vuelta es: "+vel);
+                inc = progPrest.getIncVuelta(vuelta);
+//                System.out.println("La inclinación de la vuelta cambiando vuelta es: "+inc);
+        }
     }
-    
 
     public float calcularCal(long intervalo) {
         /*
@@ -333,10 +333,12 @@ public class DataSport {
     }
 
     public void calcularKm(long tiempo) {
-        float km = (vel * tiempo / 3600);
-        distanciaAcum = km;
-        kms = km;
+//        System.out.println("La velocidad en calcularKm() es: "+vel);
+        distanciaAcum= (vel * tiempo / 3600);
+//        distanciaAcum = km;
+//        kms = km;
         distanciaAcum = (float) Math.rint(distanciaAcum * 100) / 100;
+//        System.out.println("Km recorridos (impreso desde calcularKM()) "+distanciaAcum);
 
     }
 

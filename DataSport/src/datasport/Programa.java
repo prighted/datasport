@@ -54,16 +54,8 @@ public class Programa {
         return incVuelta;
     }
     
-    public void imprProg1() {
-        int j;
-        for (int i = 0; i < vueltas.length; i++) {
-
-            j = i + 1;
-            System.out.println("Datos vuelta " + j + " No. Vuelta: " + vueltas[i].getNoVuelta() + " Velocidad: "
-                    + vueltas[i].getVel() + " Inclinación: " + vueltas[i].getInc());
-
-        }
+  
 
     }
 
-}
+

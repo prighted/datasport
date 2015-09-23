@@ -46,7 +46,7 @@ public class ActualizarReloj implements Runnable {
 
     @Override
     public void run() {
-        reloj.setHoraInicial();
+
         while (vivo) {
         
             
@@ -93,5 +93,6 @@ public class ActualizarReloj implements Runnable {
     
        //Aqui ya no existe el thread, pero puedo seguir trabajando
     }
+    
     
 }

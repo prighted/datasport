@@ -25,17 +25,17 @@ public class ipre extends javax.swing.JFrame {
     Thread hiloReloj, hiloMetricas;
     private ActualizarReloj actualizadorReloj;
     private Relojrun reloj;
-    private DataSport sesion;
+    private DataSport sesion, sesionPre;
 //    private int modo = 0, click = 0;  //seleccion de modo en 2, 
     private ActualizarMetricas actualizadorMetricas;
     private String boton = "";
     private long intervaloCalculoCalorias, intervaloMostrarPantallaCal;
-    private Programa progPrest2, progPrest0,progPrest1;
+    private Programa progPrest2, progPrest0, progPrest1;
 
     //Datos que se obtienen del txt 
     private Lectora leer;
-    private float limInf, limSup, inc, vel, k, limSupInc, limInfInc, increVel, increInc, distVuelta;
-    private int noLaps, modo;
+    private float limInf, limSup, inc, vel, k, limSupInc, limInfInc, increVel, increInc;
+    private int noLaps, modo, distVuelta;
 
     /**
      * Creates new form inface
@@ -48,7 +48,7 @@ public class ipre extends javax.swing.JFrame {
         hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
         hiloReloj.start();
         modo = 0;
-    hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
+        hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
         hiloMetricas.start();
     }
 
@@ -77,7 +77,7 @@ public class ipre extends javax.swing.JFrame {
         Vuelta[] vueltaProg0 = new Vuelta[1];
         Vuelta vuelta0 = new Vuelta(0, 0.0f, 0.0f);
         vueltaProg0[0] = vuelta0;
-        progPrest0 = new Programa(1, vueltaProg0);
+        progPrest0 = new Programa(0, vueltaProg0);
         //Creación del programa1
         Vuelta[] vueltasProg1 = new Vuelta[5];
         Vuelta vuelta1 = new Vuelta(1, 50.0f, 10.0f);
@@ -101,13 +101,10 @@ public class ipre extends javax.swing.JFrame {
         vueltasProg2[1] = vuelta32;
         progPrest2 = new Programa(2, vueltasProg2);
 
-        sesion = new DataSport();
-        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms, lblVueltaFijo, lblVel, lblInc,  reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
-    
+        sesion = new DataSport(distVuelta);
 
-   
-      
-
+        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
+                lblVueltaFijo, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
 
     }
 
@@ -1061,7 +1058,7 @@ public class ipre extends javax.swing.JFrame {
         if (modo == 0) {
             sesion.valorBoton(lblVel, 3.0f, 0);
         } else {
-            
+
         }
 
     }//GEN-LAST:event_bttVel3MouseClicked
@@ -1105,12 +1102,14 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel1MouseClicked
         if (modo == 0) {
-    
+
             sesion.valorBoton(lblVel, 1.0f, 0);
         } else {
-     
-            sesion.setProgPrest(progPrest1);
 
+            sesion.setProgPrest(progPrest1);
+//            sesion.setModo(1);
+//            System.out.println("Velocidad del prestablecido al oprimir 1 " + sesion.getVel());
+//            System.out.println("Inclinación del prestablecido al oprimir 1 " + sesion.getInc());
         }
 
     }//GEN-LAST:event_bttVel1MouseClicked
@@ -1231,10 +1230,26 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttSpeedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttSpeedMouseClicked
 //        programa.setModo(1);
+        //sesionPre = new DataSport(distVuelta, progPrest1);
+         actualizadorMetricas.setVivo(false);
+         actualizadorReloj.setVivo(false);
+        
+        reloj = new Relojrun();
+        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
+        hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
+        hiloReloj.start();
+        sesion = new DataSport(distVuelta, progPrest0);
+        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
+                lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
+        hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
+        hiloMetricas.start();
+
+//        System.out.println("EL modo de la sesión " + sesion.getModo());
+//        System.out.println("La velocidad del prestablecido es "+sesion.getVelPrestablecido());
         modo = 1;
         cambio();
-        sesion = new DataSport(distVuelta, progPrest0);
-        System.out.println("Modo: " + modo);
+
+//        System.out.println("Modo: " + modo);
 
     }//GEN-LAST:event_bttSpeedMouseClicked
 
@@ -1244,10 +1259,7 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttStopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttStopMouseClicked
         actualizadorReloj.setBoton("stop");
-        if (modo == 0) {
-            actualizadorMetricas.setBoton("stop");
-        } else {
-        }
+        actualizadorMetricas.setBoton("stop");
 
         // TODO add your handling code here:
     }//GEN-LAST:event_bttStopMouseClicked
@@ -1298,10 +1310,7 @@ public class ipre extends javax.swing.JFrame {
     private void bttPauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttPauseMouseClicked
         // TODO add your handling code here:
         actualizadorReloj.setBoton("pause");
-        if (modo == 0) {
-            actualizadorMetricas.setBoton("pause");
-        } else {
-        }
+        actualizadorMetricas.setBoton("pause");
 
 
     }//GEN-LAST:event_bttPauseMouseClicked

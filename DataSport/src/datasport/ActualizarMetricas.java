@@ -54,10 +54,8 @@ public class ActualizarMetricas implements Runnable {
     public void calculos(int tiempo) {
         programa.calcularCal(intervaloCalculoCalorias);
         programa.calcularKm(tiempo);
-        if (programa.getModo() == 1) {//modo pre
-            programa.calcularVuelta();
+        programa.calcularVuelta();
 
-        }
     }
 
     public void setBoton(String b) {
@@ -68,11 +66,10 @@ public class ActualizarMetricas implements Runnable {
     public void setVivo(boolean vivoM) {
         this.vivoM = vivoM;
     }
- 
-            
 
     @Override
-    public void run() {
+    public synchronized void run() {
+
         while (vivoM) {
 
             try {
@@ -89,10 +86,9 @@ public class ActualizarMetricas implements Runnable {
                      */ {
 
                         int tiempo = (int) reloj.getTiempoTranscurrido();
-                           calculos(tiempo);
-                         
-                         
-                                   
+
+                        calculos(tiempo);
+
                         vueltas = programa.getVueltaString();
                         kmAcum = programa.getDistAcumString();
                         calSeg = programa.getCalString();
@@ -108,8 +104,8 @@ public class ActualizarMetricas implements Runnable {
 
                             if (programa.getModo() == 1) {
                                 lblVuelta.setText("0");
-                                lblCal.setText("00000.00");
-                                lblKm.setText("       00.00");
+//                                lblCal.setText("00000.00");
+//                                lblKm.setText("       00.00");
                             }
 
                         } else {
@@ -121,8 +117,8 @@ public class ActualizarMetricas implements Runnable {
                                     lblVuelta.setText(vueltas);
                                     lblCal.setText(calSeg);
                                     lblKm.setText(kmAcum);
-//                                    lblVel.setText("" + programa.getVelPrestablecido());
-//                                    lblInc.setText("" + programa.getIncPrestablecido());
+                                    lblVel.setText("" + programa.getVelPrestablecido());
+                                    lblInc.setText("" + programa.getIncPrestablecido());
                                 }
 
                             }
@@ -144,7 +140,7 @@ public class ActualizarMetricas implements Runnable {
                     } else //usaron stop
                     {
                         if (botonM == "stop") {
-                            System.out.println("usaron stop");
+//                            System.out.println("usaron stop");
                             programa.resetCalorias();
                             programa.resetKm();
                             programa.resetVuelta();
@@ -161,4 +157,5 @@ public class ActualizarMetricas implements Runnable {
 
         }
     }
+
 }

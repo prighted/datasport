@@ -12,8 +12,8 @@ import java.io.*;
 
 public class Lectora {
     
-    private float limInf, limSup, inc, vel, k,limSupInc,limInfInc,increVel,increInc,distVuelta;
-    private int noLaps;
+    private float limInf, limSup, inc, vel, k,limSupInc,limInfInc,increVel,increInc;
+    private int noLaps, distVuelta;
     private long intCal,intPan;
     private String ruta;
     
@@ -69,7 +69,7 @@ public class Lectora {
                   increVel = Float.parseFloat(elementos[1]);
                }
                  if(elementos[0].equals("distVuelta")){
-                  distVuelta = Float.parseFloat(elementos[1]);
+                  distVuelta = Integer.parseInt(elementos[1]);
                }
                
            }
@@ -133,7 +133,7 @@ public class Lectora {
         return increInc;
     }
 
-    public float getDistVuelta() {
+    public int getDistVuelta() {
         return distVuelta;
     }
     
