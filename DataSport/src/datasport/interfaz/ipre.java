@@ -45,11 +45,9 @@ public class ipre extends javax.swing.JFrame {
         inicializarDatosLectora();
         inicializar();
         cambio();
-        hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
-        hiloReloj.start();
+        inicializarHilosRunnables();
         modo = 0;
-        hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
-        hiloMetricas.start();
+
     }
 
     //datos a partir del txt
@@ -100,29 +98,39 @@ public class ipre extends javax.swing.JFrame {
         Vuelta vuelta32 = new Vuelta(3, 3.0f, 5.0f);
         vueltasProg2[1] = vuelta32;
         progPrest2 = new Programa(2, vueltasProg2);
-
+        /*
+         Se inicializa la instancia del modoLibre
+         */
         sesion = new DataSport(distVuelta);
-
         actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
                 lblVueltaFijo, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
 
     }
 
+    public void inicializarHilosRunnables() {
+        reloj = new Relojrun();
+        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
+        hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
+        hiloReloj.start();
+
+        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
+                lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
+        hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
+        hiloMetricas.start();
+
+    }
+
     public void cambio() {
         if (modo == 0) {
-            lblTitulo.setText("Modo Libre");
+           
+            lblTitulo.setText("          MODO LIBRE          ");
             lblModoNo.setVisible(false);
-            lblNoVuelta.setVisible(false);
-            lblVueltaFijo.setVisible(false);
 
         } else {
-            lblVueltaFijo.setVisible(true);
 
             lblTitulo.setVisible(true);
             lblModoNo.setVisible(true);
-            lblNoVuelta.setVisible(true);
-
-            lblTitulo.setText("Modo Prestablecido");
+            lblTitulo.setText("MODO PRESTABLECIDO");
         }
 
     }
@@ -492,7 +500,7 @@ public class ipre extends javax.swing.JFrame {
 
         lblModoNo.setFont(new java.awt.Font("Play", 0, 36)); // NOI18N
         lblModoNo.setForeground(new java.awt.Color(51, 51, 60));
-        lblModoNo.setText("1");
+        lblModoNo.setToolTipText("");
 
         lblNoVuelta.setFont(new java.awt.Font("Play", 0, 40)); // NOI18N
         lblNoVuelta.setForeground(new java.awt.Color(51, 51, 60));
@@ -513,6 +521,7 @@ public class ipre extends javax.swing.JFrame {
         lblVel.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
         lblVel.setForeground(new java.awt.Color(51, 51, 60));
         lblVel.setText("  0.0");
+        lblVel.setToolTipText("");
 
         lblInc.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
         lblInc.setForeground(new java.awt.Color(51, 51, 60));
@@ -567,9 +576,9 @@ public class ipre extends javax.swing.JFrame {
                             .addGroup(panelPpalLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(lblReloj)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(panelPpalLayout.createSequentialGroup()
@@ -604,10 +613,9 @@ public class ipre extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lblGradosFijo))))
                             .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addGap(60, 60, 60)
                                 .addComponent(lblTitulo)
-                                .addGap(49, 49, 49)
-                                .addComponent(lblModoNo)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblModoNo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -1051,6 +1059,9 @@ public class ipre extends javax.swing.JFrame {
             sesion.valorBoton(lblVel, 2.0f, 0);
         } else {
             sesion.setProgPrest(progPrest2);
+                       lblModoNo.setText("No. 1");
+            lblVel.setText(sesion.getVelPrestablecido());
+            lblInc.setText(sesion.getIncPrestablecido());
         }
     }//GEN-LAST:event_bttVel2MouseClicked
 
@@ -1107,6 +1118,9 @@ public class ipre extends javax.swing.JFrame {
         } else {
 
             sesion.setProgPrest(progPrest1);
+            lblModoNo.setText("No. 1");
+            lblVel.setText(sesion.getVelPrestablecido());
+            lblInc.setText(sesion.getIncPrestablecido());
 //            sesion.setModo(1);
 //            System.out.println("Velocidad del prestablecido al oprimir 1 " + sesion.getVel());
 //            System.out.println("Inclinación del prestablecido al oprimir 1 " + sesion.getInc());
@@ -1231,25 +1245,14 @@ public class ipre extends javax.swing.JFrame {
     private void bttSpeedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttSpeedMouseClicked
 //        programa.setModo(1);
         //sesionPre = new DataSport(distVuelta, progPrest1);
-         actualizadorMetricas.setVivo(false);
-         actualizadorReloj.setVivo(false);
-        
-        reloj = new Relojrun();
-        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
-        hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
-        hiloReloj.start();
+        actualizadorMetricas.setVivo(false);
+        actualizadorReloj.setVivo(false);
         sesion = new DataSport(distVuelta, progPrest0);
-        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
-                lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
-        hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
-        hiloMetricas.start();
+        inicializarHilosRunnables();
 
-//        System.out.println("EL modo de la sesión " + sesion.getModo());
-//        System.out.println("La velocidad del prestablecido es "+sesion.getVelPrestablecido());
         modo = 1;
         cambio();
 
-//        System.out.println("Modo: " + modo);
 
     }//GEN-LAST:event_bttSpeedMouseClicked
 

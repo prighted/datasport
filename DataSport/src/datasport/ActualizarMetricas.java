@@ -17,22 +17,14 @@ public class ActualizarMetricas implements Runnable {
     //Codigo que se ejecutara durante el thread
     private long intervaloCalculoCalorias, intervaloMostrarPantalla;
     private JLabel lblCal, lblKm, lblVuelta, lblVel, lblInc;
-    public boolean vivoM;                                                        //Para que se repita el run
+    private boolean vivoM;                                                        //Para que se repita el run
     private DataSport programa;
     private Relojrun reloj;
     private int t;
     private int salto;
     private String botonM, vueltas, calSeg, kmAcum;
 
-    public ActualizarMetricas(JLabel lblCal, JLabel lblKm, Relojrun reloj, DataSport programa,
-            long intervaloCalculoCalorias, long intervaloMostrarPantalla) {
-        this.lblCal = lblCal;
-        this.lblKm = lblKm;
-        this.reloj = reloj;
-        this.programa = programa;
-        this.intervaloCalculoCalorias = intervaloCalculoCalorias;
-        this.intervaloMostrarPantalla = intervaloMostrarPantalla;
-        vivoM = true;
+    public void setVelIncPrestablecido() {
 
     }
 
@@ -101,25 +93,17 @@ public class ActualizarMetricas implements Runnable {
                         if ((tiempo) == 0) {
                             lblCal.setText("00000.00");
                             lblKm.setText("       00.00");
+                            lblVuelta.setText("0");
 
-                            if (programa.getModo() == 1) {
-                                lblVuelta.setText("0");
-//                                lblCal.setText("00000.00");
-//                                lblKm.setText("       00.00");
-                            }
+                      
 
                         } else {
+
                             if (((tiempo + 1) % intervaloMostrarPantalla) == 0) {
 
                                 lblCal.setText(calSeg);
                                 lblKm.setText(kmAcum);
-                                if (programa.getModo() == 1) {
-                                    lblVuelta.setText(vueltas);
-                                    lblCal.setText(calSeg);
-                                    lblKm.setText(kmAcum);
-                                    lblVel.setText("" + programa.getVelPrestablecido());
-                                    lblInc.setText("" + programa.getIncPrestablecido());
-                                }
+                                lblVuelta.setText(vueltas);
 
                             }
                         }
