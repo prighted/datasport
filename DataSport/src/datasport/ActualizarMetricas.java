@@ -16,16 +16,23 @@ public class ActualizarMetricas implements Runnable {
 
     //Codigo que se ejecutara durante el thread
     private long intervaloCalculoCalorias, intervaloMostrarPantalla;
-    private JLabel lblCal, lblKm, lblVuelta, lblVel, lblInc;
+    private JLabel jLabel4, jLabel5, jLabel6, jLabel7, lblCal, lblKm, lblVuelta, lblVel, lblInc; //agregadas variables label para mostrar datos al terminal modo libre
     public boolean vivoM;                                                        //Para que se repita el run
     private DataSport programa;
     private Relojrun reloj;
     private int t;
     private int salto;
     private String botonM, vueltas, calSeg, kmAcum;
+    
+    public void setVelIncPrestablecido() {
 
-    public ActualizarMetricas(JLabel lblCal, JLabel lblKm, Relojrun reloj, DataSport programa,
-            long intervaloCalculoCalorias, long intervaloMostrarPantalla) {
+    }
+
+    public ActualizarMetricas(JLabel jLabel4, JLabel jLabel5, JLabel jLabel6, JLabel jLabel7, JLabel lblCal, JLabel lblKm, Relojrun reloj, DataSport programa, long intervaloCalculoCalorias, long intervaloMostrarPantalla) {
+        this.jLabel4 = jLabel4;
+        this.jLabel5 = jLabel5;
+        this.jLabel6 = jLabel6;
+        this.jLabel7 = jLabel7;
         this.lblCal = lblCal;
         this.lblKm = lblKm;
         this.reloj = reloj;
@@ -36,8 +43,12 @@ public class ActualizarMetricas implements Runnable {
 
     }
 
-    public ActualizarMetricas(JLabel lblCal, JLabel lblKm, JLabel lblVuelta, JLabel lblVel, JLabel lblInc,
+    public ActualizarMetricas(JLabel jLabel4, JLabel jLabel5, JLabel jLabel6, JLabel jLabel7, JLabel lblCal, JLabel lblKm, JLabel lblVuelta, JLabel lblVel, JLabel lblInc,
             Relojrun reloj, DataSport programa, long intervaloCalculoCalorias, long intervaloMostrarPantalla) {
+        this.jLabel4 = jLabel4;
+        this.jLabel5 = jLabel5;
+        this.jLabel6 = jLabel6;
+        this.jLabel7 = jLabel7;
         this.lblCal = lblCal;
         this.lblKm = lblKm;
         this.reloj = reloj;
@@ -54,10 +65,8 @@ public class ActualizarMetricas implements Runnable {
     public void calculos(int tiempo) {
         programa.calcularCal(intervaloCalculoCalorias);
         programa.calcularKm(tiempo);
-        if (programa.getModo() == 1) {//modo pre
             programa.calcularVuelta();
-
-        }
+    
     }
 
     public void setBoton(String b) {
@@ -72,13 +81,18 @@ public class ActualizarMetricas implements Runnable {
             
 
     @Override
-    public void run() {
+    public synchronized void run() {
         while (vivoM) {
 
             try {
 
                 //Se ejecuta si esta en play
                 if (botonM == "play") {
+                    
+                    jLabel4.setVisible(false); //oculta los label cuando empieza el programa
+                    jLabel5.setVisible(false);
+                    jLabel6.setVisible(false);
+                    jLabel7.setVisible(false);
 
                     if (salto != 0) /*
                      Evita que entre de una vez a ejecutar despues de dar pausa.
@@ -89,7 +103,7 @@ public class ActualizarMetricas implements Runnable {
                      */ {
 
                         int tiempo = (int) reloj.getTiempoTranscurrido();
-                           calculos(tiempo);
+                        calculos(tiempo);
                          
                          
                                    
@@ -105,26 +119,16 @@ public class ActualizarMetricas implements Runnable {
                         if ((tiempo) == 0) {
                             lblCal.setText("00000.00");
                             lblKm.setText("       00.00");
-
-                            if (programa.getModo() == 1) {
-                                lblVuelta.setText("0");
-                                lblCal.setText("00000.00");
-                                lblKm.setText("       00.00");
-                            }
-
+                            lblVuelta.setText("0");
+                            
+                        
                         } else {
                             if (((tiempo + 1) % intervaloMostrarPantalla) == 0) {
 
                                 lblCal.setText(calSeg);
                                 lblKm.setText(kmAcum);
-                                if (programa.getModo() == 1) {
-                                    lblVuelta.setText(vueltas);
-                                    lblCal.setText(calSeg);
-                                    lblKm.setText(kmAcum);
-//                                    lblVel.setText("" + programa.getVelPrestablecido());
-//                                    lblInc.setText("" + programa.getIncPrestablecido());
-                                }
-
+                                lblVuelta.setText(vueltas);
+                               
                             }
                         }
                     } else /*
@@ -144,7 +148,16 @@ public class ActualizarMetricas implements Runnable {
                     } else //usaron stop
                     {
                         if (botonM == "stop") {
+                            Float velrafa = programa.getVel(); //toma la velocidad
                             System.out.println("usaron stop");
+                            jLabel4.setVisible(true);//deja visible los label para poder mostrar los datos
+                            jLabel5.setVisible(true);
+                            jLabel6.setVisible(true);
+                            jLabel7.setVisible(true);
+                            jLabel4.setText("Kilómetros: "+ Float.parseFloat(kmAcum));
+                            jLabel5.setText("Calorias: "+ Float.parseFloat(calSeg));
+                            jLabel6.setText("Vueltas: "+ Float.parseFloat(kmAcum)/0.04f);
+                            jLabel7.setText("Velocidad: "+ velrafa);
                             programa.resetCalorias();
                             programa.resetKm();
                             programa.resetVuelta();
@@ -152,6 +165,7 @@ public class ActualizarMetricas implements Runnable {
                             lblCal.setText("00.00");
                             lblKm.setText("00.00");
                             lblVuelta.setText("0");
+                            botonM="";
                         }
                     }
                 }
