@@ -1,0 +1,15 @@
+limInf,1.0
+limSup,12.0
+noLaps,5
+inc,5
+vel,5
+K,10
+intCal,60
+intPan,2
+limSupInc,6
+limInfInc,0.0
+increInc,0.2
+increVel,0.1
+distVuelta,400
+
+
