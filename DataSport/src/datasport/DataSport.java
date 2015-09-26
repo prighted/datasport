@@ -323,8 +323,9 @@ public class DataSport {
         
     }
 
-    public void calcularKm(long tiempo) {
-        distanciaAcum = (vel * tiempo / 3600);
+    public void calcularKm() {
+        distanciaAcum = distanciaAcum + (vel / 3600);
+        System.out.println("La distancia es "+distanciaAcum);
         distanciaAcum = (float) Math.rint(distanciaAcum * 100) / 100;
 
     }
