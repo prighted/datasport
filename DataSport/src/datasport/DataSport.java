@@ -27,34 +27,38 @@ public class DataSport {
      idAtributo=0:Velocidad, 1:Inclinacion
      */
 
-    private float vel, inc, cal, calAcum, K, distanciaAcum, peso;
-    private int vuelta, modo, distVuelta,edad;
+    private float vel, inc, cal, calAcum, K, distanciaAcum, kms, distVuelta;
+    private int vuelta, modo;
     //private int intervalo
     private Programa progPrest;
     private DecimalFormatSymbols simbolos;                                         //Para colocar el simbolo de "." a cal y km
 
-    public DataSport(int distVuelta) {
+    public DataSport(/*, Programa progPest*/) {
         //Modo Libre
-        this.distVuelta = distVuelta;
         modo = 0;
-        calcularK(edad, peso);                                                   //Por ahora va retornar 10, cuando sea la versión dos se calcula verdaderamente
+        K = 10f;
         simbolos = new DecimalFormatSymbols();
         simbolos.setDecimalSeparator('.');
-
+       
     }
 
-    public DataSport(int distVuelta, Programa progPrest) {
-        //Prestablecido
+    public DataSport(float distVuelta, Programa progPrest) {
         this.distVuelta = distVuelta;
         this.progPrest = progPrest;
         simbolos = new DecimalFormatSymbols();
         simbolos.setDecimalSeparator('.');
         modo = 1;
-        calcularK(edad, peso);
+        
+        K=10f;
     }
 
     public void setProgPrest(Programa progPrest) {
         this.progPrest = progPrest;
+        vel = progPrest.getVelVuelta(0);                                        //Esto está bien hecho?
+        System.out.println("La velocidad del prestablecido es:" +vel);
+        inc = progPrest.getIncVuelta(0);
+        System.out.println("La inclinacion del prestablecido es:" +inc);
+        
     }
 
     public Programa getProgPrest() {
@@ -100,21 +104,12 @@ public class DataSport {
         this.cal = cal;
     }
 
-    public void setVel(float vel) {
-        this.vel = vel;
-    }
-
-    public void setInc(float inc) {
-        this.inc = inc;
-    }
-
     /*
      FIN Declaración Getters y Setters
      */
     public void aumentar(JLabel etiqueta, float limSup, float limInf, float var,
             int idAtributo) {
         double x = Float.parseFloat(etiqueta.getText());
-        
         if (idAtributo == 0) {
             if ((x < limInf)) {
                 if (x < 10) {
@@ -124,6 +119,7 @@ public class DataSport {
                     etiqueta.setText("" + limInf);
                 }
                 vel = limInf;                                                      //Se establece la velocidad  
+                imprVel();
             } else {
                 if (x == limSup) {
                     if (x < 10) {
@@ -132,6 +128,7 @@ public class DataSport {
                         etiqueta.setText("" + limSup);
                     }
                     vel = limSup;
+                    imprVel();
                 } else {
                     x = x + var;
                     x = Math.rint(x * 10) / 10;
@@ -141,6 +138,7 @@ public class DataSport {
                         etiqueta.setText("" + x);
                     }
                     vel = (float) x;
+                    imprVel();
                 }
             }
         } else {
@@ -151,6 +149,7 @@ public class DataSport {
                     etiqueta.setText("" + limInf);
                 }
                 inc = limInf;                                                      //Se establece la velocidad  
+                imprInc();
             } else {
                 if (x == limSup) {
                     if (x < 10) {
@@ -159,6 +158,7 @@ public class DataSport {
                         etiqueta.setText("" + limSup);
                     }
                     inc = limSup;
+                    imprInc();
                 } else {
                     x = x + var;
                     x = Math.rint(x * 10) / 10;
@@ -168,6 +168,7 @@ public class DataSport {
                         etiqueta.setText("" + x);
                     }//redondea a dos dígitos
                     inc = (float) x;
+                    imprInc();
                 }
             }
         }
@@ -184,6 +185,7 @@ public class DataSport {
                     etiqueta.setText("" + limInf);
                 }
                 vel = limInf;
+                imprVel();
             } else {
                 x = x - var;
                 x = Math.rint(x * 10) / 10;
@@ -193,6 +195,7 @@ public class DataSport {
                     etiqueta.setText("" + x);
                 }
                 vel = (float) x;
+                imprVel();
             }
         } else {
             if (x == limInf) {
@@ -202,6 +205,7 @@ public class DataSport {
                     etiqueta.setText("" + x);
                 }
                 inc = limInf;
+                imprInc();
             } else {
                 x = x - var;
                 x = Math.rint(x * 10) / 10;
@@ -211,6 +215,7 @@ public class DataSport {
                     etiqueta.setText("" + x);
                 }
                 inc = (float) x;
+                imprInc();
             }
         }
     }
@@ -223,25 +228,24 @@ public class DataSport {
         }
         if (idAtritbuto == 0) {
             vel = n;
+            imprVel();
         } else {
             inc = n;
+            imprInc();
         }
     }
 
-    public String getVelPrestablecido() {
-        DecimalFormat formateador = new DecimalFormat("00.0", simbolos);
-        float vel0 = progPrest.getVelVuelta(0);
-        String vel1 = "" + formateador.format(vel0);
+    public String getVelPrestablecido(){
+        DecimalFormat formateador = new DecimalFormat("00.0", simbolos);          //Formateo lo que muestro en pantalla
+        String vel1 = "" + formateador.format(vel);
         return vel1;
     }
-
-    public String getIncPrestablecido() {
-        DecimalFormat formateador = new DecimalFormat("0.0", simbolos);
-        float inc0 = progPrest.getIncVuelta(0);
-        String inc1 = "" + formateador.format(inc0);
+     public String getIncPrestablecido(){
+        DecimalFormat formateador = new DecimalFormat("0.0", simbolos);          //Formateo lo que muestro en pantalla
+        String inc1 = "" + formateador.format(inc);
         return inc1;
     }
-
+    
     public void imprVel() {
         System.out.println("La velocidad es: " + vel);
     }
@@ -286,16 +290,26 @@ public class DataSport {
         return sV;
     }
 
-    public void calcularVuelta() {
-        float distanciaM = distanciaAcum * 1000; //pasa la distancia metros
-
-        int distanciaRedondeada = Math.round(distanciaM);
-        vuelta = distanciaRedondeada / distVuelta;
-        if (modo == 1) {
-            vel = progPrest.getVelVuelta(vuelta);
-            inc = progPrest.getIncVuelta(vuelta);
+    public void calcularVuelta() { //replantear con division entera. Modulo no sirve y usar la funcion round de java para redondear
+        float distanciaM = kms * 1000; //pasa la distancia metros
+        float modulo = distanciaM % distVuelta;
+        //System.out.println("El modulo es: " + modulo);
+        if ((distanciaAcum == 0)) {
+            vuelta = 0;
+        } else {
+            if (modulo == 0) {
+                vuelta++;
+                System.out.println("Estamos en la vuelta "+vuelta);
+                vel = progPrest.getVelVuelta(vuelta);
+                System.out.println("La velocidad de la vuelta en calcularVuelta es: "+vel);
+                inc = progPrest.getIncVuelta(vuelta);
+                System.out.println("La inclinación de la vuelta en calcularVuelta es: "+inc);
+                
+            }
         }
+
     }
+    
 
     public float calcularCal(long intervalo) {
         /*
@@ -314,14 +328,10 @@ public class DataSport {
 
         return cal;
 
-        
+        // K = 10 + 10*((30-e)/10) + 10*(p/100);                                 Por si necesita modificar   las calorías deben ser calculadas
+        //
     }
-    private float calcularK(int edad, float peso){
-         K = 10 + 10*((30-edad)/10) + 10*(peso/100);                               //  Por si necesita modificar   las calorías deben ser calculadas
-         K=10;
-         return K;
-        
-    }
+
 
     public void calcularKm() {
         distanciaAcum = distanciaAcum + (vel / 3600);

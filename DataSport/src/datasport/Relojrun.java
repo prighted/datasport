@@ -21,6 +21,7 @@ public class Relojrun {
      */
 
     private long horaInicial;
+    private long horaFinal;
     private long difHoras;
     private long horaParcial;
     private long tiempoTranscurrido;
@@ -38,6 +39,9 @@ public class Relojrun {
         return horaInicial;
     }
 
+    public long getHoraFinal() {
+        return horaFinal;
+    }
     
     public void resetsaveT()
     {
@@ -91,6 +95,12 @@ public class Relojrun {
 
     }
 
+    public long calcularDeltaHoras() {
+        horaFinal = System.currentTimeMillis();
+        difHoras = (horaFinal - horaInicial) / 1000;
+        return difHoras;
+
+    }
 
     public String getHoraString() {
         Date hoy = new Date();
@@ -104,5 +114,9 @@ public class Relojrun {
 
     public void imprimirHoraInicial() {
         System.out.println("la hora incial es: " + horaInicial);
+    }
+
+    public void imprimirHoraFinal() {
+        System.out.println("la hora final es: " + horaFinal);
     }
 }

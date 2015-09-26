@@ -25,17 +25,17 @@ public class ipre extends javax.swing.JFrame {
     Thread hiloReloj, hiloMetricas;
     private ActualizarReloj actualizadorReloj;
     private Relojrun reloj;
-    private DataSport sesion, sesionPre;
+    private DataSport sesion;
 //    private int modo = 0, click = 0;  //seleccion de modo en 2, 
     private ActualizarMetricas actualizadorMetricas;
     private String boton = "";
     private long intervaloCalculoCalorias, intervaloMostrarPantallaCal;
-    private Programa progPrest2, progPrest0, progPrest1;
+    private Programa progPrest2, progPrest0,progPrest1;
 
     //Datos que se obtienen del txt 
     private Lectora leer;
-    private float limInf, limSup, inc, vel, k, limSupInc, limInfInc, increVel, increInc;
-    private int noLaps, modo, distVuelta;
+    private float limInf, limSup, inc, vel, k, limSupInc, limInfInc, increVel, increInc, distVuelta;
+    private int noLaps, modo;
 
     /**
      * Creates new form inface
@@ -45,14 +45,16 @@ public class ipre extends javax.swing.JFrame {
         inicializarDatosLectora();
         inicializar();
         cambio();
-        inicializarHilosRunnables();
+        hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
+        hiloReloj.start();
         modo = 0;
-
+    hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
+        hiloMetricas.start();
     }
 
     //datos a partir del txt
     public void inicializarDatosLectora() {
-        leer = new Lectora("E:\\datasport\\DataSport\\src\\datasport\\config.txt");
+        leer = new Lectora("D:\\Documentos\\NetBeansProjects\\br\\datasport\\DataSport\\src\\datasport\\config.txt");
         limInf = leer.getLimInf();
         limSup = leer.getLimSup();
         //inc = leer.getInc();
@@ -75,7 +77,7 @@ public class ipre extends javax.swing.JFrame {
         Vuelta[] vueltaProg0 = new Vuelta[1];
         Vuelta vuelta0 = new Vuelta(0, 0.0f, 0.0f);
         vueltaProg0[0] = vuelta0;
-        progPrest0 = new Programa(0, vueltaProg0);
+        progPrest0 = new Programa(1, vueltaProg0);
         //Creación del programa1
         Vuelta[] vueltasProg1 = new Vuelta[5];
         Vuelta vuelta1 = new Vuelta(1, 50.0f, 10.0f);
@@ -98,39 +100,40 @@ public class ipre extends javax.swing.JFrame {
         Vuelta vuelta32 = new Vuelta(3, 3.0f, 5.0f);
         vueltasProg2[1] = vuelta32;
         progPrest2 = new Programa(2, vueltasProg2);
-        /*
-         Se inicializa la instancia del modoLibre
-         */
-        sesion = new DataSport(distVuelta);
-        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
-                lblVueltaFijo, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
 
-    }
+        sesion = new DataSport();
+        actualizadorMetricas = new ActualizarMetricas(jLabel4, jLabel5, jLabel6, jLabel7, lblCalorias, lblKms, lblVueltaFijo, lblVel, lblInc,  reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
+    
 
-    public void inicializarHilosRunnables() {
-        reloj = new Relojrun();
-        actualizadorReloj = new ActualizarReloj(lblReloj, lblTiempo, reloj);
-        hiloReloj = new Thread(actualizadorReloj, "hiloReloj");
-        hiloReloj.start();
+   
+      
 
-        actualizadorMetricas = new ActualizarMetricas(lblCalorias, lblKms,
-                lblNoVuelta, lblVel, lblInc, reloj, sesion, intervaloCalculoCalorias, intervaloMostrarPantallaCal);
-        hiloMetricas = new Thread(actualizadorMetricas, "hiloMetricas");
-        hiloMetricas.start();
 
     }
 
     public void cambio() {
+            jLabel4.setVisible(false);
+            jLabel5.setVisible(false);
+            jLabel6.setVisible(false);
+            jLabel7.setVisible(false);
         if (modo == 0) {
-           
-            lblTitulo.setText("          MODO LIBRE          ");
+            lblTitulo.setText("Modo Libre");
             lblModoNo.setVisible(false);
+            lblNoVuelta.setVisible(false);
+            lblVueltaFijo.setVisible(false);
+            jLabel1.setText("Seleccione la velocidad"); //en modo libre este panel sirve para seleccionar la velocidad
+            jLabel2.setText("Seleccione la inclinación"); //en modo libre este panel sirve para seleccionar la inclinación
 
         } else {
+            lblVueltaFijo.setVisible(true);
 
             lblTitulo.setVisible(true);
             lblModoNo.setVisible(true);
-            lblTitulo.setText("MODO PRESTABLECIDO");
+            lblNoVuelta.setVisible(true);
+
+            lblTitulo.setText("Modo Prestablecido");
+            jLabel1.setText("Seleccione el modo prestablecido"); //en modo prestablecido este panel sirve para escoger el modo, no la velocidad
+            
         }
 
     }
@@ -180,6 +183,10 @@ public class ipre extends javax.swing.JFrame {
         lblConsola = new javax.swing.JLabel();
         lblVueltaFijo = new javax.swing.JLabel();
         lblTiempoFijo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         bttPlay = new javax.swing.JButton();
         bttPause = new javax.swing.JButton();
         bttStop = new javax.swing.JButton();
@@ -497,183 +504,98 @@ public class ipre extends javax.swing.JFrame {
         panelPpal.setMaximumSize(new java.awt.Dimension(640, 360));
         panelPpal.setMinimumSize(new java.awt.Dimension(640, 360));
         panelPpal.setPreferredSize(new java.awt.Dimension(640, 360));
+        panelPpal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblModoNo.setFont(new java.awt.Font("Play", 0, 36)); // NOI18N
         lblModoNo.setForeground(new java.awt.Color(51, 51, 60));
-        lblModoNo.setToolTipText("");
+        lblModoNo.setText("1");
+        panelPpal.add(lblModoNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 12, -1, -1));
 
         lblNoVuelta.setFont(new java.awt.Font("Play", 0, 40)); // NOI18N
         lblNoVuelta.setForeground(new java.awt.Color(51, 51, 60));
         lblNoVuelta.setText("0");
+        panelPpal.add(lblNoVuelta, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 139, -1, -1));
 
         lblCalorias.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
         lblCalorias.setForeground(new java.awt.Color(51, 51, 60));
         lblCalorias.setText("00000.00");
+        panelPpal.add(lblCalorias, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 322, 140, -1));
 
         lblCaloriasFijo.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
         lblCaloriasFijo.setForeground(new java.awt.Color(51, 51, 60));
         lblCaloriasFijo.setText("Calorias:");
+        panelPpal.add(lblCaloriasFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 322, -1, -1));
 
         lblKmFijo.setFont(new java.awt.Font("Play", 1, 14)); // NOI18N
         lblKmFijo.setForeground(new java.awt.Color(51, 51, 60));
         lblKmFijo.setText("Km/h");
+        panelPpal.add(lblKmFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 143, -1, -1));
 
         lblVel.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
         lblVel.setForeground(new java.awt.Color(51, 51, 60));
         lblVel.setText("  0.0");
-        lblVel.setToolTipText("");
+        panelPpal.add(lblVel, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 77, 177, -1));
+        panelPpal.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 95, -1, -1));
 
         lblInc.setFont(new java.awt.Font("Play", 0, 80)); // NOI18N
         lblInc.setForeground(new java.awt.Color(51, 51, 60));
         lblInc.setText("  0.0");
+        panelPpal.add(lblInc, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 185, 177, -1));
+        panelPpal.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 95, -1, -1));
 
         lblGradosFijo.setFont(new java.awt.Font("Play", 0, 90)); // NOI18N
         lblGradosFijo.setForeground(new java.awt.Color(51, 51, 60));
         lblGradosFijo.setText("°");
+        panelPpal.add(lblGradosFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(703, 185, -1, 102));
+        panelPpal.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(739, 77, -1, -1));
 
         lblTitulo.setFont(new java.awt.Font("Play", 0, 36)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(51, 51, 60));
         lblTitulo.setText("Modo Prestablecido");
+        panelPpal.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 12, -1, -1));
 
         lblKmFIjo.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
         lblKmFIjo.setForeground(new java.awt.Color(51, 51, 60));
         lblKmFIjo.setText("Km recorridos:");
+        panelPpal.add(lblKmFIjo, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 360, -1, -1));
 
         lblKms.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
         lblKms.setForeground(new java.awt.Color(51, 51, 60));
         lblKms.setText("       00.00");
         lblKms.setToolTipText("");
+        panelPpal.add(lblKms, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 360, 157, -1));
 
         lblReloj.setFont(new java.awt.Font("Play", 1, 24)); // NOI18N
         lblReloj.setText("00:00:00");
+        panelPpal.add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 12, -1, 47));
 
         lblTiempo.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         lblTiempo.setText("00:00:00");
         lblTiempo.setToolTipText("");
+        panelPpal.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 212, -1, 92));
 
         lblConsola.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        panelPpal.add(lblConsola, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 77, 134, 145));
 
         lblVueltaFijo.setFont(new java.awt.Font("Play", 0, 24)); // NOI18N
         lblVueltaFijo.setText("Vuelta No.");
+        panelPpal.add(lblVueltaFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 150, 125, 42));
 
         lblTiempoFijo.setFont(new java.awt.Font("Play", 0, 18)); // NOI18N
         lblTiempoFijo.setText("Tiempo Transcurrido");
+        panelPpal.add(lblTiempoFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 258, -1, -1));
 
-        javax.swing.GroupLayout panelPpalLayout = new javax.swing.GroupLayout(panelPpal);
-        panelPpal.setLayout(panelPpalLayout);
-        panelPpalLayout.setHorizontalGroup(
-            panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPpalLayout.createSequentialGroup()
-                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPpalLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel13))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPpalLayout.createSequentialGroup()
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblConsola, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(lblReloj)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(panelPpalLayout.createSequentialGroup()
-                                            .addComponent(jLabel12)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel3))
-                                        .addGroup(panelPpalLayout.createSequentialGroup()
-                                            .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(lblKmFIjo)
-                                                .addComponent(lblCaloriasFijo))
-                                            .addGap(18, 18, 18)
-                                            .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(lblKms, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(lblCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(22, 22, 22))
-                                        .addGroup(panelPpalLayout.createSequentialGroup()
-                                            .addComponent(lblTiempoFijo)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(lblTiempo)))
-                                    .addGroup(panelPpalLayout.createSequentialGroup()
-                                        .addComponent(lblVueltaFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(90, 90, 90)
-                                        .addComponent(lblNoVuelta)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelPpalLayout.createSequentialGroup()
-                                        .addComponent(lblVel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(lblKmFijo))
-                                    .addGroup(panelPpalLayout.createSequentialGroup()
-                                        .addComponent(lblInc, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblGradosFijo))))
-                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addComponent(lblTitulo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblModoNo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        panelPpalLayout.setVerticalGroup(
-            panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPpalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblReloj, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                    .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblTitulo)
-                        .addComponent(lblModoNo)))
-                .addGap(18, 18, 18)
-                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPpalLayout.createSequentialGroup()
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblVel)
-                            .addComponent(lblKmFijo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblInc)
-                            .addComponent(lblGradosFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(106, 106, 106))
-                    .addGroup(panelPpalLayout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelPpalLayout.createSequentialGroup()
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addComponent(lblConsola, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(panelPpalLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel12)
-                                .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelPpalLayout.createSequentialGroup()
-                                        .addGap(44, 44, 44)
-                                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(lblNoVuelta)
-                                            .addComponent(lblVueltaFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPpalLayout.createSequentialGroup()
-                                        .addGap(100, 100, 100)
-                                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(lblTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(lblTiempoFijo))
-                                        .addGap(18, 18, 18)))))
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblCalorias)
-                            .addComponent(lblCaloriasFijo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelPpalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblKmFIjo)
-                            .addComponent(lblKms))
-                        .addGap(11, 11, 11))))
-        );
+        jLabel4.setText("Kilómetros:");
+        panelPpal.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 155, -1));
+
+        jLabel5.setText("Calorías:");
+        panelPpal.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 155, -1));
+
+        jLabel6.setText("Vueltas:");
+        panelPpal.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 155, -1));
+
+        jLabel7.setText("Velocidad:");
+        panelPpal.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 370, 155, -1));
 
         bttPlay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/play.png"))); // NOI18N
         bttPlay.setBorder(null);
@@ -1059,9 +981,6 @@ public class ipre extends javax.swing.JFrame {
             sesion.valorBoton(lblVel, 2.0f, 0);
         } else {
             sesion.setProgPrest(progPrest2);
-                       lblModoNo.setText("No. 1");
-            lblVel.setText(sesion.getVelPrestablecido());
-            lblInc.setText(sesion.getIncPrestablecido());
         }
     }//GEN-LAST:event_bttVel2MouseClicked
 
@@ -1069,7 +988,7 @@ public class ipre extends javax.swing.JFrame {
         if (modo == 0) {
             sesion.valorBoton(lblVel, 3.0f, 0);
         } else {
-
+            
         }
 
     }//GEN-LAST:event_bttVel3MouseClicked
@@ -1113,17 +1032,12 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttVel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttVel1MouseClicked
         if (modo == 0) {
-
+    
             sesion.valorBoton(lblVel, 1.0f, 0);
         } else {
-
+     
             sesion.setProgPrest(progPrest1);
-            lblModoNo.setText("No. 1");
-            lblVel.setText(sesion.getVelPrestablecido());
-            lblInc.setText(sesion.getIncPrestablecido());
-//            sesion.setModo(1);
-//            System.out.println("Velocidad del prestablecido al oprimir 1 " + sesion.getVel());
-//            System.out.println("Inclinación del prestablecido al oprimir 1 " + sesion.getInc());
+
         }
 
     }//GEN-LAST:event_bttVel1MouseClicked
@@ -1244,15 +1158,10 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttSpeedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttSpeedMouseClicked
 //        programa.setModo(1);
-        //sesionPre = new DataSport(distVuelta, progPrest1);
-        actualizadorMetricas.setVivo(false);
-        actualizadorReloj.setVivo(false);
-        sesion = new DataSport(distVuelta, progPrest0);
-        inicializarHilosRunnables();
-
         modo = 1;
         cambio();
-
+        sesion = new DataSport(distVuelta, progPrest0);
+        System.out.println("Modo: " + modo);
 
     }//GEN-LAST:event_bttSpeedMouseClicked
 
@@ -1262,7 +1171,10 @@ public class ipre extends javax.swing.JFrame {
 
     private void bttStopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttStopMouseClicked
         actualizadorReloj.setBoton("stop");
-        actualizadorMetricas.setBoton("stop");
+        if (modo == 0) {
+            actualizadorMetricas.setBoton("stop");
+        } else {
+        }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_bttStopMouseClicked
@@ -1313,7 +1225,10 @@ public class ipre extends javax.swing.JFrame {
     private void bttPauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttPauseMouseClicked
         // TODO add your handling code here:
         actualizadorReloj.setBoton("pause");
-        actualizadorMetricas.setBoton("pause");
+        if (modo == 0) {
+            actualizadorMetricas.setBoton("pause");
+        } else {
+        }
 
 
     }//GEN-LAST:event_bttPauseMouseClicked
@@ -1406,6 +1321,10 @@ public class ipre extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
