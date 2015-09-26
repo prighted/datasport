@@ -13,7 +13,7 @@ import java.sql.*;
  */
 public class Conexion {
     
-    private String url = "D:\\Documentos\\NetBeansProjects\\br\\datasport\\DataSport\\src\\basededatos\\BDdatasport1";
+    private String url = "/home/rafael/NetBeansProjects/datasport/DataSport/src/datasport/BDdatasport1";
     private Connection connect;
     private Statement st;
     
@@ -50,8 +50,8 @@ public class Conexion {
     }
     /*
     public void guardarenBD(int usuario, float calorias, float calAcumuladas, float CI, float CV, float inc, int tiempo, float vel, int vuelta){
-    
-    try {
+        
+        try {
             PreparedStatement st = connect.prepareStatement("insert into ejercicio (usuario, calorias, calAcumuladas, CI, CV, inc, tiempo, vel, vuelta) values (?,?,?,?,?,?,?,?,?)");
             st.setInt(1, usuario);
             st.setFloat(2, calorias);
@@ -66,6 +66,7 @@ public class Conexion {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
+    
     }
     */
    
